@@ -1,41 +1,41 @@
 enable : true
 work_item: 
   - title: "Armadillo"
-    img: "http://cdn.celiasy.xyz/images/index/8.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/8.jpg"
     url: "/work/armadillo"
 
   - title: "Trust Finance"
-    img: "http://cdn.celiasy.xyz/images/index/9.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/9.jpg"
     url: "/work/trust-finance"
 
   - title: "PayBlocks Banking"
-    img: "http://cdn.celiasy.xyz/images/index/10.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/10.jpg"
     url: "/work/payblocks-banking"
 
   - title: "Buffet"
-    img: "http://cdn.celiasy.xyz/images/index/6.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/6.jpg"
     url: "/work/buffet"
 
   - title: "Seeding the Food Desert"
-    img: "http://cdn.celiasy.xyz/images/index/5.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/5.jpg"
     url: "/work/seeding-the-food-desert"
 
   - title: "Sandscape: Sediment Mechanism"
-    img: "http://cdn.celiasy.xyz/images/index/4.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/4.jpg"
     url: "/work/sandscape-sediment-mechanism"
 
   - title: "JunctionScape"
-    img: "http://cdn.celiasy.xyz/images/index/7.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/7.jpg"
     url: "/work/junctionscape"
 
   - title: "Knowing River Through Sound"
-    img: "http://cdn.celiasy.xyz/images/index/1.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/1.jpg"
     url: "/work/knowing-river-through-sound"
 
   - title: "A Collection: Garments of Discomfort"
-    img: "http://cdn.celiasy.xyz/images/index/2.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/2.jpg"
     url: "/work/a-collection-garments-of-discomfort"
 
   - title: "Stone-fized History and Tree-fized Temporary"
-    img: "http://cdn.celiasy.xyz/images/index/3.jpg"
+    img: "https://cdn.celiasy.xyz/images/index/3.jpg"
     url: "/work/stone-fized-history-and-tree-fized-temporary"
