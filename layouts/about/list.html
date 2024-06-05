@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+<section class="site-about-intro">
+  <div class="container">
+
+    <div class="row">
+      <div class="site-about-intro-header col-md-4">
+        <h2>Designer & Artist</h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="site-about-intro-portrait col-md-5">
+        <img src="{{ .Params.portrait_img }}" alt="portrait">
+      </div>
+
+      <div class="site-about-intro-content col-md-5">
+
+        <div class="site-about-intro-content-detail">
+          <p>{{ .Params.intro_content_1 }}</p>
+          <p>{{ .Params.intro_content_2 }}</p>
+          <p>{{ .Params.intro_content_3 }}</p>
+        </div>
+
+      <div class="site-about-intro-content-divider"></div>
+  
+      <div class="site-about-intro-content-more">
+        <div class="site-about-intro-content-education">
+          <span class="site-about-intro-content-more-title">Education</span>
+          <ul>
+            <li>Harvard University</li>
+            <li>Graduate School of Design</li>
+            <li>Master of Landscape Architecture</li>
+            <li><br></li>
+            <li>MIT</li>
+            <li>Cross Registration in</li>
+            <li>Art, Culture and Technology</li>
+          </ul>
+        </div>
+
+        <div class="site-about-intro-content-passtion">
+          <span class="site-about-intro-content-more-title">Passions</span>
+          <ul>
+            <li><a href="/work/armadillo">Experience</a></li>
+            <li><a href="/work/trust-finance">Fintech</a></li>
+            <li><a href="/work/payblocks-banking">Web3 Product</a></li>
+            <li><a href="/work/buffet">Game</a></li>
+            <li><a href="/work/knowing-river-through-sound">Metaverse</a></li>
+            <li><a href="/work/stone-fized-history-and-tree-fized-temporary">VR</a></li>
+            <li><a href="/work/a-collection-garments-of-discomfort">Multimedia Art</a></li>
+          </ul>
+        </div>
+      </div>  
+      
+      <div class="site-about-intro-content-contact">
+          <span class="site-about-intro-content-contact-title">
+            <a href="/contact">Contact for Details</a>
+          </span>
+      </div>
+
+    
+    </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+{{ end }}

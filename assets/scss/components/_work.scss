@@ -1,0 +1,159 @@
+.site-work{
+
+
+  &-header{
+    padding: 150px 0 0;
+    @include mobile{
+      padding: 100px 0 0;
+    }
+
+    margin-bottom: 20px;
+
+    &-title{
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+    &-disclaimer{
+      font-size: 12px;
+    }
+
+    p{
+      line-height: 0.8em;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  &-detail{
+
+    margin-bottom: 150px;
+
+    &-front{
+      height: 1000px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      // display: flex;
+      // background-image:url('http://cdn.celiasy.xyz/images/ux-web3/armadillo/front%20page.jpg')
+    
+
+      &-info{
+        display: grid;
+        min-height: 480px;
+        // background-color: white;
+        margin-left: 15%;
+        margin-top: 100px;
+        width: 485px;
+
+        &-box{
+          margin-top: 50%;
+          background-color: white;
+        }
+
+      }
+      
+    }
+  }
+
+  &-intro{
+
+    padding: 150px 0 0;
+    @include mobile{
+      padding: 100px 0 0;
+    }
+    padding-bottom: 20px;
+
+    &-link{
+      h2{
+        font-size:35px;
+        line-height:1.5em;
+      }
+      a{
+        color: black;
+      }
+    }
+
+    &-content{
+      margin-top: 20px;
+      p{
+        line-height:1.9em;
+        font-size:20px;
+        line-height: 1.5em;
+        letter-spacing:0.01em;
+        margin-bottom: 0;
+        color: black;
+      }
+    }
+
+  }
+
+  &-divider{
+    margin: 50px 0;
+    border-bottom: 2px solid $gray;
+  }
+
+  &-works{
+
+    margin-bottom: 50px;
+
+    &-image-list {
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: space-between;
+    }
+    
+    &-image-item {
+      position: relative;
+      width: calc(50% - 10px); // 考虑到间距，调整宽度
+      height: auto;
+      padding-left: 10px; 
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-sizing: border-box;
+      @include mobile{
+        flex: 1 0 auto;
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+        
+      }
+
+      &:hover {
+        
+        div {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        img {
+          opacity: 0.5;
+        }
+
+        p {
+          visibility: visible;
+        }
+      }
+      img {
+        width: 100%;
+        transition: opacity 0.1s ease;
+      }
+
+      &-mask {
+        background-color: transparent;
+        transition: background-color 0.1s ease;
+      }      
+
+      &-title {
+        font-size: 28px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        visibility: hidden;
+        transition: visibility 0.1s ease;
+        white-space: nowrap;
+      }
+    }
+  }
+}
