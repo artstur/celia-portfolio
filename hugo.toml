@@ -1,4 +1,4 @@
-baseURL       = "http://celiasy.com/"
+baseURL       = "https://celiasy.com/"
 languageCode  = "en-us"
 title         = "Celia Shuyue Li"
 summarylength = 25
@@ -15,9 +15,9 @@ summarylength = 25
     url     = "work"
     weight  = 2
   [[menu.nav]]
-    name    = "Get in touch"
+    name    = "Contact"
     url     = "contact"
-    weight  = 4
+    weight  = 3
 
 # Site Params
 [params]
