@@ -1,0 +1,26 @@
+<section class="site-work-works">
+    <div class="container">
+      <div class="row">
+        {{ with .Site.Data.works }}
+        <div class="site-work-works-image-list">
+          {{ range $index, $element := .work_item }}
+
+          <!-- {{ if eq (mod $index 2) 0 }}
+            <a class="site-work-works-image-item" href="{{ .url }}" target="_self" data-aos="fade-right" data-aos-duration="500">
+          {{ else }}
+            <a class="site-work-works-image-item" href="{{ .url }}" target="_self" data-aos="fade-left" data-aos-duration="500">
+          {{ end }} -->
+      
+          <a class="site-work-works-image-item" href="{{ .url }}" target="_self" data-aos="fade-in" data-aos-duration="800">
+            <div class="site-work-works-image-item-mask">
+              <img src="{{ .img }}" alt="Image">
+              <p class="site-work-works-image-item-title">{{ .title }}</p>
+            </div>
+          </a>
+          {{ end }}
+          <!-- 更多图片... -->
+        </div>
+        {{ end }}
+      </div>
+    </div>
+</section>  
