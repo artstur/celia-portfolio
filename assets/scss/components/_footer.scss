@@ -63,16 +63,16 @@
   }
   &-copyright{
     p{
-      color: $black;
+      color: $dark-gray;
       margin: 50px auto 0;
       text-align: center;
     }
     a{
-      color: $black;
+      color: $dark-gray;
       transition: all .3s ease;
-      @include tablet{
-        font-size: 20px;
-      }
+      // @include tablet{
+      //   font-size: 20px;
+      // }
       @include desktop{
         margin-bottom: 70px;
       }
