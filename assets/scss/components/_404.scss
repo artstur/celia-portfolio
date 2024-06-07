@@ -1,0 +1,40 @@
+.site-404{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    // display: flex;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    padding: 150px 0 0;
+    @include mobile{
+      padding: 100px 0 0;
+    }
+
+    p {
+      color: darkgray;
+    }
+
+    h1 {
+      color: black;
+    }
+    
+
+    &-mark{
+      font-size: 100px;
+      color: black;
+    }
+
+    &-content{
+      padding: 20px;
+    }
+
+    &-btn {
+      font-size: 12px;
+      margin-top: 20px;
+      border-radius: 50px;
+    }
+
+
+}
