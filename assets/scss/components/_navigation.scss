@@ -40,6 +40,14 @@
     // &:last-child{
     //   margin-left: 15px;
     // }
+    .has-dropdown-icon {
+      margin-left: 2px;
+
+      @include mobile{
+        display: none;
+      }
+
+    }
 
     .nav-dropdown {
       display: none;
