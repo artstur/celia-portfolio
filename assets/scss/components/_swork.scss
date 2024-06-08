@@ -1,0 +1,33 @@
+.site-work{
+    
+    &-detail{
+
+    margin-bottom: 150px;
+
+    &-front{
+      height: 200px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      // display: flex;
+      // background-image:url('http://cdn.celiasy.xyz/images/ux-web3/armadillo/front%20page.jpg')
+    
+
+      &-info{
+        display: grid;
+        min-height: 480px;
+        // background-color: white;
+        margin-left: 15%;
+        margin-top: 100px;
+        width: 485px;
+
+        &-box{
+          margin-top: 50%;
+          background-color: white;
+        }
+
+      }
+      
+    }
+  }
+}
