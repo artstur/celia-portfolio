@@ -5,21 +5,24 @@
     margin-bottom: 150px;
 
     &-front{
-      height: 200px;
+      height: 720px;
+
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
-      // display: flex;
+      display: flex;
+      background-position: center; /* 使背景图居中 */
       // background-image:url('http://cdn.celiasy.xyz/images/ux-web3/armadillo/front%20page.jpg')
-    
+      @include mobile{
+        height: 400px;
+      }    
 
       &-info{
         display: grid;
         min-height: 480px;
-        // background-color: white;
         margin-left: 15%;
         margin-top: 100px;
-        width: 485px;
+        width: auto;
 
         &-box{
           margin-top: 50%;
