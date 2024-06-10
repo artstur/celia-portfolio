@@ -68,3 +68,16 @@ select.form-control{
 textarea.form-control{
   height: auto;
 }
+
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('static/font/MyriadPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('static/font/MyriadPro-Semibold.ttf') format('truetype');
+  font-weight: 600;
+}
