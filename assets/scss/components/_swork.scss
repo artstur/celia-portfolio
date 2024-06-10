@@ -108,7 +108,7 @@
     }
 
 
-    &-page-white-bg {
+    &-page-template {
       height: auto;
       padding-left: 10%;
       padding-right: 10%;
@@ -162,11 +162,15 @@
       }
 
       &-chart {
-        padding:3%;
+        padding: 3%;
+
+        p{
+          font-family: $myriad-font;
+          color: black;
+        }
 
         img {
           width: 100%;
-
           @include mobile {
             margin-bottom: 5%;
           }
@@ -186,17 +190,17 @@
 
         &-img {
 
-        width: 200%;
+          width: 200%;
 
-        /* 移动端样式 */
-        @include mobile {
-          width:100%;
-        }
+          /* 移动端样式 */
+          @include mobile {
+            width: 100%;
+          }
 
           img {
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* 下方阴影 */
-                       0 -4px 8px rgba(0, 0, 0, 0.1); /* 上方阴影 */
+            width: 98%;
+            // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),              /* 下方阴影 */
+            //   0 -4px 8px rgba(0, 0, 0, 0.1); /* 上方阴影 */
             height: auto;
           }
         }
@@ -204,7 +208,7 @@
         &-text {
           padding-left: 2%;
           padding-right: 2%;
-          padding-top: 20%;
+          padding-top: 12%;
 
           ul {
             font-family: $myriad-font;
@@ -212,11 +216,13 @@
           }
 
           p {
+            font-family: $myriad-font;
             color: black;
-            font-weight: bold;
+            // font-weight: bold;
           }
 
           li {
+            font-family: $myriad-font;
             color: black;
             line-height: 1.5em;
             padding-bottom: 20px;
@@ -225,10 +231,10 @@
 
       }
 
-      &-two-chart{
+      &-two-chart {
 
         display: flex;
-        padding:2%;
+        padding: 2%;
 
         /* 移动端样式 */
         @include mobile {
@@ -237,17 +243,19 @@
 
         &-img {
 
-        width: 100%;
+          width: 100%;
 
-        /* 移动端样式 */
-        @include mobile {
-          width:100%;
-        }
+          /* 移动端样式 */
+          @include mobile {
+            width: 100%;
+          }
 
           img {
             width: 95%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* 下方阴影 */
-                       0 -4px 8px rgba(0, 0, 0, 0.1); /* 上方阴影 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+              /* 下方阴影 */
+              0 -4px 8px rgba(0, 0, 0, 0.1);
+            /* 上方阴影 */
             height: auto;
 
             @include mobile {
