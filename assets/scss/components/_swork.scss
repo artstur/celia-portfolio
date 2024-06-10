@@ -208,7 +208,7 @@
         &-text {
           padding-left: 2%;
           padding-right: 2%;
-          padding-top: 12%;
+          padding-top: 10%;
 
           ul {
             font-family: $myriad-font;
@@ -234,7 +234,7 @@
       &-two-chart {
 
         display: flex;
-        padding: 2%;
+        padding: 1%;
 
         /* 移动端样式 */
         @include mobile {
@@ -244,6 +244,7 @@
         &-img {
 
           width: 100%;
+          padding: 2%;
 
           /* 移动端样式 */
           @include mobile {
@@ -252,16 +253,24 @@
 
           img {
             width: 95%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+            // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
               /* 下方阴影 */
-              0 -4px 8px rgba(0, 0, 0, 0.1);
+              // 0 -4px 8px rgba(0, 0, 0, 0.1);
             /* 上方阴影 */
             height: auto;
 
             @include mobile {
-              margin-top: 5%;
-              margin-bottom: 5%;
+              margin-top: 2%;
+              margin-bottom: 2%;
             }
+          }
+
+          p {
+            margin-top: 2%;
+            width: 95%;
+            font-family: $myriad-font;
+            color: black;
+            font-size: 14px;
           }
         }
 
