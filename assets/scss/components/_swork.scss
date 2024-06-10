@@ -29,29 +29,87 @@
 
     margin-bottom: 150px;
 
-    &-front {
-      height: 1000px;
 
+    &-page {
+      height: 920px;
+      background-color: rgb(202, 193, 210);
+
+      @include mobile {
+        height: 600px;
+      }
+
+      &-header {
+
+        padding: 6%;
+
+
+        h3 {
+          text-align: center;
+          color: white;
+          font-size: 30px;
+          margin-top: 50px;
+          padding-bottom: 30px;
+
+          @include mobile {
+            margin-top: 70px;
+            font-size: 22px;
+          }
+        }
+
+        h3::after {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 2px;
+          background-color: #FFFFFF;
+          margin: 10px auto 0;
+        }
+
+        p {
+
+          font-size: 18px;
+          text-align: center;
+          color: white;
+
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-chart {
+
+        padding-left: 10%;
+        padding-right: 10%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    &-front {
+
+      height: 920px;
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
       display: flex;
       background-position: center;
 
-      /* 使背景图居中 */
-      // background-image:url('http://cdn.celiasy.xyz/images/ux-web3/armadillo/front%20page.jpg')
       @include mobile {
         height: 600px;
       }
 
       &-info {
         display: grid;
-        min-height: 700px;
-        margin-top: 10%;
+        min-height: 500px;
+        margin-top: 5%;
         margin-left: 18%;
         width: auto;
 
         @include mobile {
+          margin-top: 15%;
           margin-left: 10%;
         }
 
@@ -59,29 +117,32 @@
           box-shadow: 0 2px 4px rgba(41, 40, 40, 0.2);
           // border: 1px solid #ccc;
           width: 48%;
+          margin-top: 15%;
+          max-height: 52%;
+          background-color: white;
+
 
           @include mobile {
             width: 90%;
+            max-height: 70%;
           }
 
-          margin-top: 15%;
-          max-height: 60%;
-          background-color: white;
         }
 
-        &-title{
+        &-title {
           margin-top: 15%;
+
           h3 {
-            font-family: Arial, Helvetica, sans-serif;
+
             color: rgb(202, 193, 210);
             text-align: center;
             // text-emphasis: bold;
-            font-size: 36px;     
+            font-size: 32px;
           }
-     
+
         }
 
-        &-content{
+        &-content {
 
           margin-top: 5%;
           padding-left: 10%;
@@ -93,30 +154,28 @@
           }
 
           p {
-            font-family: Arial, Helvetica, sans-serif;
+
             color: rgb(202, 193, 210);
             text-align: center;
             padding: 20px;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.5em;
             letter-spacing: 0.01em;
-            @include mobile {
-              font-size: 18px;
-            }
           }
         }
 
-        &-btn{
+        &-btn {
           margin-top: 5%;
           display: flex;
           justify-content: center;
+
           a {
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
             background-color: rgb(202, 193, 210);
           }
 
-          a:hover{
+          a:hover {
             background-color: rgb(197, 180, 214);
           }
         }
