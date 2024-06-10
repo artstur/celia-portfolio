@@ -16,10 +16,12 @@
     }
 
     &-disclaimer {
+      font-family: $myriad-font;
       font-size: 12px;
     }
 
     p {
+      font-family: $myriad-font;
       line-height: 1.5em;
       letter-spacing: 0.01em;
     }
@@ -31,11 +33,11 @@
 
 
     &-page {
-      height: 920px;
+      height: 940px;
       background-color: rgb(202, 193, 210);
 
       @include mobile {
-        height: 600px;
+        height: 640px;
       }
 
       &-header {
@@ -44,6 +46,7 @@
 
 
         h3 {
+          font-family: $myriad-font;
           text-align: center;
           color: white;
           font-size: 30px;
@@ -66,13 +69,13 @@
         }
 
         p {
-
+          font-family: $myriad-font;
           font-size: 18px;
           text-align: center;
           color: white;
 
           @include mobile {
-            font-size: 16px;
+            font-size: 14px;
           }
         }
       }
@@ -84,6 +87,22 @@
 
         img {
           width: 100%;
+        }
+      }
+
+      &-more {
+        padding: 5%;
+        margin-top: 5%;
+
+        p {
+          font-family: $myriad-font;
+          font-size: 24px;
+          text-align: center;
+          color: white;
+
+          @include mobile {
+            font-size: 18px;
+          }
         }
       }
     }
@@ -133,7 +152,7 @@
           margin-top: 15%;
 
           h3 {
-
+            font-family: $myriad-font;
             color: rgb(202, 193, 210);
             text-align: center;
             // text-emphasis: bold;
@@ -154,7 +173,7 @@
           }
 
           p {
-
+            font-family: $myriad-font;
             color: rgb(202, 193, 210);
             text-align: center;
             padding: 20px;
@@ -170,13 +189,19 @@
           justify-content: center;
 
           a {
+            font-family: $myriad-font;
             text-align: center;
             font-size: 16px;
+            padding: 10px 50px; // 调整内部空间
             background-color: rgb(202, 193, 210);
+            border: 1px solid rgb(202, 193, 210);
+            transition: 0.3 ease;
           }
 
           a:hover {
-            background-color: rgb(197, 180, 214);
+            background-color: white ;
+            color:  rgb(202, 193, 210) !important;
+            border: 1px solid rgb(202, 193, 210);
           }
         }
 
