@@ -41,7 +41,7 @@
       &-detail{
 
         p{
-          // font-family:'Franklin Gothic Medium', 'Arial Normal', Arial, sans-serif;
+          font-family: $myriad-font;
           line-height:1.9em;
           font-size: 18px;
           line-height: 1.5em;
@@ -73,17 +73,20 @@
         }
 
         ul{
+          font-family: $myriad-font;
           margin-top: 8px;
           padding-left: 0;
         }
 
         li{
+          font-family: $myriad-font;
           color: $text-color;
           text-align: left;
           list-style: none;
         }
 
         a{
+          font-family: $myriad-font;
             color: $text-color;
             text-decoration: underline;
         }
@@ -95,6 +98,7 @@
 
         &-title{
           a{
+            font-family: $myriad-font;
             color: black;
             text-decoration: underline;
           }
