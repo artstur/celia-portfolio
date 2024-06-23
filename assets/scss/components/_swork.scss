@@ -267,69 +267,6 @@
 
       }
 
-      &-two-card {
-        display: flex;
-        gap: 5%;
-
-        padding: 2%;
-
-        /* 移动端样式 */
-        @include mobile {
-          flex-direction: column;
-        }        
-
-        &-card {
-          background-color: #d0d8e5;
-          border-radius: 10px;
-          margin: 2%;
-          padding: 2%;
-          padding-left: 5%;
-          padding-right: 5%;
-          width: 50%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-          @include mobile {
-            width: 100%;
-          }
-
-          img {
-            display: block; // 使图片成为块级元素
-            margin: auto; // 水平居中图片
-            padding-bottom: 15px;
-            padding-top: 15px;
-            width: 12%;
-          }
-
-          h4 {
-            font-family: $myriad-font;
-            text-align: center;
-            color: black;
-            font-size: 24px;
-            margin-bottom: 20px;
-
-            @include mobile {
-              font-size: 18px;
-            }
-          }
-
-          ul {
-            font-family: $myriad-font;
-            color: black;
-            list-style: none;
-            padding: 0;
-          }
-
-          ul li {
-            color: black;
-            margin-bottom: 10px;
-            font-size: 16px;
-            line-height: 1.5;
-          }
-        }
-
-      }
-
-
       &-two-chart {
 
         display: flex;
