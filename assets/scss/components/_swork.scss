@@ -26,8 +26,9 @@
       letter-spacing: 0.01em;
     }
 
-    a{
+    a {
       color: black;
+
       &:hover {
         color: $design-purple;
       }
@@ -40,11 +41,13 @@
 
 
     &-page {
-      height: 940px;
+      min-height: 940px;
+      height: auto;
       background-color: $design-purple;
 
       @include mobile {
-        height: 640px;
+        height: auto;
+        min-height: 640px;
       }
 
       &-header {
@@ -171,13 +174,14 @@
       &-chart {
         padding: 3%;
 
-        p{
+        p {
           font-family: $myriad-font;
           color: black;
         }
 
         img {
           width: 100%;
+
           @include mobile {
             margin-bottom: 5%;
           }
@@ -243,6 +247,60 @@
 
       }
 
+      &-two-card {
+        display: flex;
+        gap: 5%;
+
+        padding: 2%;
+
+        /* 移动端样式 */
+        @include mobile {
+          flex-direction: column;
+        }        
+
+        &-card {
+          background-color: #d0d8e5;
+          border-radius: 10px;
+          padding: 2%;
+          padding-left: 5%;
+          padding-right: 5%;
+          width: 50%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+          @include mobile {
+            width: 100%;
+          }
+
+          h4 {
+            font-family: $myriad-font;
+            text-align: center;
+            color: black;
+            font-size: 24px;
+            margin-bottom: 20px;
+
+            @include mobile {
+              font-size: 18px;
+            }
+          }
+
+          ul {
+            font-family: $myriad-font;
+            color: black;
+            list-style: none;
+            padding: 0;
+          }
+
+          ul li {
+            color: black;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+
+      }
+
+
       &-two-chart {
 
         display: flex;
@@ -266,8 +324,8 @@
           img {
             width: 95%;
             // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-              /* 下方阴影 */
-              // 0 -4px 8px rgba(0, 0, 0, 0.1);
+            /* 下方阴影 */
+            // 0 -4px 8px rgba(0, 0, 0, 0.1);
             /* 上方阴影 */
             height: auto;
 
