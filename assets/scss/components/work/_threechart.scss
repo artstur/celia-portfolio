@@ -1,0 +1,39 @@
+.site-work-template {
+
+
+    &-three-chart {
+
+        display: flex;
+        padding: 1%;
+
+        /* 移动端样式 */
+        @include mobile {
+          flex-direction: column;
+        }
+
+
+        &-single {
+
+            padding: 2%;
+            
+            img {
+                display: block; // 使图片成为块级元素
+                margin: auto; // 水平居中图片
+                width: 30%;
+                padding: 2%;
+            }
+
+            p {
+                text-align: center;
+                margin-top: 2%;
+                width: 95%;
+                font-family: $myriad-font;
+                color: black;
+                font-size: 16px;
+                line-height: 1.8em;
+              }
+        }
+
+      }
+
+}
