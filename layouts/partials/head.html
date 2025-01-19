@@ -14,9 +14,11 @@
   {{ $bootstrap := resources.Get "css/bootstrap.css" | minify }}
   <link rel="stylesheet" href="{{ $bootstrap.Permalink }}" />
   {{ "<!-- font-awesome -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ " font-awesome/css/font-awesome.min.css" | absURL }}" />
   {{ "<!-- Animate on scroll library -->" | safeHTML }}
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  {{ "<!-- swiper library -->" | safeHTML }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
@@ -24,8 +26,8 @@
   <link href="{{ $style.Permalink }}" rel="stylesheet" />
 
   {{ range .Site.Params.custom_stylesheets -}}
-    {{ $style := resources.Get . | resources.ToCSS | minify }}
-    <link href="{{ $style.Permalink }}" rel="stylesheet" />
+  {{ $style := resources.Get . | resources.ToCSS | minify }}
+  <link href="{{ $style.Permalink }}" rel="stylesheet" />
   {{- end }}
 
   <!--Favicon-->

@@ -3,40 +3,31 @@
 
     <div class="row">
       <div class="col-12">
-      <div class="site-footer-social" data-aos="fade-in" data-aos-duration="1500">
-        <ul class="site-footer-social-icons">
+        <div class="site-footer-social" data-aos="fade-in" data-aos-duration="1500">
+          <ul class="site-footer-social-icons">
             <li>
-              <a
-                target="_blank"
-                aria-label="linkedin"
-                rel="nofollow noopener"
+              <a target="_blank" aria-label="linkedin" rel="nofollow noopener"
                 href="https://www.linkedin.com/in/celia-shuyue-li/">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
-              <a
-                target="_blank"
-                aria-label="instagram"
-                rel="nofollow noopener"
+              <a target="_blank" aria-label="instagram" rel="nofollow noopener"
                 href="https://www.instagram.com/celia.sysy/">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              <a
-                target="_blank"
-                aria-label="twitter"
-                rel="nofollow noopener"
-                href="https://twitter.com/ShuyueLi4/">
+              <a target="_blank" aria-label="twitter" rel="nofollow noopener" href="https://twitter.com/ShuyueLi4/">
                 <i class="fa fa-twitter-square" aria-hidden="true"></i>
               </a>
             </li>
-        </ul>
-      </div>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
         <div class="site-footer-copyright">
-          <p>© {{ dateFormat "2006" now }} <a href="https://github.com/artstur" target="_blank">ArtStur Associates</a>. All Rights Reserved. </p>
+          <p>© {{ dateFormat "2006" now }} <a href="https://github.com/artstur" target="_blank">ArtStur Associates</a>.
+            All Rights Reserved. </p>
         </div>
       </div>
     </div>
@@ -49,16 +40,35 @@
 <script src="{{ $vendor.Permalink }}"></script>
 {{ $script := resources.Get "js/script.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
+
 <!-- Animate on scroll library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
+<script>
+  AOS.init();
 </script>
 
-<!-- Get minor updates and patch fixes within a major version -->
+<!-- Smooth Scroll library -->
 <script src="https://fastly.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
 <script>
-var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 1000
-});
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000
+  });
+</script>
+
+<!-- Swiper library -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true, // 循环播放
+    autoPlay: {
+      delay: 1000,
+    },
+    slidesPerView: 2.5, // 显示 2.5 张幻灯片
+    spaceBetween: 10, // 幻灯片之间的间距（单位 px）
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    // 支持触摸滑动
+    touchEventsTarget: 'container', // 触摸目标容器
+    simulateTouch: true, // 模拟触摸
+  });
 </script>
