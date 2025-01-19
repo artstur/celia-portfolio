@@ -40,6 +40,14 @@
 
       &-detail{
 
+
+        text-align: justify; /* 两端对齐 */
+
+        @include mobile{
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+
         p{
           font-family: $myriad-font;
           line-height:1.9em;
@@ -70,6 +78,11 @@
 
         div{
           padding-right: 10%;
+
+          @include mobile{
+            padding-left: 5%;
+            padding-right: 5%;
+          }
         }
 
         ul{
@@ -95,6 +108,11 @@
 
       &-contact{
         margin-top: 50px;
+
+        @include mobile{
+          padding-left: 5%;
+          padding-right: 5%;
+        }
 
         &-title{
           a{

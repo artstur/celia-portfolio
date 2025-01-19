@@ -14,7 +14,7 @@
   {{ $bootstrap := resources.Get "css/bootstrap.css" | minify }}
   <link rel="stylesheet" href="{{ $bootstrap.Permalink }}" />
   {{ "<!-- font-awesome -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ " font-awesome/css/font-awesome.min.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" />
   {{ "<!-- Animate on scroll library -->" | safeHTML }}
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   {{ "<!-- swiper library -->" | safeHTML }}
