@@ -12,14 +12,21 @@
             font-size: 16px;
             color: #000;
             font-family: $myriad-font;
-            padding: 1%;
             @include mobile {
                 font-size: 15px;
             }
         }
 
-        /* 移动端样式 */
+        a {
+            color: $text-color;
+            text-decoration: underline;
+            transition: all 0.3s ease; // 添加过渡效果，使颜色变化和其他变化更平滑
+            &:hover {
+                opacity: 0.6;
+                transform: scale(1.05); // 鼠标悬停时稍微放大
+            }
 
+        }
 
 
     }
