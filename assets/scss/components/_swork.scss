@@ -147,6 +147,11 @@
       padding-right: 10%;
       background-color: white;
 
+      @include mobile {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
       &-header {
 
         padding: 10px;
