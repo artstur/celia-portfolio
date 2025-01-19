@@ -63,8 +63,16 @@
     autoPlay: {
       delay: 1000,
     },
-    slidesPerView: 2.5, // 显示 2.5 张幻灯片
-    spaceBetween: 10, // 幻灯片之间的间距（单位 px）
+    // 默认配置
+    slidesPerView: 1, 
+    spaceBetween: 10,
+    // 根据屏幕宽度调整配置
+    breakpoints: {
+      768: { // 屏幕宽度大于等于 768px（平板和桌面端）
+        slidesPerView: 2.5, // 显示 2.5 张幻灯片
+        spaceBetween: 10, // 幻灯片间距增大
+      }
+    },
     pagination: { el: '.swiper-pagination', clickable: true },
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
     // 支持触摸滑动
