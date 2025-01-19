@@ -1,0 +1,28 @@
+.site-work-template {
+
+
+    &-plain-text {
+
+        padding: 1%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-family: $myriad-font;
+
+        p {
+            font-size: 18px;
+            color: #000;
+            font-family: $myriad-font;
+            padding: 1%;
+        }
+
+        /* 移动端样式 */
+        @include mobile {
+            flex-direction: column;
+        }
+
+
+    }
+
+}

@@ -1,0 +1,61 @@
+.site-work-template {
+
+
+    &-image-slide {
+
+        display: flex;
+        justify-content: center;
+        align-items: center; // 垂直居中
+
+    }
+
+    &-image-slide-img {
+        display: flex;
+        justify-content: center;
+        align-items: center; // 垂直居中
+        img {
+            max-width: 98%;
+            // height: auto;
+            object-fit: cover; /* 图片适配容器 */
+        }
+    }
+
+}
+
+
+/* 将导航箭头设置为白色 */
+.swiper-button-prev,
+.swiper-button-next {
+  font-size: 10px;
+  width: 3%; /* 调整宽度 */
+  height: 10px; /* 调整高度 */
+  color: white; /* 设置箭头颜色 */
+//   opacity: 0.8; /* 可选：设置透明度 */
+  transition: color 0.3s, opacity 0.3s; /* 添加过渡效果 */
+  top: 55%; /* 垂直居中 */
+  transform: translateY(50%); /* 修复偏移，使箭头完全居中 */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 1; 
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 24px; /* 调整箭头图标大小 */
+  @include mobile{
+    font-size: 12px;
+  }
+
+}
+
+.swiper-pagination-bullet {
+    background-color: white;
+    opacity: 0.8;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: white;
+    opacity: 1; /* 活跃状态更明显 */
+  }

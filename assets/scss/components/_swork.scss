@@ -11,8 +11,11 @@
     margin-bottom: 20px;
 
     &-title {
-      text-decoration: underline;
       margin-bottom: 20px;
+
+      a {
+        text-decoration: underline;
+      }
     }
     
     &-project-desc {
