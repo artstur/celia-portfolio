@@ -9,18 +9,20 @@
         padding-left: 5%;
         padding-right: 5%;
         font-family: $myriad-font;
+        text-align: justify;
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             color: #000;
             font-family: $myriad-font;
             padding: 1%;
+            @include mobile {
+                font-size: 14px;
+            }
         }
 
         /* 移动端样式 */
-        @include mobile {
-            flex-direction: column;
-        }
+
 
 
     }
