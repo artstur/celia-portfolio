@@ -23,11 +23,11 @@
 
 
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
-  {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
+  {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify | fingerprint }}
   <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
 
   {{ range .Site.Params.custom_stylesheets -}}
-  {{ $style := resources.Get . | resources.ToCSS | minify }}
+  {{ $style := resources.Get . | resources.ToCSS | minify | fingerprint }}
   <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
   {{- end }}
 
