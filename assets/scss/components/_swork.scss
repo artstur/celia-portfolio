@@ -350,6 +350,7 @@
 
       @include mobile {
         height: 600px;
+        background-attachment: scroll; // fixed 在 iOS Safari 不支持
       }
 
       &-info {
