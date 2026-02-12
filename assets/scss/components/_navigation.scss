@@ -7,7 +7,6 @@
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   @include desktop{
-    background: $white;
     margin: 10px;
     border-radius: 5px;
     top: 0;
@@ -23,6 +22,9 @@
     img{
       max-width: 78px;
     }
+    .logo-text{
+      color: $text-color-dark;
+    }
   }
   .nav-item{
     @include desktop{
@@ -37,35 +39,48 @@
       padding: 15px 18px;
       position: relative;
     }
-    // &:last-child{
-    //   margin-left: 15px;
-    // }
     .has-dropdown-icon {
       margin-left: 2px;
+      transition: transform 0.3s ease;
 
       @include mobile{
-        display: none;
+        display: inline-block;
+        margin-left: 4px;
+        font-size: 0.75em;
       }
+    }
 
+    // 移动端下拉箭头旋转
+    &.has-dropdown.open .has-dropdown-icon {
+      @include mobile{
+        transform: rotate(180deg);
+      }
     }
 
     .nav-dropdown {
       display: none;
       position: absolute;
-      background-color: #fff; // 你可以根据你的设计修改这个颜色
+      background-color: $white;
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
   
       .nav-link {
-        color: black; // 你可以根据你的设计修改这个颜色
+        color: $text-color-dark;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
         width: 100%;
         &:hover {
-          background-color: $gray; // 你可以根据你的设计修改这个颜色
+          background-color: $gray;
         }
+      }
+    }
+
+    // 桌面端 hover 展开
+    &:hover {
+      .nav-dropdown {
+        display: block;
       }
     }
 
@@ -74,7 +89,7 @@
         text-align: left;
         padding-left: 5%;
         position: static;
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         border: none;
         box-shadow: none;
@@ -85,12 +100,14 @@
         }
       }
 
+      // 移动端禁用 hover，仅通过点击展开
+      &:hover .nav-dropdown {
+        display: none;
+      }
 
-    }
-
-    &:hover {
-      .nav-dropdown {
-        display: block;
+      // 移动端点击展开（优先级最高，放最后）
+      &.has-dropdown.open .nav-dropdown {
+        display: flex;
       }
     }
 
@@ -113,7 +130,6 @@
       }
       &:nth-child(2){
         opacity: 0;
-	      filter: alpha(opacity=0);
       }
       &:nth-child(3){
         transform: rotate(-45deg);
@@ -127,7 +143,6 @@
         }
         &:nth-child(2){
           opacity: 1;
-          filter: alpha(opacity=1);
         }
         &:nth-child(3){
           transform: rotate(0);
