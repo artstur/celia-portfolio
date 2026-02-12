@@ -24,14 +24,14 @@
 
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
-  <link href="{{ $style.Permalink }}" rel="stylesheet" />
+  <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
 
   {{ range .Site.Params.custom_stylesheets -}}
   {{ $style := resources.Get . | resources.ToCSS | minify }}
-  <link href="{{ $style.Permalink  | absURL }}" rel="stylesheet" />
+  <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
   {{- end }}
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | absURL }}" type="image/x-icon" />
-  <link rel="icon" href="{{ .Site.Params.favicon_icon | absURL }}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | relURL }}" type="image/x-icon" />
+  <link rel="icon" href="{{ .Site.Params.favicon_icon | relURL }}" type="image/x-icon" />
 </head>
