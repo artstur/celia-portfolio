@@ -23,7 +23,7 @@
 
                 {{ if .HasChildren }}
                 <div class="nav-item has-dropdown is-hoverable">
-                    <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}<i class="fa fa-angle-down has-dropdown-icon" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}<i class="fa-solid fa-angle-down has-dropdown-icon" aria-hidden="true"></i></a>
                     
                     <div class="nav-dropdown">
                         {{ range .Children }}
