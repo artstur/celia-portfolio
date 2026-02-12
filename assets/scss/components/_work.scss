@@ -78,16 +78,17 @@
 
         .site-work-works-image-item-title {
           visibility: visible;
+          opacity: 1;
         }
       }
       img {
         width: 100%;
-        transition: opacity 0.1s ease;
+        transition: opacity 0.5s ease;
       }
 
       &-mask {
         background-color: transparent;
-        transition: background-color 0.1s ease;
+        transition: background-color 0.5s ease;
       }      
 
       &-title {
@@ -100,8 +101,8 @@
         transform: translate(-50%, -50%);
         color: white;
         visibility: hidden;
-        transition: visibility 0.1s ease;
-        // white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
       }
     }
   }
