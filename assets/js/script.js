@@ -23,6 +23,37 @@ $(document).ready(function() {
     $('.site-testimonial-item').removeClass('inactive');
     $('.site-testimonial-item').removeClass('active');
   });
+
+  // Mobile dropdown toggle: click to expand/collapse sub-menu
+  $('.has-dropdown .dropdown-toggle-link').on('click', function(e) {
+    if ($(window).width() <= 575) {
+      e.preventDefault();
+      var $parent = $(this).closest('.has-dropdown');
+      var isOpen = $parent.hasClass('open');
+      // Close all other dropdowns
+      $('.has-dropdown').not($parent).removeClass('open')
+        .find('.dropdown-toggle-link').attr('aria-expanded', 'false');
+      // Toggle current
+      $parent.toggleClass('open');
+      $(this).attr('aria-expanded', !isOpen);
+    }
+  });
+
+  // Keyboard navigation: Enter/Space to toggle dropdown
+  $('.has-dropdown .dropdown-toggle-link').on('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if ($(window).width() <= 575) {
+        e.preventDefault();
+        $(this).trigger('click');
+      }
+    }
+  });
+
+  // Close dropdowns when navbar collapses
+  $('#sitenavbar').on('hide.bs.collapse', function() {
+    $('.has-dropdown').removeClass('open');
+    $('.dropdown-toggle-link').attr('aria-expanded', 'false');
+  });
 });
 
 $(window).on('scroll', function () {
