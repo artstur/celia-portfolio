@@ -43,16 +43,16 @@
       margin-left: 2px;
       transition: transform 0.3s ease;
 
-      @include mobile{
+      @include desktop{
         display: inline-block;
         margin-left: 4px;
         font-size: 0.75em;
       }
     }
 
-    // 移动端下拉箭头旋转
+    // 折叠模式下拉箭头旋转
     &.has-dropdown.open .has-dropdown-icon {
-      @include mobile{
+      @include desktop{
         transform: rotate(180deg);
       }
     }
@@ -77,14 +77,15 @@
       }
     }
 
-    // 桌面端 hover 展开
+    // 大屏 hover 展开
     &:hover {
       .nav-dropdown {
         display: block;
       }
     }
 
-    @include mobile {
+    // 折叠模式（≤991px，与 navbar-expand-lg 一致）
+    @include desktop {
       .nav-dropdown {
         text-align: left;
         padding-left: 5%;
@@ -100,12 +101,12 @@
         }
       }
 
-      // 移动端禁用 hover，仅通过点击展开
+      // 折叠模式禁用 hover，仅通过点击展开
       &:hover .nav-dropdown {
         display: none;
       }
 
-      // 移动端点击展开（优先级最高，放最后）
+      // 点击展开（优先级最高，放最后）
       &.has-dropdown.open .nav-dropdown {
         display: flex;
       }
