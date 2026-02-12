@@ -24,11 +24,16 @@ $(document).ready(function() {
     $('.site-testimonial-item').removeClass('active');
   });
 
-  // Mobile/tablet dropdown toggle: click to expand/collapse sub-menu
-  // 991px matches Bootstrap navbar-expand-lg breakpoint
-  $('.has-dropdown .dropdown-toggle-link').on('click', function(e) {
-    if ($(window).width() <= 991) {
+  // Dropdown toggle: detect collapsed mode by checking if toggler is visible
+  function isCollapsedMode() {
+    return $('.navbar-toggler').is(':visible');
+  }
+
+  // Use event delegation on document for reliability
+  $(document).on('click', '.has-dropdown .dropdown-toggle-link', function(e) {
+    if (isCollapsedMode()) {
       e.preventDefault();
+      e.stopPropagation();
       var $parent = $(this).closest('.has-dropdown');
       var isOpen = $parent.hasClass('open');
       // Close all other dropdowns
@@ -37,13 +42,14 @@ $(document).ready(function() {
       // Toggle current
       $parent.toggleClass('open');
       $(this).attr('aria-expanded', !isOpen);
+      return false;
     }
   });
 
   // Keyboard navigation: Enter/Space to toggle dropdown
-  $('.has-dropdown .dropdown-toggle-link').on('keydown', function(e) {
+  $(document).on('keydown', '.has-dropdown .dropdown-toggle-link', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
-      if ($(window).width() <= 991) {
+      if (isCollapsedMode()) {
         e.preventDefault();
         $(this).trigger('click');
       }
