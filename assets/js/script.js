@@ -24,9 +24,10 @@ $(document).ready(function() {
     $('.site-testimonial-item').removeClass('active');
   });
 
-  // Mobile dropdown toggle: click to expand/collapse sub-menu
+  // Mobile/tablet dropdown toggle: click to expand/collapse sub-menu
+  // 991px matches Bootstrap navbar-expand-lg breakpoint
   $('.has-dropdown .dropdown-toggle-link').on('click', function(e) {
-    if ($(window).width() <= 575) {
+    if ($(window).width() <= 991) {
       e.preventDefault();
       var $parent = $(this).closest('.has-dropdown');
       var isOpen = $parent.hasClass('open');
@@ -42,7 +43,7 @@ $(document).ready(function() {
   // Keyboard navigation: Enter/Space to toggle dropdown
   $('.has-dropdown .dropdown-toggle-link').on('keydown', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
-      if ($(window).width() <= 575) {
+      if ($(window).width() <= 991) {
         e.preventDefault();
         $(this).trigger('click');
       }
