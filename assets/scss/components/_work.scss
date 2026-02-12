@@ -67,13 +67,8 @@
       }
 
       &:hover {
-        
-        div {
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        img {
-          opacity: 0.5;
+        .site-work-works-image-item-mask::after {
+          opacity: 1;
         }
 
         .site-work-works-image-item-title {
@@ -83,12 +78,25 @@
       }
       img {
         width: 100%;
-        transition: opacity 0.5s ease;
+        display: block;
       }
 
       &-mask {
-        background-color: transparent;
-        transition: background-color 0.5s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.4);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+        }
       }      
 
       &-title {
@@ -100,6 +108,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
+        z-index: 1;
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.5s ease, visibility 0.5s ease;

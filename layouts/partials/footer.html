@@ -83,6 +83,28 @@
     simulateTouch: true,
   });
 
+  // 图片轮播（画廊：4.5张，不循环）
+  var imageSwiperGalleryEl = document.querySelector('.image-swiper-gallery');
+  if (imageSwiperGalleryEl) {
+    new Swiper('.image-swiper-gallery', {
+      loop: false,
+      slidesPerView: 2,
+      spaceBetween: 10,
+      breakpoints: {
+        768: {
+          slidesPerView: 4.5,
+          spaceBetween: 10,
+        }
+      },
+      navigation: {
+        nextEl: '.image-swiper-gallery-next',
+        prevEl: '.image-swiper-gallery-prev'
+      },
+      touchEventsTarget: 'container',
+      simulateTouch: true,
+    });
+  }
+
   // 视频轮播（封面视图）
   var videoSwiperEl = document.querySelector('.video-swiper');
   var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
