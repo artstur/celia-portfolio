@@ -8,7 +8,7 @@
   background-color: #000;
 
   @include mobile {
-    margin-top: 80px; // 为 fixed 导航栏留出空间（移动端 header 隐藏）
+    margin-top: 0;
   }
 
   // 有视频正在内联播放时隐藏轮播控件
