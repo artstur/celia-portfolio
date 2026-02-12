@@ -14,55 +14,146 @@
 </section>
 <section class="site-work-detail">
 
-  <div class="site-work-detail-front" data-aos="fade-in" data-aos-duration="1500"
-    style="background-image:url('https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/title%20page.jpg') ;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/7ByGB9I9jSM?si=fHP_hFgRXbCZMNtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <!-- 视频轮播（封面视图） -->
+  <div class="site-work-video-carousel" data-aos="fade-in" data-aos-duration="1500">
+    <div class="swiper video-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide video-slide"
+          data-video-src="https://www.youtube.com/embed/7ByGB9I9jSM?autoplay=1"
+          data-video-title="Knowing River Through Sound"
+          data-video-author="Shuyue Li &middot; 01:42"
+          data-video-duration="01:42"
+          data-video-thumb="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/title%20page.jpg"
+          data-video-desc="&ldquo;Knowing River through Sound&rdquo; is a multimedia work by Shuyue Li and Yiou Wang that exposes the audience to the voice of the Mystic River in a form of an audiovisual, spatio-temporal imagination that merges present-day and historic migration of bodies of water, fish, plants and humans, establishing a de-anthropocentric animist epistemology to probe our connection to the riverscape.&lt;br&gt;&lt;br&gt;While the original film is in 4k, the Youtube trailer is a reduced resolution version. It was shared as part of the Soma Salon, at MIT ACT Cube, 2022.">
+          <img class="video-cover" src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/title%20page.jpg" alt="Knowing River Through Sound - VR Film">
+          <div class="video-overlay">
+            <h3 class="video-overlay-title">Knowing River Through Sound</h3>
+            <button class="video-play-btn" aria-label="Play video">
+              <i class="fa-regular fa-circle-play"></i>
+              <span>Play Video</span>
+            </button>
+          </div>
+        </div>
+        <div class="swiper-slide video-slide"
+          data-video-src="https://www.youtube.com/embed/iQhBbUTCe_U?autoplay=1"
+          data-video-title="Knowing River Through Sound | Mystic Murmuring"
+          data-video-author="Shuyue Li &middot; 00:57"
+          data-video-duration="00:57"
+          data-video-thumb="https://img.youtube.com/vi/iQhBbUTCe_U/maxresdefault.jpg"
+          data-video-desc="Sound generates movement">
+          <img class="video-cover" src="https://img.youtube.com/vi/iQhBbUTCe_U/maxresdefault.jpg" alt="Knowing River Through Sound - Video 2">
+          <div class="video-overlay">
+            <h3 class="video-overlay-title">Knowing River Through Sound</h3>
+            <button class="video-play-btn" aria-label="Play video">
+              <i class="fa-regular fa-circle-play"></i>
+              <span>Play Video</span>
+            </button>
+          </div>
+        </div>
+        <div class="swiper-slide video-slide"
+          data-video-src="https://www.youtube.com/embed/pwRjr_3D2CI?autoplay=1"
+          data-video-title="Knowing River Through Sound | Talk with Mystic River"
+          data-video-author="Shuyue Li &middot; 01:48"
+          data-video-duration="01:48"
+          data-video-thumb="https://img.youtube.com/vi/pwRjr_3D2CI/maxresdefault.jpg"
+          data-video-desc="A soundscape of Mystic River">
+          <img class="video-cover" src="https://img.youtube.com/vi/pwRjr_3D2CI/maxresdefault.jpg" alt="Knowing River Through Sound - Video 3">
+          <div class="video-overlay">
+            <h3 class="video-overlay-title">Knowing River Through Sound</h3>
+            <button class="video-play-btn" aria-label="Play video">
+              <i class="fa-regular fa-circle-play"></i>
+              <span>Play Video</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button class="video-all-btn">All Videos <i class="fa-solid fa-plus"></i></button>
+  </div>
+
+  <!-- 视频播放 Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-top">
+      <button class="video-modal-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="video-modal-body">
+      <div class="video-modal-player">
+        <div class="video-modal-iframe-wrap">
+          <iframe id="videoModalIframe" src="about:blank" title="Video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="video-modal-info">
+        <h3 class="video-modal-title"></h3>
+        <p class="video-modal-author"></p>
+        <p class="video-modal-desc"></p>
+      </div>
+    </div>
+    <div class="video-modal-thumbs" id="videoModalThumbs">
+      <!-- 缩略图由 JS 动态生成 -->
+    </div>
   </div>
 
   <div id="Introduction" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">
-      <div class="site-work-template-plain-text" data-aos="fade-in" data-aos-duration="1500">
+      <div class="site-work-template-plain-text">
         <p>First phase: VR film installation, 2022. (Best viewed in installation, YoutubeVR on VR headsets will give you
-          access to a reduced resolution version). </br>Second & third phases: multimedia performance (in progress and
+          access to a reduced resolution version).<br>Second & third phases: multimedia performance (in progress and
           confidential).</p>
         <p>In the Yoruba myth of Osogbo, Nigeria, people asked the river Osun for guidance in where to establish their
-          city, Osogbo, when Osun said, “move the city until you no longer hear my voice.” The river’s voice, aural,
-          metaphorical, or political, has largely been neglected in human civilization’s perception of the world and
+          city, Osogbo, when Osun said, &ldquo;move the city until you no longer hear my voice.&rdquo; The river&rsquo;s voice, aural,
+          metaphorical, or political, has largely been neglected in human civilization&rsquo;s perception of the world and
           intervention of it, such as territorialization or urbanization. The river is not just a habitat for beings;
           the river is a being. As modern culture becomes distanced from nature and migration of people, organisms,
           water and land happen in history, rivers are reduced to natural resources or economic values to businesses.
-          “Knowing River through Sound” is a multi-stage, multimedia art piece that asks the public to, as landscape
-          historian Peter Coates has advocated, know nature through sound – listen to the river’s original voice
+          &ldquo;Knowing River through Sound&rdquo; is a multi-stage, multimedia art piece that asks the public to, as landscape
+          historian Peter Coates has advocated, know nature through sound &ndash; listen to the river&rsquo;s original voice
           collected by the artists, perceive beyond transcience, characterize the undescribable, and connect beyond the
           boundaries of human and nonhuman.</p>
-        <p>“Knowing River through Sound” VR film was shared during the Soma Salon #2 at MIT List Center of Arts
+        <p>Through immersive virtual worldmaking and field recordings, the first phase of &ldquo;Knowing River through Sound,&rdquo;
+          a VR film, exposes the audience to two timescales of the Mystic River that flows in Massachusetts &ndash; a day scale
+          and a historical scale from 1955 to present. Mystic River was named in the indigenous tribe Wampanoag language
+          &ldquo;missi-tuk,&rdquo; meaning &ldquo;Great Tidal River.&rdquo; It was once roaring with tides and created areas of salt marshes
+          around its flow map. As the Wampanoag, Nipmuc, and Massachusetts peoples who once lived close to the river were
+          gradually displaced, Mystic River underwent migration as well. During a 24-hour day, the river&rsquo;s soundscape
+          changes from the river&rsquo;s own voice soon to layers of traffic sound collected over 7 accumulative hours of field
+          recording. On the historical scale, Mystic River was forced to recourse due to the construction of highway I-93.
+          From 1955 to 1963, one segment of the river was straightened and constricted by humans, where the salt marshes
+          were once most abundant and now absent (see map below). In the VR film, we simulate this migration backwards,
+          visually, aurally, and sensually imagining that the river was probably more comfortable in being itself before
+          the migration.</p>
+        <p>&ldquo;Knowing River through Sound&rdquo; VR film was shared during the Soma Salon #2 at MIT List Center of Arts
           organized by Gediminas Urbonas and Adesola Akinleye with communities of MIT and Harvard students and guests.
           The VR film elicited the response of moving and dancing in the river in many of the audience.</p>
       </div>
 
       <div class="site-work-template-image-slide" data-aos="fade-in" data-aos-duration="1500">
         <!-- Slider main container -->
-        <div class="swiper">
+        <div class="swiper image-swiper">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide site-work-template-image-slide-img"><img
-                src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/1.jpg" data-aos="fade-in" data-aos-duration="1500" loading="lazy">
+            <div class="swiper-slide site-work-template-image-slide-img">
+              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/1.jpg" alt="Knowing River Through Sound - VR film still 1" loading="lazy">
             </div>
-            <div class="swiper-slide site-work-template-image-slide-img"><img
-                src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/2.jpg" data-aos="fade-in" data-aos-duration="1500" loading="lazy">
+            <div class="swiper-slide site-work-template-image-slide-img">
+              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/2.jpg" alt="Knowing River Through Sound - VR film still 2" loading="lazy">
             </div>
-            <div class="swiper-slide site-work-template-image-slide-img"><img
-                src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/3.jpg" data-aos="fade-in" data-aos-duration="1500" loading="lazy">
+            <div class="swiper-slide site-work-template-image-slide-img">
+              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/3.jpg" alt="Knowing River Through Sound - VR film still 3" loading="lazy">
             </div>
-            <div class="swiper-slide site-work-template-image-slide-img"><img
-                src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/4.jpg" data-aos="fade-in" data-aos-duration="1500" loading="lazy">
+            <div class="swiper-slide site-work-template-image-slide-img">
+              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/4.jpg" alt="Knowing River Through Sound - exhibition view 1" loading="lazy">
             </div>
-            <div class="swiper-slide site-work-template-image-slide-img"><img
-                src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/5.jpg" data-aos="fade-in" data-aos-duration="1500" loading="lazy">
+            <div class="swiper-slide site-work-template-image-slide-img">
+              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/5.jpg" alt="Knowing River Through Sound - exhibition view 2" loading="lazy">
             </div>
-            <div class="swiper-slide site-work-template-image-slide-img"><img
-                src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/6.jpg" data-aos="fade-in" data-aos-duration="1500" loading="lazy">
+            <div class="swiper-slide site-work-template-image-slide-img">
+              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/6.jpg" alt="Knowing River Through Sound - exhibition view 3" loading="lazy">
             </div>
           </div>
           <!-- If we need navigation buttons -->
@@ -71,22 +162,16 @@
         </div>
       </div>
 
-      <div class="site-work-template-plain-text" data-aos="fade-in" data-aos-duration="1500">
+      <div class="site-work-template-plain-text">
         <p style="color: gray;"><b>In Collaboration With</b></p>
         <p><a href="https://yiouwang.org/" target="_blank">Yiou Wang</a></p>
         <p style="color: gray;"><b>Medium</b></p>
         <p style="color: gray;">VR, Sound, Particle System</p>
-      </div>     
+      </div>
 
     </div>
-
-
-
   </div>
 
 </section>
-
-
-
 
 {{ end }}

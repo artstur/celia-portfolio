@@ -1,0 +1,527 @@
+// ==========================================
+// 视频画廊组件（封面轮播 + 播放弹窗）
+// ==========================================
+
+// ---------- 封面轮播区域 ----------
+.site-work-video-carousel {
+  position: relative;
+  background-color: #000;
+
+  @include mobile {
+    margin-top: 80px; // 为 fixed 导航栏留出空间（移动端 header 隐藏）
+  }
+
+  // 有视频正在内联播放时隐藏轮播控件
+  &.has-playing {
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-pagination {
+      display: none;
+    }
+  }
+
+  // 内联播放工具栏（分享 + 关闭）
+  .video-inline-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+    padding: 12px 16px;
+    background: #000;
+  }
+
+  .video-inline-toolbar-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .video-inline-toolbar-sep {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 10px;
+  }
+
+  // 播放时底部也加黑边，上下对称
+  &.has-playing::after {
+    content: '';
+    display: block;
+    height: 44px; // 与 toolbar 高度对称
+    background: #000;
+  }
+}
+
+.video-swiper {
+  width: 100%;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: rgba(255, 255, 255, 0.7);
+    &::after {
+      font-size: 28px;
+    }
+    &:hover {
+      color: #fff;
+    }
+    &.swiper-button-disabled {
+      display: none;
+    }
+
+    // 移动端隐藏箭头，改用底部 pagination
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    display: none; // 桌面端不显示
+
+    @include mobile {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 1;
+      width: 8px;
+      height: 8px;
+      margin: 0 4px;
+
+      &-active {
+        background: #fff;
+      }
+    }
+  }
+}
+
+.video-slide {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #000;
+
+  .video-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // 移动端内联播放时隐藏封面、覆盖层
+  &.playing {
+    cursor: default;
+
+    .video-cover,
+    .video-overlay {
+      display: none;
+    }
+  }
+
+}
+
+// 封面覆盖层：标题 + Play Video
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &-title {
+    color: #fff;
+    font-family: $myriad-font;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.video-play-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: $myriad-font;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  padding: 8px 16px;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+
+  i {
+    font-size: 28px;
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  span {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 2px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+// "All Videos +" 按钮
+.video-all-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-family: $myriad-font;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  i {
+    font-size: 10px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+// ---------- 视频播放 Modal ----------
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.video-modal-top {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  flex-shrink: 0;
+
+  @include mobile {
+    padding: 10px 12px;
+  }
+}
+
+.video-modal-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+.video-modal-body {
+  display: flex;
+  flex: 1;
+  padding: 0 40px;
+  gap: 40px;
+  min-height: 0;
+
+  @include tablet {
+    flex-direction: column;
+    flex: none; // 纵向排列时不拉伸
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  @include mobile {
+    padding: 0 12px;
+    gap: 12px;
+  }
+}
+
+.video-modal-player {
+  flex: 3;
+  min-width: 0;
+
+  @include tablet {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.video-modal-iframe-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9
+  background: #000;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.video-modal-info {
+  flex: 1.2;
+  color: #fff;
+  padding-top: 8px;
+  min-width: 260px;
+
+  @include tablet {
+    flex: none;
+    min-width: 0; // 移动端取消 min-width 防止溢出
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
+.video-modal-title {
+  font-family: $myriad-font;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #fff;
+
+  @include mobile {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+}
+
+.video-modal-author {
+  font-family: $myriad-font;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 24px;
+
+  @include mobile {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+.video-modal-desc {
+  font-family: $myriad-font;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+}
+
+// ---------- 底部缩略图条 ----------
+.video-modal-thumbs {
+  display: flex;
+  gap: 16px;
+  padding: 20px 40px 32px;
+  flex-shrink: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include tablet {
+    padding: 16px 20px 24px;
+  }
+
+  @include mobile {
+    padding: 12px;
+    gap: 10px;
+  }
+}
+
+.video-modal-thumb {
+  position: relative;
+  width: 240px;
+  min-width: 240px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+
+  @include tablet {
+    width: 200px;
+    min-width: 200px;
+  }
+
+  @include mobile {
+    width: 160px;
+    min-width: 160px;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  // hover 覆盖层（标题 + 播放图标 + 时长）
+  &-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 8px;
+    text-align: center;
+
+    &-title {
+      color: #fff;
+      font-family: $myriad-font;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.3;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    &-play {
+      color: #fff;
+      font-size: 32px;
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+
+    &-duration {
+      color: rgba(255, 255, 255, 0.8);
+      font-family: $myriad-font;
+      font-size: 13px;
+      font-weight: 600;
+
+      @include mobile {
+        font-size: 11px;
+      }
+    }
+  }
+
+  &:hover .video-modal-thumb-hover {
+    opacity: 1;
+  }
+
+  // "Now Playing" 标签
+  &-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-family: $myriad-font;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 10px;
+    text-align: left;
+
+    @include mobile {
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &.active {
+    border-color: #fff;
+  }
+}
