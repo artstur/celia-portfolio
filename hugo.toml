@@ -2,7 +2,7 @@ baseURL          = "https://celiasy.com/"
 languageCode     = "en-us"
 title            = "Celia Shuyue Li"
 summarylength    = 25
-googleAnalytics  = "G-ZRN02VH7G6"
+googleAnalytics  = "G-S5RBWMEYXS"
 
 # Site Menus
 [menu]
@@ -21,18 +21,18 @@ googleAnalytics  = "G-ZRN02VH7G6"
     weight  = 3
   [[menu.nav]]
     parent = "Work"
-    name = "UX & Web3"
-    url = "work/ux-web3"
-    weight  = 1
-  [[menu.nav]]
-    parent = "Work"
     name = "Multimedia Art & HCI"
     url = "work/multimedia-art-hci"
-    weight  = 2
+    weight  = 1
   [[menu.nav]]
     parent = "Work"
     name = "Spatial Design"
     url = "work/spatial-design"
+    weight  = 2
+  [[menu.nav]]
+    parent = "Work"
+    name = "UX & Web3"
+    url = "work/ux-web3"
     weight  = 3
 
 # Site Params
