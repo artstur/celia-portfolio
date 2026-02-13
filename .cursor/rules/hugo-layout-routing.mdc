@@ -1,0 +1,83 @@
+---
+description: Hugo layout routing conventions for this portfolio site
+globs: content/**/*.md, layouts/**/*.html
+alwaysApply: false
+---
+
+# Hugo Layout 路由规则
+
+## Layout 查找机制
+
+Hugo 通过 `type` 确定 layout 目录，`layout` 只是文件名，**不能包含 `/` 路径**。
+
+```yaml
+# ❌ 错误 — layout 值中不能有斜杠
+type: 'work'
+layout: 'multimedia-art-hci/knowing-river-through-sound'
+
+# ✅ 正确 — type 决定目录，layout 只写文件名
+type: 'multimedia-art-hci'
+layout: 'knowing-river-through-sound'
+```
+
+对应关系：
+- `type: 'multimedia-art-hci'` → Hugo 去 `layouts/multimedia-art-hci/` 下查找
+- `layout: 'knowing-river-through-sound'` → 查找 `knowing-river-through-sound.html`
+- 最终路径：`layouts/multimedia-art-hci/knowing-river-through-sound.html`
+
+## 本项目的 Content / Layout 结构
+
+### multimedia-art-hci 子页面
+
+Content 放在 `content/work/multimedia-art-hci/` 下（URL 为 `/work/multimedia-art-hci/xxx`），
+Layout 放在 `layouts/multimedia-art-hci/` 下（因为 type 是 `multimedia-art-hci`）。
+
+```
+content/work/multimedia-art-hci/
+  _index.md              → type: 'work', layout: 'work-list-with-type'（列表页，用 layouts/work/ 下的模板）
+  knowing-river-through-sound.md        → type: 'multimedia-art-hci', layout: 'knowing-river-through-sound'
+  a-collection-garments-of-discomfort.md → type: 'multimedia-art-hci', layout: 'a-collection-garments-of-discomfort'
+  stone-fized-history-and-tree-fized-temporary.md → type: 'multimedia-art-hci', layout: 'stone-fized-history-and-tree-fized-temporary'
+
+layouts/multimedia-art-hci/
+  baseof.html              （从 _default 复制）
+  knowing-river-through-sound.html
+  a-collection-garments-of-discomfort.html
+  stone-fized-history-and-tree-fized-temporary.html
+```
+
+### ux-web3 子页面
+
+Content 放在 `content/work/ux-web3/` 下（URL 为 `/work/ux-web3/xxx`），
+Layout 放在 `layouts/ux-web3/` 下（因为 type 是 `ux-web3`）。
+
+```
+content/work/ux-web3/
+  _index.md       → type: 'work', layout: 'work-list-with-type'（列表页）
+  armadillo.md    → type: 'ux-web3', layout: 'armadillo'
+  trust-finance.md → type: 'ux-web3', layout: 'trust-finance'
+
+layouts/ux-web3/
+  baseof.html
+  armadillo.html
+  trust-finance.html
+```
+
+### 其他 work 子页面（不在子目录中的）
+
+Content 直接放在 `content/work/` 下，type 为 `work`，Layout 在 `layouts/work/` 下。
+
+## Section 目录注意事项
+
+- 当 `content/work/multimedia-art-hci/` 目录存在时，Hugo 自动将其识别为 section
+- 子目录下的页面 type 默认继承目录名 `multimedia-art-hci`（而非上级 `work`）
+- 列表页 `_index.md` 可以单独设置 `type: 'work'` 来使用 `layouts/work/` 下的列表模板
+- 同名的 `content/work/multimedia-art-hci.md` 和目录不能共存，必须用 `_index.md`
+
+## 新增页面时的 URL 引用
+
+在 `data/works.yml` 和其他模板中引用 URL 时，使用完整路径：
+
+```yaml
+url: "/work/multimedia-art-hci/knowing-river-through-sound"
+```
