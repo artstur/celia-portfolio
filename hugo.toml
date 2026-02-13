@@ -1,7 +1,8 @@
-baseURL       = "https://celiasy.com/"
-languageCode  = "en-us"
-title         = "Celia Shuyue Li"
-summarylength = 25
+baseURL          = "https://celiasy.com/"
+languageCode     = "en-us"
+title            = "Celia Shuyue Li"
+summarylength    = 25
+googleAnalytics  = "G-ZRN02VH7G6"
 
 # Site Menus
 [menu]
@@ -46,8 +47,7 @@ summarylength = 25
   # Meta data
   description = "Roxo Hugo themes | Design Agency Template by StaticMania"
   author = "StaticMania"
-  # Google Analitycs
-  googleAnalitycsID = "Your ID"
+  # Google Analytics (legacy placeholder, actual config is at top-level googleAnalytics)
   # We're using formspree.io for form handling, paste your formspree url below
   fabform  = "https://fabform.io/f/USAg2Jl"
 
