@@ -158,6 +158,10 @@
         padding-right: 5%;
       }
 
+      &--spaced {
+        margin-top: 5%;
+      }
+
       &-header {
 
         padding: 10px;
@@ -260,6 +264,10 @@
             max-width: 100%;
           }
 
+          h4 {
+            margin-bottom: 16px;
+          }
+
           ul {
             font-family: $myriad-font;
             color: black;
@@ -268,7 +276,6 @@
           p {
             font-family: $myriad-font;
             color: black;
-            // font-weight: bold;
           }
 
           li {
@@ -279,6 +286,38 @@
           }
         }
 
+      }
+
+      &-two-text {
+        display: flex;
+        padding: 2% 1%;
+        gap: 4%;
+
+        @include mobile {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        &-col {
+          flex: 1;
+
+          h4 {
+            font-family: $myriad-font;
+            color: black;
+            margin-bottom: 16px;
+          }
+
+          p {
+            font-family: $myriad-font;
+            color: black;
+            font-size: 18px;
+            line-height: 1.5em;
+
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+        }
       }
 
       &-two-chart {

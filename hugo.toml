@@ -82,7 +82,7 @@ googleAnalytics  = "G-S5RBWMEYXS"
 
 
   [params.intro]
-    intro_content = "Hi! I'm Celia, a product designer, web3 contributor, and multimedia artist. I work on intergrating people, design, art, and technology."
+    intro_content = "Hi! I'm Celia, an AI product designer and multimedia artist. I work on intergrating people, design, art, and technology."
 
   [params.blog]
     read_more             = "read more"
