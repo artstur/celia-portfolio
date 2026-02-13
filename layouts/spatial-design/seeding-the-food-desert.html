@@ -1,0 +1,304 @@
+{{ define "main" }}
+
+{{ $accent := .Params.accent_color | default "rgb(202, 193, 210)" | safeCSS }}
+<style>
+  :root {
+    --accent-color: {{ $accent }};
+  }
+  /* Problem Space 区块背景色 */
+  .site-work-detail-page {
+    background-color: var(--accent-color) !important;
+  }
+  /* 首屏信息框标题和内容颜色 */
+  .site-work-detail-front-info-title h3,
+  .site-work-detail-front-info-content p {
+    color: var(--accent-color) !important;
+  }
+  /* Learn More 按钮 */
+  .site-work-detail-front-info-btn a {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+  }
+  .site-work-detail-front-info-btn a:hover {
+    background-color: white !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+  }
+</style>
+
+<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="site-work-header-title">Seeding the Food Desert: School System Activated Rewilding City</h3>
+        <p class="site-work-header-desc"><a href="https://www.gsd.harvard.edu/2022/05/designing-for-a-new-wilderness/" target="_blank">Harvard GSD News</a>, ASLA Nominated</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-work-detail">
+
+  <div class="site-work-detail-front" data-aos="fade-in" data-aos-duration="1500"
+    style="background-image:url('https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/title%20page.jpg') ;">
+    <div class="site-work-detail-front-info">
+      <div class="site-work-detail-front-info-box">
+          <div class="site-work-detail-front-info-title">
+            <h3>Seeding Food Desert</h3>
+          </div>
+          <div class="site-work-detail-front-info-content">
+            <p>The project proposes a school system activated rewilding urban design solution, through the lens of wildlife in Los Angeles.</p>
+          </div>
+          <div class="site-work-detail-front-info-btn"><a
+              href="#problem-space" class="btn btn-primary">Learn More</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="problem-space" class="site-work-detail-page">
+    <div class="container">
+      <div class="site-work-detail-page-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>Problem Space</h3>
+        <p>Among social vulnerability Index of LA, the project tackles on the food deprivation issue, which is one of the most worrisome social problems of Los Angeles. The regions of South Los Angeles, are communities with extremely limited access to healthy fresh food, and currently defined as a food desert.</p>
+        <p>Wildlife in LA faces the similar food deprive issue - Monarch butterflies are facing food deprivation as the milkweed habitat is disappearing due to the climate change, and Western fence lizards are more concerned with food resource safety as the insects they feed on are polluted and toxified by pesticide and herbicide.</p>
+      </div>
+
+      <div class="site-work-detail-page-more" data-aos="fade-in" data-aos-duration="1500">
+        <p>How can we activate the food desert in this area, address social inequalities caused by it, and educate our next generation under the context of climate change?</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="01-Research" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>01. Research</h3>
+        <h4>I. Food Desert Issue</h4>
+        <p>By mapping the walkable distance to supermarkets as well as the butterfly and lizard's habitat and breeding sites, the region of South Los Angeles are observed as the food desert for both humans and the two wild species, which is a community with extremely limited access to fresh food. The lack of access to fresh foods and a drought of supermarkets results in an influx of fast-food restaurants, liquor stores, and small convenience stores.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/1.jpg"
+          alt="Food Desert Issue">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Lens of Species</h4>
+        <p>In the research of wildlife, we found Monarch Butterflies are famous for their migration. Though habitats for Monarchs are diverse, they face many risks that are resulting in declining populations. The largest impacts come from the loss of habitats and food resources during their migration due to climate change and people's activities. For Western Fence Lizards, the biggest challenge comes from unsafe food resources that polluted and toxified by pesticide and herbicide. As territorial species, their annual based life cycle bring opportunities to our design.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/2.jpg"
+          alt="Lens of Species">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="02-Strategy" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>02. Strategy</h3>
+        <h4>I. Seeding the Food Desert</h4>
+        <p>Schools, as the knowledge hub, are the starting point of seeding. Collaborating with LAUSD, we first try to improve public awareness of wildlife and the food desert issue among students. Then activate the four types of spaces step by step.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/3.jpg"
+          alt="Seeding the Food Desert Strategy">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Four Space Types</h4>
+        <p>Schools activate vacant lots as workshop and place for communicating, exchanging and celebrating, then enable parkways to become test planting sites. Finally, people would have motion to plant in their yards. In each phase, the project cooperates with various agencies.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/4.jpg"
+          alt="Four Space Types">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="03-Prototyping" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>03. Prototyping</h3>
+        <h4>I. Urban Policy & Mechanism</h4>
+        <p>To achieve the urban transformation, the mechanism and policies for four sites are proposed. By designing building codes, urban rules, and course syllabus, we aim to apply the mechanism to bigger context beyond the priority areas.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/5.jpg"
+          alt="Urban Policy and Mechanism">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Edible Forest Planting Method</h4>
+        <p>An edible forest planting method with five layers was adapted to create a food forest, in which way a stronger ecosystem and biodiversity form. Plants with different seasons for human and animal food resources enable a year-round food resource.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/6.jpg"
+          alt="Edible Forest Planting Method">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>III. Urban Toolkit</h4>
+        <p>Urban toolkit box indicates the units of spatial intervention. It is designed based on five genres: animal habitat, planting method, installation, community activity, and facility.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/7.jpg"
+          alt="Urban Toolkit">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="04-Iteration-Final-Designs" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>04. Iteration & Final Designs</h3>
+        <h4>I. Schools as Knowledge Hubs</h4>
+        <p>We aim to collaborating with LAUSD (Los Angeles Unified School District), which is a public school dis&shy;trict in Los Angeles. It is the 2nd largest public school district in the United States containing 2,000 schools and serving 700,000 students. Schools are serving as a knowledge hub in the system. Our intervention includes establishing wild habitat on campus and adding curriculum like wildlife study and preservation, organic food farming.</p>
+        <p>We apply toolkits to the primary school using a low-intrusive intervention, designing it as a wildlife research site and knowledge exchange hub. The middle school is an example of large-scale renovation. Asphalt grounds are regenerated, and wild habitats are introduced.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/8.jpg"
+          alt="Schools as Knowledge Hubs">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Vacant Lots as Exchange Centers</h4>
+        <p>In the future, the identity of vacant lots inside neighborhoods are about exchange - seed exchange sites, spaces for knowledge sharing about planting methods and wild species preservation, woodshops and metal shops for residents to work together.</p>
+        <p>Vacant lots also will be planting test areas for students to study the plant growth habits and ratios of mixing them. Their temporary properties enable residents to organize annual based festivals there. Besides, art installations for butterflies could be built along vacant lots to attract wild animals.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-two-chart-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/9.jpg"
+            alt="Vacant Lots as Exchange Centers 1">
+        </div>
+        <div class="site-work-detail-page-template-two-chart-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/15.jpg"
+            alt="Vacant Lots as Exchange Centers 2">
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>III. Parkways as Food Resources</h4>
+        <p>Inspired by Gardener Ron Finley's "Residential Parkway Landscaping Guidelines", we hope to transform parkways to stable fresh food resources for the city, at the same time, provide animals with small habitat patches and open corridors.</p>
+        <p>We propose to transform parkways to urban farms as the healthy food hubs for the whole community and biodiverse animal habitats, which enables less pesticide use and organic plants growing.</p>
+        <p>From the research we can found, there are many vacant lots in priority areas and scattered. Crime rate in this area is high. By designing vacant lots, we hope to use them as urban generators and lower the crime ratio, improving social equality and inclusion in the diversive neighborhood.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-two-chart-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/10.jpg"
+            alt="Parkways as Food Resources 1">
+        </div>
+        <div class="site-work-detail-page-template-two-chart-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/13.jpg"
+            alt="Parkways as Food Resources 2">
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>IV. Embrace Wildlife in Daily Life</h4>
+        <p>We suggest securing a wildlife zone around the fence in the residential backyard. By assigning planting homework to students, hosting workshops in vacant lots, planting testing in parkways, we are gradually penetrating and seeding the message of rewilding and cohabitating into residents' daily life.</p>
+        <p>We are also imagining the urban events happening on different kinds of land, according to butterfly, lizard, and plants' life cycle, as well as human's activities. Schools as knowledge hubs, will play important roles during semesters. Correspondly, vacant lots, parkways and building yards will take the functions of seed exchange, reformation, installation make, and habitat build in different times.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/11.jpg"
+          alt="Embrace Wildlife in Daily Life">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="05-Impacts-Reflections" class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>05. Impacts & Reflections</h3>
+        <p>By collaborating with the Los Angeles Unified School District Board of Education(LAUSD) and with local "Gangsta Gardener" Ron Finley, we transform neglected land tracts into gardening spaces.</p>
+        <p>While the gardens would be welcoming spaces for the Monarch Butterflies and Western Fence Lizards, the two species also would help to nurture the growth of fresh produce in a sustainable and resilient way. All systems would have beneficial effects on each other. In this way, wildlifes finds habitats in urban context, while people who live far away from Santa Monica Mount also have access to lush green space in their own community.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/16.jpg"
+          alt="Impacts and Reflections">
+      </div>
+
+      <!-- 视频封面 -->
+      <div class="site-work-video-carousel" data-aos="fade-in" data-aos-duration="1500">
+        <div class="swiper video-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide video-slide"
+              data-video-src="https://www.youtube.com/embed/BQBZiFlWEWs?autoplay=1"
+              data-video-title="Seeding The Food Desert"
+              data-video-author="Celia Shuyue Li"
+              data-video-duration=""
+              data-video-thumb="https://img.youtube.com/vi/BQBZiFlWEWs/maxresdefault.jpg"
+              data-video-desc="">
+              <img class="video-cover" src="https://img.youtube.com/vi/BQBZiFlWEWs/maxresdefault.jpg" alt="Seeding The Food Desert">
+              <div class="video-overlay">
+                <h3 class="video-overlay-title">Seeding The Food Desert</h3>
+                <button class="video-play-btn" aria-label="Play video">
+                  <i class="fa-regular fa-circle-play"></i>
+                  <span>Play Video</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 视频播放 Modal -->
+      <div class="video-modal" id="videoModal">
+        <div class="video-modal-top">
+          <button class="video-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="video-modal-body">
+          <div class="video-modal-player">
+            <div class="video-modal-iframe-wrap">
+              <iframe id="videoModalIframe" src="about:blank" title="Video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="video-modal-info">
+            <h3 class="video-modal-title"></h3>
+            <p class="video-modal-author"></p>
+            <p class="video-modal-desc"></p>
+          </div>
+        </div>
+        <div class="video-modal-thumbs" id="videoModalThumbs">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Collaboration Info -->
+  <div class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
+    <div class="container">
+      <div class="site-work-template-plain-text">
+        <p style="color: gray;"><b>In Collaboration With</b></p>
+        <p style="color: gray;">Zeqi Liu</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{ end }}
