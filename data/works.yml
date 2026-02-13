@@ -1,5 +1,35 @@
 enable : true
 work_item: 
+  - title: "Knowing River Through Sound"
+    img: "https://cdn.celiasy.com/images/index/compressed/1.jpg"
+    url: "/work/multimedia-art-hci/knowing-river-through-sound"
+    type: "multimedia-art-hci"
+
+  - title: "A Collection: Garments of Discomfort"
+    img: "https://cdn.celiasy.com/images/index/compressed/2.jpg"
+    url: "/work/multimedia-art-hci/a-collection-garments-of-discomfort"
+    type: "multimedia-art-hci"
+
+  - title: "Stone-fized History and Tree-fized Temporary"
+    img: "https://cdn.celiasy.com/images/index/compressed/3.jpg"
+    url: "/work/multimedia-art-hci/stone-fized-history-and-tree-fized-temporary"
+    type: "multimedia-art-hci"
+
+  - title: "Seeding the Food Desert"
+    img: "https://cdn.celiasy.com/images/index/compressed/5.jpg"
+    url: "/work/seeding-the-food-desert"
+    type: "spatial-design"
+
+  - title: "Sandscape: Sediment Mechanism"
+    img: "https://cdn.celiasy.com/images/index/compressed/4.jpg"
+    url: "/work/sandscape-sediment-mechanism"
+    type: "spatial-design"
+
+  - title: "JunctionScape"
+    img: "https://cdn.celiasy.com/images/index/compressed/7.jpg"
+    url: "/work/junctionscape"
+    type: "spatial-design"
+
   - title: "Armadillo"
     img: "https://cdn.celiasy.com/images/index/compressed/8.jpg"
     url: "/work/ux-web3/armadillo"
@@ -19,33 +49,3 @@ work_item:
     img: "https://cdn.celiasy.com/images/index/compressed/6.jpg"
     url: "/work/buffet"
     type: "ux-web3"
-
-  - title: "Seeding the Food Desert"
-    img: "https://cdn.celiasy.com/images/index/compressed/5.jpg"
-    url: "/work/seeding-the-food-desert"
-    type: "spatial-design"
-
-  - title: "Sandscape: Sediment Mechanism"
-    img: "https://cdn.celiasy.com/images/index/compressed/4.jpg"
-    url: "/work/sandscape-sediment-mechanism"
-    type: "spatial-design"
-
-  - title: "JunctionScape"
-    img: "https://cdn.celiasy.com/images/index/compressed/7.jpg"
-    url: "/work/junctionscape"
-    type: "spatial-design"
-
-  - title: "Knowing River Through Sound"
-    img: "https://cdn.celiasy.com/images/index/compressed/1.jpg"
-    url: "/work/multimedia-art-hci/knowing-river-through-sound"
-    type: "multimedia-art-hci"
-
-  - title: "A Collection: Garments of Discomfort"
-    img: "https://cdn.celiasy.com/images/index/compressed/2.jpg"
-    url: "/work/multimedia-art-hci/a-collection-garments-of-discomfort"
-    type: "multimedia-art-hci"
-
-  - title: "Stone-fized History and Tree-fized Temporary"
-    img: "https://cdn.celiasy.com/images/index/compressed/3.jpg"
-    url: "/work/multimedia-art-hci/stone-fized-history-and-tree-fized-temporary"
-    type: "multimedia-art-hci"
