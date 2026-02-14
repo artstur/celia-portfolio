@@ -62,13 +62,39 @@
         <h3>Problem Space</h3>
         <p>New Bedford is famous for its shellfish industry.</p>
         <p>However, the rising sea level is submerging the seaports and most nearshore scallop processing areas. The traditional scallop dredging technique is also destroying the offshore seabed and scallop habitats.</p>
-        <p>Where will the traditional shellfish industry go?</p>
       </div>
 
       <div class="site-work-detail-page-more" data-aos="fade-in" data-aos-duration="1500">
+        <p>Where will the traditional shellfish industry go?</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="approach" class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>Approach</h3>
         <p>The traditional shellfish industry in the current territory requires the process of scallop dredging, ocean transportation, seaports processing and on land transportation. However, the process not only is largely influenced by sea level rising caused by climate change, but also have a negative impact on undersea habitat and seabed.</p>
         <p>I propose a new kind of industrial structure in the new territory. On the one hand, the dredge scars will be treated as tourism resource to activate local tourism economy. On the other hand, most of the scallop production will move to the coastline, combining with the fishermen's community. The new industry will be a community driven, more productive, less influenced by climate change one, and has the potential to arouse people's awareness of environment and nature.</p>
       </div>
+
+      <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
+        <div class="swiper auto-carousel-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-title="Current Territory">
+              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review2.jpg" alt="Current Territory" loading="lazy">
+            </div>
+            <div class="swiper-slide" data-slide-title="Future Territory">
+              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review3.jpg" alt="Future Territory" loading="lazy">
+            </div>
+          </div>
+          <div class="auto-carousel-overlay">
+            <span class="auto-carousel-title">Current Territory</span>
+            <span class="auto-carousel-counter">1/2</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -296,7 +322,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // 初始化所有自动轮播
   document.querySelectorAll('.auto-carousel-swiper').forEach(function(el) {
     var counter = el.querySelector('.auto-carousel-counter');
-    var totalSlides = el.querySelectorAll('.swiper-slide').length;
+    var titleEl = el.querySelector('.auto-carousel-title');
+    var slides = el.querySelectorAll('.swiper-slide');
+    var totalSlides = slides.length;
     var autoplayDelay = 1500;
 
     var swiper = new Swiper(el, {
@@ -312,13 +340,18 @@ document.addEventListener('DOMContentLoaded', function() {
       fadeEffect: { crossFade: true },
     });
 
-    function updateCounter() {
+    function updateOverlay() {
       if (counter) {
         counter.textContent = (swiper.realIndex + 1) + '/' + totalSlides;
       }
+      if (titleEl) {
+        var activeSlide = slides[swiper.realIndex];
+        var slideTitle = activeSlide ? activeSlide.getAttribute('data-slide-title') : '';
+        if (slideTitle) titleEl.textContent = slideTitle;
+      }
     }
-    swiper.on('slideChange', function() { updateCounter(); });
-    updateCounter();
+    swiper.on('slideChange', function() { updateOverlay(); });
+    updateOverlay();
 
     // 点击打开 modal
     el.addEventListener('click', function() {
