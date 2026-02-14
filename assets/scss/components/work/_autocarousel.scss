@@ -1,0 +1,164 @@
+// 自动轮播组件（缩略图 + Modal 大图）
+
+.auto-carousel {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+
+  &-swiper {
+    position: relative;
+    overflow: hidden;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    &:hover .auto-carousel-overlay {
+      opacity: 1;
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+    pointer-events: none;
+  }
+
+  &-title {
+    font-weight: 600;
+  }
+
+  &-counter {
+    opacity: 0.85;
+  }
+}
+
+// Modal
+.auto-carousel-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &.active {
+    display: flex;
+  }
+
+  &-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-swiper-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 90vw;
+    gap: 16px;
+
+    @include tablet {
+      gap: 8px;
+    }
+  }
+
+  &-nav {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    i {
+      font-size: 28px;
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-swiper {
+    width: 100%;
+    overflow: hidden;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+  }
+
+  &-caption {
+    text-align: center;
+    color: white;
+    padding: 16px 0 0;
+    font-size: 15px;
+  }
+}
