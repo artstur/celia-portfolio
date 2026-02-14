@@ -229,7 +229,7 @@
       }
 
       &-chart {
-        padding: 3%;
+        padding: 1% 0;
 
         p {
           font-family: $myriad-font;
@@ -241,6 +241,21 @@
 
           @include mobile {
             margin-bottom: 5%;
+          }
+        }
+      }
+
+      &-caption {
+        padding: 10px;
+
+        p {
+          font-family: $myriad-font;
+          font-size: 18px;
+          text-align: left;
+          color: black;
+
+          @include mobile {
+            font-size: 14px;
           }
         }
       }
