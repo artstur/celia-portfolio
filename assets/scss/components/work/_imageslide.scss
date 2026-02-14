@@ -50,6 +50,43 @@
 
 }
 
+/* image-swiper 导航箭头加半透明黑色背景，防止白色图片上看不清 */
+.image-swiper,
+.image-swiper-gallery {
+  --swiper-navigation-top-offset: 50%;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px; /* 高度的一半，精确垂直居中 */
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    top: 50%;
+    transform: none;
+    transition: background-color 0.3s, opacity 0.3s;
+
+    @include mobile {
+      width: 28px;
+      height: 28px;
+      margin-top: -14px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &::after {
+      font-size: 16px;
+      color: white;
+
+      @include mobile {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
 .swiper-pagination-bullet {
     background-color: white;
     opacity: 0.8;
