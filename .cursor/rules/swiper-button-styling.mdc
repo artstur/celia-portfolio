@@ -1,0 +1,41 @@
+---
+description: Swiper 导航按钮样式覆盖的正确做法
+globs: "**/*.scss"
+alwaysApply: false
+---
+
+# Swiper 导航按钮定位
+
+Swiper 11 使用 CSS 变量 `--swiper-navigation-top-offset` 控制按钮垂直位置，直接设置 `top` + `transform` 容易被内部样式覆盖。
+
+## 正确做法：用 CSS 变量 + margin-top
+
+```scss
+// ✅ 正确 — 通过 CSS 变量 + 负 margin 精确居中
+.image-swiper {
+  --swiper-navigation-top-offset: 50%;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px; // 按钮高度的一半取负值
+    transform: none;   // 清除外部 transform
+  }
+}
+```
+
+```scss
+// ❌ 错误 — top/transform 会被 Swiper 内部 CSS 变量覆盖
+.image-swiper .swiper-button-prev {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+```
+
+## 要点
+
+- 始终通过 `--swiper-navigation-top-offset` 设置 `top` 值
+- 用 `margin-top: -(height/2)` 实现精确居中，而不是 `transform: translateY(-50%)`
+- 移动端的 `margin-top` 要同步调整为移动端按钮高度的一半
+- 按钮在浅色/白色图片上不可见时，加 `background-color: rgba(0,0,0,0.35)` 半透明背景
