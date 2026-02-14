@@ -1,0 +1,134 @@
+{{/*
+  auto-carousel-modal.html
+  ========================
+  通用自动轮播 Modal 组件。
+
+  用法：在页面模板底部（</section> 之后、{{ end }} 之前）调用：
+    {{ partial "auto-carousel-modal.html" . }}
+
+  前提：页面中存在 .auto-carousel-swiper 元素，并已加载 Swiper CSS/JS。
+*/}}
+
+<!-- 自动轮播 Modal -->
+<div class="auto-carousel-modal" id="autoCarouselModal">
+  <button class="auto-carousel-modal-close" aria-label="Close">&times;</button>
+  <div class="auto-carousel-modal-body">
+    <div class="auto-carousel-modal-swiper-wrap">
+      <button class="auto-carousel-modal-nav auto-carousel-modal-prev" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="swiper auto-carousel-modal-swiper">
+        <div class="swiper-wrapper" id="autoCarouselModalSlides"></div>
+      </div>
+      <button class="auto-carousel-modal-nav auto-carousel-modal-next" aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    <div class="auto-carousel-modal-caption">
+      <span class="auto-carousel-modal-title"></span>
+    </div>
+  </div>
+</div>
+
+<!-- 自动轮播脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('autoCarouselModal');
+  var modalSlidesContainer = document.getElementById('autoCarouselModalSlides');
+  var modalTitle = modal.querySelector('.auto-carousel-modal-title');
+  var modalCloseBtn = modal.querySelector('.auto-carousel-modal-close');
+  var modalSwiper = null;
+
+  // 初始化所有自动轮播
+  document.querySelectorAll('.auto-carousel-swiper').forEach(function(el) {
+    var counter = el.querySelector('.auto-carousel-counter');
+    var titleEl = el.querySelector('.auto-carousel-title');
+    var slides = el.querySelectorAll('.swiper-slide');
+    var totalSlides = slides.length;
+    var autoplayDelay = 500;
+
+    var swiper = new Swiper(el, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoplay: {
+        delay: autoplayDelay,
+        disableOnInteraction: false,
+      },
+      speed: 600,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+    });
+
+    function updateOverlay() {
+      if (counter) {
+        counter.textContent = (swiper.realIndex + 1) + '/' + totalSlides;
+      }
+      if (titleEl) {
+        var activeSlide = slides[swiper.realIndex];
+        var slideTitle = activeSlide ? activeSlide.getAttribute('data-slide-title') : '';
+        if (slideTitle) titleEl.textContent = slideTitle;
+      }
+    }
+    swiper.on('slideChange', function() { updateOverlay(); });
+    updateOverlay();
+
+    // 点击打开 modal
+    el.addEventListener('click', function() {
+      var slides = el.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)');
+      var title = el.querySelector('.auto-carousel-title');
+      var titleText = title ? title.textContent : '';
+
+      // 构建 modal slides
+      modalSlidesContainer.innerHTML = '';
+      slides.forEach(function(slide) {
+        var img = slide.querySelector('img');
+        if (img) {
+          var div = document.createElement('div');
+          div.className = 'swiper-slide';
+          var newImg = document.createElement('img');
+          newImg.src = img.src;
+          newImg.alt = img.alt;
+          div.appendChild(newImg);
+          modalSlidesContainer.appendChild(div);
+        }
+      });
+
+      modalTitle.textContent = titleText;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // 销毁旧的 modal swiper
+      if (modalSwiper) { modalSwiper.destroy(true, true); }
+      modalSwiper = new Swiper('.auto-carousel-modal-swiper', {
+        loop: slides.length > 1,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        initialSlide: swiper.realIndex,
+        navigation: {
+          nextEl: '.auto-carousel-modal-next',
+          prevEl: '.auto-carousel-modal-prev',
+        },
+      });
+    });
+  });
+
+  // 关闭 modal
+  modalCloseBtn.addEventListener('click', function() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+</script>

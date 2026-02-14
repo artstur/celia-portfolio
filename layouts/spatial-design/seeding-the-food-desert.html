@@ -1,30 +1,6 @@
 {{ define "main" }}
 
-{{ $accent := .Params.accent_color | default "rgb(202, 193, 210)" | safeCSS }}
-<style>
-  :root {
-    --accent-color: {{ $accent }};
-  }
-  /* Problem Space 区块背景色 */
-  .site-work-detail-page {
-    background-color: var(--accent-color) !important;
-  }
-  /* 首屏信息框标题和内容颜色 */
-  .site-work-detail-front-info-title h3,
-  .site-work-detail-front-info-content p {
-    color: var(--accent-color) !important;
-  }
-  /* Learn More 按钮 */
-  .site-work-detail-front-info-btn a {
-    background-color: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
-  }
-  .site-work-detail-front-info-btn a:hover {
-    background-color: white !important;
-    color: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
-  }
-</style>
+{{ partial "accent-color-style.html" . }}
 
 <section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
   <div class="container">
