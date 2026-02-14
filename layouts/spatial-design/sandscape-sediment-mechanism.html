@@ -1,0 +1,383 @@
+{{ define "main" }}
+
+{{ $accent := .Params.accent_color | default "rgb(202, 193, 210)" | safeCSS }}
+<style>
+  :root {
+    --accent-color: {{ $accent }};
+  }
+  /* Problem Space 区块背景色 */
+  .site-work-detail-page {
+    background-color: var(--accent-color) !important;
+  }
+  /* 首屏信息框标题和内容颜色 */
+  .site-work-detail-front-info-title h3,
+  .site-work-detail-front-info-content p {
+    color: var(--accent-color) !important;
+  }
+  /* Learn More 按钮 */
+  .site-work-detail-front-info-btn a {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+  }
+  .site-work-detail-front-info-btn a:hover {
+    background-color: white !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+  }
+</style>
+
+<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="site-work-header-title">Sandscape: Sediment Mechanism</h3>
+        <p class="site-work-header-desc">Landscape Architecture Core Studio III</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-work-detail">
+
+  <div class="site-work-detail-front" data-aos="fade-in" data-aos-duration="1500"
+    style="background-image:url('https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/title%20image.jpg') ;">
+    <div class="site-work-detail-front-info">
+      <div class="site-work-detail-front-info-box">
+          <div class="site-work-detail-front-info-title">
+            <h3>Sediment Mechanism</h3>
+          </div>
+          <div class="site-work-detail-front-info-content">
+            <p>The project aims to define a new future of the shellfish industry in New Bedford by controlling sediment.</p>
+          </div>
+          <div class="site-work-detail-front-info-btn"><a
+              href="#problem-space" class="btn btn-primary">Learn More</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="problem-space" class="site-work-detail-page">
+    <div class="container">
+      <div class="site-work-detail-page-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>Problem Space</h3>
+        <p>New Bedford is famous for its shellfish industry.</p>
+        <p>However, the rising sea level is submerging the seaports and most nearshore scallop processing areas. The traditional scallop dredging technique is also destroying the offshore seabed and scallop habitats.</p>
+        <p>Where will the traditional shellfish industry go?</p>
+      </div>
+
+      <div class="site-work-detail-page-more" data-aos="fade-in" data-aos-duration="1500">
+        <p>The traditional shellfish industry in the current territory requires the process of scallop dredging, ocean transportation, seaports processing and on land transportation. However, the process not only is largely influenced by sea level rising caused by climate change, but also have a negative impact on undersea habitat and seabed.</p>
+        <p>I propose a new kind of industrial structure in the new territory. On the one hand, the dredge scars will be treated as tourism resource to activate local tourism economy. On the other hand, most of the scallop production will move to the coastline, combining with the fishermen's community. The new industry will be a community driven, more productive, less influenced by climate change one, and has the potential to arouse people's awareness of environment and nature.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="01-Discovery" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>01. Discovery</h3>
+        <h4>I. Two Agents</h4>
+        <p><b>Dredge Scars:</b> Treating dredge scars as tourism resource, can be applied to the whole Buzzards Bay. However, it will be more likely happen to the areas where the suitable sediment types and current fishing areas overlapped.</p>
+      </div>
+
+      <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
+        <div class="swiper auto-carousel-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-title="Undersea Dredge Scars">
+              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/agent3.jpg" alt="Undersea Dredge Scars 1" loading="lazy">
+            </div>
+            <div class="swiper-slide" data-slide-title="Undersea Dredge Scars">
+              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/agent4.jpg" alt="Undersea Dredge Scars 2" loading="lazy">
+            </div>
+          </div>
+          <div class="auto-carousel-overlay">
+            <span class="auto-carousel-title">Undersea Dredge Scars</span>
+            <span class="auto-carousel-counter">1/2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <p><b>Scallop Farms:</b> Moving scallop production to the inland area, can be applied to the whole coastal line, yet to combine with the fishermen's community better, they should be around the city.</p>
+      </div>
+
+      <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
+        <div class="swiper auto-carousel-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-title="Coastal Scallop Farms">
+              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/agent1.jpg" alt="Coastal Scallop Farms 1" loading="lazy">
+            </div>
+            <div class="swiper-slide" data-slide-title="Coastal Scallop Farms">
+              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/agent2.jpg" alt="Coastal Scallop Farms 2" loading="lazy">
+            </div>
+          </div>
+          <div class="auto-carousel-overlay">
+            <span class="auto-carousel-title">Coastal Scallop Farms</span>
+            <span class="auto-carousel-counter">1/2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Choose Priority Sites</h4>
+        <p>Based on the research of two agents, priority sites are chosen in the area. The offshore site is the current scallop dredging areas in Buzzards Bay, which will be transformed to undersea ruins for tourists and deep-sea scallop hatchery.</p>
+        <p>The inland site is the coastal line at the South End of New Bedford, which will become coastal scallop farms in the near future.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/priority%20sites.jpg"
+          alt="Priority Sites">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>III. Sites Transformation</h4>
+        <p>The interdependence between these two sites is changing. The current relationship is single – fishermen come from New Bedford and then dredge scallop in Buzzards Bay.</p>
+        <p>In the future, it will be a mutual relationship - New Bedford provides technical supports, tourists, and labors to Buzzards Bay, and Buzzards Bay provide New Bedford with scallop seedings and economic benefits.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/sites%20transformation.jpg"
+          alt="Sites Transformation">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="02-Prototyping" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>02. Prototyping</h3>
+      </div>
+
+      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-chart-with-content-text">
+          <h4>I. Sediment Type</h4>
+          <p>The transformation will be achieved by managing sediment. On the one hand, scallop dredging left scars on seabed sediment. On the other hand, quahog, the main scallop species in this area, spend most of their lifecycle in sediment.</p>
+          <p>The initial design idea is to prevent sediment depositing on dredge scars in inland sites; and to improve suitable types of sediment depositing to build the scallop farm in offshore sites.</p>
+        </div>
+        <div class="site-work-detail-page-template-chart-with-content-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review10.jpg"
+            alt="Sediment Type">
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-chart-with-content-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review11.jpg"
+            alt="Landform Prototype">
+        </div>
+        <div class="site-work-detail-page-template-chart-with-content-text">
+          <h4>II. Landform Prototype</h4>
+          <p>This is the test that the ability of different landforms to catch different types of sediment. Then apply the topographies to the sites to achieve the expected effects.</p>
+          <p>By creating the landform in the direction facing the ocean current, sediment comes along with the current would accumulate at the lower areas and avoid the dredge areas.</p>
+          <p>The other landform is to catch sediment for scallop farms. The contouring farm enables the sediment to accumulate on the terraces.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="03-Testing" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>03. Testing</h3>
+        <h4>I. Offshore Site Testing</h4>
+        <p>When apply the landform in the direction facing the ocean current to inland sites, sediment comes along with the current would accumulate at the lower areas and avoid the dredge areas. The lower areas, covered by sediment, will form the new habitat and scallop hatchery. This is the situation that the sea sculpture applied to the whole current landscape of labor.</p>
+        <p>In a more zoom in scale, the landform facing the current enables the sediment to accumulate in the lower areas, which makes the dredge scars remain and scallop hatcheries form. The sediment will accumulate as time goes by.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-two-chart-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/testing1.jpg"
+            alt="Offshore Site Testing 1">
+        </div>
+        <div class="site-work-detail-page-template-two-chart-img">
+          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/testing6.jpg"
+            alt="Offshore Site Testing 2">
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Inland Site Testing</h4>
+        <p>The landform for offshore sites is to catch sediment for scallop farms. The contouring farm enables the sediment to accumulate on the terraces. This is the situation that the contouring farm applied to the whole suitable coastal areas in New Bedford.</p>
+        <p>When zoom in to the designed area, the arrangement of the landform is according to the current direction and the urban texture. By weaving the landform to the urban area, I hope they are not only functional for scallop farming but can also serve as open space for New Bedford citizens.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Inland%20Site%20Testing.jpg"
+          alt="Inland Site Testing">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="04-Final-Designs" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>04. Final Designs</h3>
+        <h4>I. Offshore Site</h4>
+        <p>The offshore site will be a combination of the tourism and the scallop hatchery.</p>
+        <p>Tourists come here for sightseeing the dredge scars and picking scallops themselves. Fishermen come here for juvenile scallop and bring them back to New Bedford for productive farming, which will largely reduce the amount of fishing trips.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Current%2C%20Dredge%20Scar%20and%20Sea%20Sculpture.jpg"
+          alt="Offshore Site Design">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Inland Site</h4>
+        <p>The inland site will be a combination of the quahog farm and the public space.</p>
+        <p>The landform catches the sediment, forming the scallop farms. Fishermen work here. Working fishermen can be seen by people in the public place formed by the landform in turn. Climate change will be both challenge and opportunity for the new shellfish industry.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Inland%20Site%20Design.jpg"
+          alt="Inland Site Design">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="05-Impact-Reflections" class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>05. Impact & Reflections</h3>
+        <p>In this project, design approaches are grounded in the material media of the discipline—sediment, scallops, water dynamics—and their controlling infrastructures, physical and policy-based.</p>
+        <p>It explores: How productive sectors will migrate due to climate risk; What happens to the land left behind; How these landscapes can support dignified spaces for work and self-determination.</p>
+        <p>These design propositions may lead to new forms, scales, and cadences for work and habitation that may seem improbable under current systems of funding, fuels, and power. In the 21st century, the socially productive landscape reconsidered does not merely provide the stuff of everyday life closer to home. It demands a paradigm shift from landscapes that are discrete and transactional to those that foster a commonwealth of human and natural labor.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Impact%20and%20Reflections.jpg"
+          alt="Impact and Reflections">
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- 自动轮播 Modal -->
+<div class="auto-carousel-modal" id="autoCarouselModal">
+  <button class="auto-carousel-modal-close" aria-label="Close">&times;</button>
+  <div class="auto-carousel-modal-body">
+    <div class="auto-carousel-modal-swiper-wrap">
+      <button class="auto-carousel-modal-nav auto-carousel-modal-prev" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="swiper auto-carousel-modal-swiper">
+        <div class="swiper-wrapper" id="autoCarouselModalSlides"></div>
+      </div>
+      <button class="auto-carousel-modal-nav auto-carousel-modal-next" aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    <div class="auto-carousel-modal-caption">
+      <span class="auto-carousel-modal-title"></span>
+    </div>
+  </div>
+</div>
+
+<!-- 自动轮播脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('autoCarouselModal');
+  var modalSlidesContainer = document.getElementById('autoCarouselModalSlides');
+  var modalTitle = modal.querySelector('.auto-carousel-modal-title');
+  var modalCloseBtn = modal.querySelector('.auto-carousel-modal-close');
+  var modalSwiper = null;
+
+  // 初始化所有自动轮播
+  document.querySelectorAll('.auto-carousel-swiper').forEach(function(el) {
+    var counter = el.querySelector('.auto-carousel-counter');
+    var totalSlides = el.querySelectorAll('.swiper-slide').length;
+    var autoplayDelay = 1500;
+
+    var swiper = new Swiper(el, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoplay: {
+        delay: autoplayDelay,
+        disableOnInteraction: false,
+      },
+      speed: 600,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+    });
+
+    function updateCounter() {
+      if (counter) {
+        counter.textContent = (swiper.realIndex + 1) + '/' + totalSlides;
+      }
+    }
+    swiper.on('slideChange', function() { updateCounter(); });
+    updateCounter();
+
+    // 点击打开 modal
+    el.addEventListener('click', function() {
+      var slides = el.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)');
+      var title = el.querySelector('.auto-carousel-title');
+      var titleText = title ? title.textContent : '';
+
+      // 构建 modal slides
+      modalSlidesContainer.innerHTML = '';
+      slides.forEach(function(slide) {
+        var img = slide.querySelector('img');
+        if (img) {
+          var div = document.createElement('div');
+          div.className = 'swiper-slide';
+          var newImg = document.createElement('img');
+          newImg.src = img.src;
+          newImg.alt = img.alt;
+          div.appendChild(newImg);
+          modalSlidesContainer.appendChild(div);
+        }
+      });
+
+      modalTitle.textContent = titleText;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // 销毁旧的 modal swiper
+      if (modalSwiper) { modalSwiper.destroy(true, true); }
+      modalSwiper = new Swiper('.auto-carousel-modal-swiper', {
+        loop: slides.length > 1,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        initialSlide: swiper.realIndex,
+        navigation: {
+          nextEl: '.auto-carousel-modal-next',
+          prevEl: '.auto-carousel-modal-prev',
+        },
+      });
+    });
+  });
+
+  // 关闭 modal
+  modalCloseBtn.addEventListener('click', function() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+</script>
+
+{{ end }}
