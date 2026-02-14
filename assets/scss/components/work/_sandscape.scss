@@ -1,0 +1,75 @@
+// Sandscape: 文字 + 图片（上静态下轮播）左右并排布局
+.sandscape-row {
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  padding: 2% 0;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  // 反向排列（图在左，文字在右）
+  &--reverse {
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // 文字列
+  &__text {
+    flex: 0 0 30%;
+    width: 30%;
+
+    @include mobile {
+      flex: none;
+      width: 100%;
+    }
+
+    h4 {
+      font-family: $myriad-font;
+      color: black;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-family: $myriad-font;
+      font-size: 18px;
+      line-height: 1.5em;
+      color: black;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // 图片列（上静态图，下轮播，纵向排列）
+  &__figures {
+    flex: 1 1 0%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include mobile {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  // 静态图
+  &__static {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  // 轮播图
+  &__carousel {
+    overflow: hidden;
+  }
+}
