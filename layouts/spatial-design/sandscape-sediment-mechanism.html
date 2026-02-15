@@ -154,30 +154,27 @@
         <h3>02. Prototyping</h3>
       </div>
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <h4>I. Sediment Type</h4>
-          <p>The transformation will be achieved by managing sediment. On the one hand, scallop dredging left scars on seabed sediment. On the other hand, quahog, the main scallop species in this area, spend most of their lifecycle in sediment.</p>
-          <p>The initial design idea is to prevent sediment depositing on dredge scars in inland sites; and to improve suitable types of sediment depositing to build the scallop farm in offshore sites.</p>
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review10.jpg"
-            alt="Sediment Type">
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "title" "I. Sediment Type"
+        "paragraphs" (slice
+          "The transformation will be achieved by managing sediment. On the one hand, scallop dredging left scars on seabed sediment. On the other hand, quahog, the main scallop species in this area, spend most of their lifecycle in sediment."
+          "The initial design idea is to prevent sediment depositing on dredge scars in inland sites; and to improve suitable types of sediment depositing to build the scallop farm in offshore sites."
+        )
+        "imageSrc" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review10.jpg"
+        "imageAlt" "Sediment Type"
+      ) }}
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review11.jpg"
-            alt="Landform Prototype">
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <h4>II. Landform Prototype</h4>
-          <p>This is the test that the ability of different landforms to catch different types of sediment. Then apply the topographies to the sites to achieve the expected effects.</p>
-          <p>By creating the landform in the direction facing the ocean current, sediment comes along with the current would accumulate at the lower areas and avoid the dredge areas.</p>
-          <p>The other landform is to catch sediment for scallop farms. The contouring farm enables the sediment to accumulate on the terraces.</p>
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "title" "II. Landform Prototype"
+        "paragraphs" (slice
+          "This is the test that the ability of different landforms to catch different types of sediment. Then apply the topographies to the sites to achieve the expected effects."
+          "By creating the landform in the direction facing the ocean current, sediment comes along with the current would accumulate at the lower areas and avoid the dredge areas."
+          "The other landform is to catch sediment for scallop farms. The contouring farm enables the sediment to accumulate on the terraces."
+        )
+        "imageSrc" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/Final%20Review11.jpg"
+        "imageAlt" "Landform Prototype"
+        "reverse" true
+      ) }}
 
     </div>
   </div>
