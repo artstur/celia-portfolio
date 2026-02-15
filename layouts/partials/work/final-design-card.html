@@ -7,12 +7,21 @@
   <h4>{{ .title }}</h4>
   <div class="site-work-detail-page-template-junctionscape-final-design-layout">
     <div class="site-work-detail-page-template-junctionscape-final-design-hero">
-      <picture>
-        {{- with .planDesktopSrc }}
-          <source media="(min-width: 768px)" srcset="{{ . }}">
-        {{- end }}
-        <img loading="lazy" src="{{ .planSrc }}" alt="{{ .planAlt }}">
-      </picture>
+      <button
+        type="button"
+        class="site-work-detail-page-template-junctionscape-final-design-hero-trigger"
+        data-modal-desktop-src="{{ default .planSrc .planDesktopSrc }}"
+        data-modal-mobile-src="{{ .planSrc }}"
+        data-modal-alt="{{ .planAlt }}"
+        aria-label="Open full image"
+      >
+        <picture>
+          {{- with .planDesktopSrc }}
+            <source media="(min-width: 768px)" srcset="{{ . }}">
+          {{- end }}
+          <img loading="lazy" src="{{ .planSrc }}" alt="{{ .planAlt }}">
+        </picture>
+      </button>
     </div>
 
     <div class="site-work-detail-page-template-junctionscape-final-design-cards">
@@ -34,3 +43,61 @@
     </div>
   </div>
 </div>
+
+<script>
+(function () {
+  if (window.__junctionscapeFinalImageModalInit) return;
+  window.__junctionscapeFinalImageModalInit = true;
+
+  var modal = document.createElement('div');
+  modal.className = 'site-work-final-image-modal';
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML =
+    '<button type="button" class="site-work-final-image-modal-close" aria-label="Close">&times;</button>' +
+    '<div class="site-work-final-image-modal-body">' +
+    '  <img class="site-work-final-image-modal-image" alt="">' +
+    '</div>';
+  document.body.appendChild(modal);
+
+  var modalImage = modal.querySelector('.site-work-final-image-modal-image');
+  var closeBtn = modal.querySelector('.site-work-final-image-modal-close');
+
+  function openModal(src, alt) {
+    modalImage.src = src;
+    modalImage.alt = alt || '';
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    modalImage.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function (event) {
+    var trigger = event.target.closest('.site-work-detail-page-template-junctionscape-final-design-hero-trigger');
+    if (!trigger) return;
+
+    var desktopSrc = trigger.getAttribute('data-modal-desktop-src');
+    var mobileSrc = trigger.getAttribute('data-modal-mobile-src');
+    var alt = trigger.getAttribute('data-modal-alt');
+    var src = window.matchMedia('(min-width: 768px)').matches ? desktopSrc : mobileSrc;
+    if (!src) return;
+
+    openModal(src, alt);
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();
+</script>
