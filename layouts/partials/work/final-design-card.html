@@ -1,0 +1,26 @@
+{{- $classes := "site-work-detail-page-template-junctionscape-final-design" -}}
+{{- if .reversed -}}
+  {{- $classes = printf "%s %s" $classes "site-work-detail-page-template-junctionscape-final-design--reversed" -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  <h4>{{ .title }}</h4>
+  <div class="site-work-detail-page-template-junctionscape-final-design-layout">
+    <div class="site-work-detail-page-template-junctionscape-final-design-plan">
+      <img loading="lazy" src="{{ .planSrc }}" alt="{{ .planAlt }}">
+    </div>
+    <div class="site-work-detail-page-template-junctionscape-final-design-side">
+      <div class="site-work-detail-page-template-junctionscape-final-design-ref">
+        <img loading="lazy" src="{{ .refSrc }}" alt="{{ .refAlt }}">
+      </div>
+      <div class="site-work-detail-page-template-junctionscape-final-design-caption">
+        {{- range .captions }}
+          <p>{{ . }}</p>
+        {{- end }}
+      </div>
+    </div>
+    <div class="site-work-detail-page-template-junctionscape-final-design-section">
+      <img loading="lazy" src="{{ .sectionSrc }}" alt="{{ .sectionAlt }}">
+    </div>
+  </div>
+</div>
