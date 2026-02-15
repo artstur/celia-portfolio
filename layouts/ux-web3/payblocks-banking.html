@@ -1,0 +1,290 @@
+{{ define "main" }}
+
+{{ partial "accent-color-style.html" . }}
+
+<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="site-work-header-title">PayBlocks Banking</h3>
+        <p class="site-work-header-desc">HSBC Product Management and Web3 Externship</p>
+        <p class="site-work-header-role">Role: Product Management Extern, UX/ UI Designer</p>
+        <p class="site-work-header-disclaimer">Disclaimer: To comply with NDA, I have obfuscated confidential information
+          in this case study. All information in this case study is my own and does not necessarily reflect the views of
+          HSBC.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-work-detail">
+
+  <div class="site-work-detail-front"
+    style="background-image:url('https://cdn.celiasy.com/images/ux-web3/payblocks-banking/front%20page.jpg') ;">
+    <div class="site-work-detail-front-info">
+      <div class="site-work-detail-front-info-box">
+        <div class="site-work-detail-front-info-title">
+          <h3>PayBlocks Banking</h3>
+        </div>
+        <div class="site-work-detail-front-info-content">
+          <p>Playing an important role as one of the infrastructures of crypto banking solutions, and onboarding the
+            next 1 billion Web3 residents.</p>
+        </div>
+        <div class="site-work-detail-front-info-btn"><a href="#discovery" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="discovery" class="site-work-detail-page">
+    <div class="container">
+      <div class="site-work-detail-page-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>Discovery</h3>
+        <p>The shift to digital, primarily mobile and online banking, is the most pervasive trend now seen in the
+          financial services sector. Because of the digital change, especially the boom of Web3, there is now more
+          competition from tech firms and smaller banks are being consolidated.</p>
+        <p>To cope up with the customer needs, financial institutions are currently seeking for chances to quickly adopt
+          a variety of banking industry trends and Web3 solutions that will help them alter their current business model,
+          increase the effectiveness of the operations, and boost their competitiveness on the banking market.</p>
+      </div>
+
+      <div class="site-work-detail-page-more" data-aos="fade-in" data-aos-duration="1500">
+        <p>What impact does Web3 technology change have on online banking?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mind Map -->
+  <div class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
+    <div class="container">
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>Mind Map</h3>
+        <p>In order to articulate and familiarize myself with what's going on and the possibilities of what could happen
+          in the Web3, banking, and adjacent spaces, I created a mind map on current trends in fintech and Web3 and
+          current problems in the banking industry.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/Mind%20Map.jpg"
+          alt="Mind Map">
+      </div>
+    </div>
+  </div>
+
+  <!-- 01. Research -->
+  <div id="01-Research" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>01. Research</h3>
+        <p>Based on the mind map, I brainstormed several ideas, including C2C Crypto Payment Solutions, Tokenized Real
+          Estate, and Wallet Based Security Tool. After discussing with the HSBC team, I narrowed the scope and designed
+          an integrating C2C crypto payments for personal customers, which will play an important role as one of the
+          infrastructures of crypto banking solutions.</p>
+      </div>
+
+      {{ partial "work/media-text-block.html" (dict
+        "title" "I. Market"
+        "paragraphs" (slice
+          "In 2021, cryptocurrency accounted for <b>$6.10 billion</b> worth of transactions worldwide, up <b>177.3%</b> from <b>$2.20 billion</b> the year before. Come 2023, crypto transaction value will hit <b>$16.16 billion</b>."
+          "Nearly <b>13%</b> of US adults will own crypto this year, per our estimates. Most are in it for long-term investment, with only about <b>10%</b> of US owners using their crypto for transactions. That said, the base of crypto payment users will expand at high double-digit rates through 2023, even as growth in owners decelerates."
+        )
+        "imageSrc" "https://cdn.celiasy.com/images/ux-web3/payblocks-banking/market.jpg"
+        "imageAlt" "Market"
+      ) }}
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Problem &amp; Solutions</h4>
+      </div>
+
+      <div class="site-work-detail-page-template-two-text" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-two-text-col">
+          <h4>Problems:</h4>
+          <p>Paying with wallets no longer satisfies people's increasing needs for crypto payments. Paying and
+            transferring in crypto can be time consuming. If people use personal wallets to transfer cryptocurrency, they
+            need to transfer one by one in sequence, sometimes it will take long due to inefficient nonces and gas fees.
+            Besides, people are unable to request crypto from others, split bills, or make recurring/stream payments in
+            situations such as paying bills.</p>
+          <p class="mt-4">In conclusion, the core problems are:</p>
+          <ul>
+            <li><strong>Slow C2C crypto payments</strong></li>
+            <li><strong>Lack integrated functions of Transfer Between Accounts, Request and Split</strong></li>
+            <li><strong>No access to recurring payment</strong></li>
+          </ul>
+        </div>
+        <div class="site-work-detail-page-template-two-text-col">
+          <h4>Solutions:</h4>
+          <p>PayBlocks Banking aims to enable integrating C2C crypto payments for personal customers with various payment
+            requirements and scenarios.</p>
+          <p class="mt-4">The product solves the problem by giving three main functions:</p>
+          <ul>
+            <li><strong>Transfer between one person's different wallets</strong></li>
+            <li><strong>C2C payment:</strong>
+              <br>&nbsp;&nbsp;- Direct transfer
+              <br>&nbsp;&nbsp;- Request
+              <br>&nbsp;&nbsp;- Split
+            </li>
+            <li><strong>Pay bills (recurring payment)</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>III. User Story</h4>
+        <p>Noah is a multimedia artist, metaverse architect, and game designer based in Lucerne. As an active Web3
+          contributor, his income resources are plentiful. He gets crypto payments from selling NFT works, various DAOs,
+          Web3 companies, and startups.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/User%20Story.jpg"
+          alt="User Story">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 02. Wireframing -->
+  <div id="02-Wireframing" class="site-work-detail-page-template">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>02. Wireframing</h3>
+        <p>I created wireframes and facilitated workshops to gather feedback. I updated the wireframes and captured
+          decisions in real time discussing in company internal meetings, which was extremely well received by the
+          team.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/structure.jpg"
+          alt="Wireframe Structure">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 03. Prototyping -->
+  <div id="03-Prototyping" class="site-work-detail-page-template"
+    style="background-color:var(--accent-color); padding-bottom: 4%;">
+    <div class="container">
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>03. Prototyping</h3>
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>I. Onboarding</h4>
+        <p>Compared with traditional mobile bank onboarding process, PayBlocks adopts a simple way by using users'
+          crypto wallet addresses, yet gather necessary information including phone numbers and ID numbers to meet
+          compliance requirements.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/prototype1.png"
+          alt="Onboarding">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>II. Internal Transfer</h4>
+        <p>The Internal Transfer function is designed for users to transfer directly between their multiple wallets via
+          PayBlocks, which costs less gas fees and shorter transaction times.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/prototype2.png"
+          alt="Internal Transfer">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>III. Payment</h4>
+        <p>After researching users' needs, I added the Create Recipient function to the payment process. Users can
+          easily pay their recipients without having to re-enter wallet addresses, which improves the payment efficiency
+          and security.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/prototype3.png"
+          alt="Payment">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>IV. Request &amp; Split</h4>
+        <p>In addition to making payments, users can also request crypto from others or split bills. Two situations were
+          considered: one is for online request or split, the other is for face-to-face QR code payment.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/prototype4.png"
+          alt="Request and Split">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>V. Bills</h4>
+        <p>The Bills function is for users to make recurring payments in the case of periodic payments. I also designed
+          bill categories for them to plan and manage bills.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/prototype5.png"
+          alt="Bills">
+      </div>
+
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h4>VI. Accounting</h4>
+        <p>PayBlocks provides the Accounting function to personal users. Drawn on advantages of traditional mobile
+          banks, this function fits user habits for most new Web3 users and provides a powerful data visualization
+          tool.</p>
+      </div>
+
+      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
+        <img loading="lazy"
+          src="https://cdn.celiasy.com/images/ux-web3/payblocks-banking/prototype6.png"
+          alt="Accounting">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 04. Impact & Reflections -->
+  <div id="04-Impact-Reflections" class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
+        <h3>04. Impact &amp; Reflections</h3>
+      </div>
+
+      <div class="site-work-detail-page-template-two-text" data-aos="fade-in" data-aos-duration="1500">
+        <div class="site-work-detail-page-template-two-text-col">
+          <h4>I. Impact</h4>
+          <p>Efficient crypto payment solutions are fundamental to banks' participation in the Web3 world. PayBlocks
+            Banking aims to enable integrating C2C crypto payments for personal customers. In this way, it will play an
+            important role as one of the infrastructures of crypto banking solutions.</p>
+          <p class="mt-4">For customers, the product enables them to make various types of C2C payment efficiently. For
+            HSBC, the product provides an important infrastructure for any payment related banking solutions, at the same
+            time, attracts a lot of potential customers adopting crypto. For Web3, the product provides a chance to
+            onboard the next 1 billion Web3 residents.</p>
+        </div>
+        <div class="site-work-detail-page-template-two-text-col">
+          <h4>II. Reflections</h4>
+          <p>In this project I used my experience in crypto payments to help HSBC design the Web3 bank of the future. At
+            the same time, I thought carefully about the differences between the use cases of banking and the services
+            provided by a fintech company. I also examined the differences between B2B payments and C2C payments.</p>
+          <p class="mt-4">In cooperation with HSBC, I had an impressive journey of conducting banking solutions using
+            Web3 technologies. I learned more about strategic problem solving, product management, and critical thinking
+            skills in the process of improving customer experience, and identifying and enabling HSBC's growth
+            priorities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{ end }}

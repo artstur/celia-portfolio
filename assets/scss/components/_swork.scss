@@ -296,8 +296,8 @@
         }
 
         &-text {
-          padding-left: 2%;
-          padding-right: 2%;
+          padding-left: 1%;
+          padding-right: 1%;
           max-width: 50%;
 
           @include mobile {
@@ -316,6 +316,13 @@
           p {
             font-family: $myriad-font;
             color: black;
+            font-size: 18px;
+            line-height: 1.8em;
+            margin-bottom: 12px;
+
+            @include mobile {
+              font-size: 14px;
+            }
           }
 
           li {
@@ -355,6 +362,23 @@
 
             @include mobile {
               font-size: 14px;
+            }
+          }
+
+          ul {
+            font-family: $myriad-font;
+            color: black;
+            padding-left: 20px;
+            margin-top: 8px;
+
+            li {
+              font-size: 18px;
+              line-height: 1.5em;
+              margin-bottom: 6px;
+
+              @include mobile {
+                font-size: 14px;
+              }
             }
           }
         }
