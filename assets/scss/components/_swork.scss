@@ -354,6 +354,76 @@
         }
       }
 
+      // JunctionScape - 02. Prototyping
+      // 专用双栏：左栏较窄且图片更小，右栏较宽，整体底部对齐
+      &-prototyping-split {
+        display: flex;
+        align-items: stretch;
+        gap: 4%;
+        padding: 2% 1%;
+
+        @include mobile {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+        }
+
+        &-col {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          h4 {
+            font-family: $myriad-font;
+            color: black;
+            margin-bottom: 16px;
+          }
+
+          p,
+          ul,
+          li {
+            font-family: $myriad-font;
+            color: black;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 1.5em;
+
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &-col--left {
+          flex: 0.9;
+        }
+
+        &-col--right {
+          flex: 1.35;
+        }
+
+        &-media {
+          margin-top: 0.5rem;
+          padding: 0;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &-media--left {
+          margin-top: auto;
+          padding-top: 1.25rem;
+
+          img {
+            width: 82%;
+          }
+        }
+      }
+
       &-two-chart {
 
         display: flex;
