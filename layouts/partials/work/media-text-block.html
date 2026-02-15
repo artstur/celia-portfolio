@@ -1,0 +1,35 @@
+<div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
+  {{- if .reverse }}
+    <div class="site-work-detail-page-template-chart-with-content-img">
+      <img loading="lazy" src="{{ .imageSrc }}" alt="{{ .imageAlt }}">
+    </div>
+  {{- end }}
+
+  <div class="site-work-detail-page-template-chart-with-content-text">
+    {{- with .title }}
+      <h4>{{ . }}</h4>
+    {{- end }}
+    {{- with .introHtml }}
+      {{ . | safeHTML }}
+    {{- end }}
+    {{- range $index, $paragraph := .paragraphs }}
+      <p>{{ $paragraph | safeHTML }}</p>
+      {{- if and $.insertBreakBetweenParagraphs (lt (add $index 1) (len $.paragraphs)) }}
+        <br>
+      {{- end }}
+    {{- end }}
+    {{- with .listItems }}
+      <ul>
+        {{- range . }}
+          <li>{{ . | safeHTML }}</li>
+        {{- end }}
+      </ul>
+    {{- end }}
+  </div>
+
+  {{- if not .reverse }}
+    <div class="site-work-detail-page-template-chart-with-content-img">
+      <img loading="lazy" src="{{ .imageSrc }}" alt="{{ .imageAlt }}">
+    </div>
+  {{- end }}
+</div>

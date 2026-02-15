@@ -65,31 +65,28 @@
         <h3>01. Research</h3>
       </div>
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <h4>I. Water·Scape</h4>
-          <p>During the field trip, I found the river water slaps the bank as if it has an intention to go out of the river channel.</p>
-          <br>
-          <p>To study this phenomenon more, I mapped the nodes where the water is the most turbulent on both the plan and continuous sections.</p>
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/waterscape.jpg"
-            alt="Water·Scape">
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "title" "I. Water·Scape"
+        "paragraphs" (slice
+          "During the field trip, I found the river water slaps the bank as if it has an intention to go out of the river channel."
+          "To study this phenomenon more, I mapped the nodes where the water is the most turbulent on both the plan and continuous sections."
+        )
+        "imageSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/waterscape.jpg"
+        "imageAlt" "Water·Scape"
+        "insertBreakBetweenParagraphs" true
+      ) }}
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/urbanscape.jpg"
-            alt="Urban·Scape">
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <h4>II. Urban·Scape</h4>
-          <p>In the site study, the urban axes at the south interested me a lot.</p>
-          <br>
-          <p>This study led me to a planting strategy that brings urban axes into the site connected to framed wooded areas. Then I connected these trees planted areas to different waterscapes: pools, water squares or river edges.</p>
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "title" "II. Urban·Scape"
+        "paragraphs" (slice
+          "In the site study, the urban axes at the south interested me a lot."
+          "This study led me to a planting strategy that brings urban axes into the site connected to framed wooded areas. Then I connected these trees planted areas to different waterscapes: pools, water squares or river edges."
+        )
+        "imageSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/urbanscape.jpg"
+        "imageAlt" "Urban·Scape"
+        "insertBreakBetweenParagraphs" true
+        "reverse" true
+      ) }}
 
     </div>
   </div>
@@ -180,7 +177,7 @@
           </div>
           <div class="auto-carousel-overlay">
             <span class="auto-carousel-title">Master Plan</span>
-            <span class="auto-carousel-counter">1/3</span>
+            <span class="auto-carousel-counter">1/4</span>
           </div>
         </div>
       </div>
@@ -195,75 +192,42 @@
         <h3>05. Final Designs</h3>
       </div>
 
-      <div class="site-work-detail-page-template-junctionscape-final-design" data-aos="fade-in" data-aos-duration="1500">
-        <h4>I. Reflection Pool</h4>
-        <div class="site-work-detail-page-template-junctionscape-final-design-layout">
-          <div class="site-work-detail-page-template-junctionscape-final-design-plan">
-            <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/planA.jpg"
-              alt="Reflection Pool Plan">
-          </div>
-          <div class="site-work-detail-page-template-junctionscape-final-design-side">
-            <div class="site-work-detail-page-template-junctionscape-final-design-ref">
-              <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/refA.jpg"
-                alt="Reflection Pool Reference">
-            </div>
-            <div class="site-work-detail-page-template-junctionscape-final-design-caption">
-              <p>The reflection pool enables people to have the best view of the Charles river and the Auburn mountains.</p>
-            </div>
-          </div>
-          <div class="site-work-detail-page-template-junctionscape-final-design-section">
-            <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/sectionA.jpg"
-              alt="Reflection Pool Section">
-          </div>
-        </div>
-      </div>
+      {{ partial "work/final-design-card.html" (dict
+        "title" "I. Reflection Pool"
+        "planSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/planA.jpg"
+        "planAlt" "Reflection Pool Plan"
+        "refSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/refA.jpg"
+        "refAlt" "Reflection Pool Reference"
+        "sectionSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/sectionA.jpg"
+        "sectionAlt" "Reflection Pool Section"
+        "captions" (slice "The reflection pool enables people to have the best view of the Charles river and the Auburn mountains.")
+      ) }}
 
-      <div class="site-work-detail-page-template-junctionscape-final-design site-work-detail-page-template-junctionscape-final-design--reversed" data-aos="fade-in" data-aos-duration="1500">
-        <h4>II. Swimming Pool</h4>
-        <div class="site-work-detail-page-template-junctionscape-final-design-layout">
-          <div class="site-work-detail-page-template-junctionscape-final-design-plan">
-            <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/planB.jpg"
-              alt="Swimming Pool Plan">
-          </div>
-          <div class="site-work-detail-page-template-junctionscape-final-design-side">
-            <div class="site-work-detail-page-template-junctionscape-final-design-ref">
-              <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/refB.jpg"
-                alt="Swimming Pool Reference">
-            </div>
-            <div class="site-work-detail-page-template-junctionscape-final-design-caption">
-              <p>The swimming pool connected with the Harvard stadiums, providing both the inner pool and outer pool. It is also the end point of the main urban axis.</p>
-            </div>
-          </div>
-          <div class="site-work-detail-page-template-junctionscape-final-design-section">
-            <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/sectionB.jpg"
-              alt="Swimming Pool Section">
-          </div>
-        </div>
-      </div>
+      {{ partial "work/final-design-card.html" (dict
+        "title" "II. Swimming Pool"
+        "planSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/planB.jpg"
+        "planAlt" "Swimming Pool Plan"
+        "refSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/refB.jpg"
+        "refAlt" "Swimming Pool Reference"
+        "sectionSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/sectionB.jpg"
+        "sectionAlt" "Swimming Pool Section"
+        "captions" (slice "The swimming pool connected with the Harvard stadiums, providing both the inner pool and outer pool. It is also the end point of the main urban axis.")
+        "reversed" true
+      ) }}
 
-      <div class="site-work-detail-page-template-junctionscape-final-design" data-aos="fade-in" data-aos-duration="1500">
-        <h4>III. Watersquare</h4>
-        <div class="site-work-detail-page-template-junctionscape-final-design-layout">
-          <div class="site-work-detail-page-template-junctionscape-final-design-plan">
-            <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/planC.jpg"
-              alt="Watersquare Plan">
-          </div>
-          <div class="site-work-detail-page-template-junctionscape-final-design-side">
-            <div class="site-work-detail-page-template-junctionscape-final-design-ref">
-              <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/refC.jpg"
-                alt="Watersquare Reference">
-            </div>
-            <div class="site-work-detail-page-template-junctionscape-final-design-caption">
-              <p>The water square allows people to feel the waves and sit there, looking back to the whole park.</p>
-              <p>Platforms provide spaces for citizens to watch the sailing competition.</p>
-            </div>
-          </div>
-          <div class="site-work-detail-page-template-junctionscape-final-design-section">
-            <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/junctionscape/sectionC.jpg"
-              alt="Watersquare Section">
-          </div>
-        </div>
-      </div>
+      {{ partial "work/final-design-card.html" (dict
+        "title" "III. Watersquare"
+        "planSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/planC.jpg"
+        "planAlt" "Watersquare Plan"
+        "refSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/refC.jpg"
+        "refAlt" "Watersquare Reference"
+        "sectionSrc" "https://cdn.celiasy.com/images/spatial-design/junctionscape/sectionC.jpg"
+        "sectionAlt" "Watersquare Section"
+        "captions" (slice
+          "The water square allows people to feel the waves and sit there, looking back to the whole park."
+          "Platforms provide spaces for citizens to watch the sailing competition."
+        )
+      ) }}
 
     </div>
   </div>
