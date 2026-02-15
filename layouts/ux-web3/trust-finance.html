@@ -642,14 +642,12 @@
         </div>
       </div>
 
-      <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
-        <h4>In Collaboration With</h4>
-        <p>Quadri Oguntade (Market and Product); Chilo Nwokolo (Frontend and Smart Contract);
-          Prateek Pradhan (Frontend); Phidel Musungu (Backend and Smart Contract)</p>
-      </div>
-
     </div>
   </div>
+
+  {{ partial "work/collaboration-meta.html" (dict
+    "collaborators" "Quadri Oguntade (Market and Product); Chilo Nwokolo (Frontend and Smart Contract); Prateek Pradhan (Frontend); Phidel Musungu (Backend and Smart Contract)"
+  ) }}
 
 </section>
 

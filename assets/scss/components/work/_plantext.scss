@@ -28,6 +28,22 @@
 
         }
 
+        &--meta {
+            max-width: 50%;
+            margin-top: 0;
+
+            @include mobile {
+                max-width: 100%;
+            }
+
+            p {
+                color: gray;
+            }
+
+            a {
+                color: $text-color;
+            }
+        }
 
     }
 

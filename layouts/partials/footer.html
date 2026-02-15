@@ -83,6 +83,28 @@
     simulateTouch: true,
   });
 
+  // 内联轮播（左右布局中使用，每次显示1张，自动播放）
+  document.querySelectorAll('.inline-carousel-swiper').forEach(function(el) {
+    new Swiper(el, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoplay: {
+        delay: 1200,
+        disableOnInteraction: false,
+      },
+      speed: 300,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      navigation: {
+        nextEl: el.querySelector('.swiper-button-next'),
+        prevEl: el.querySelector('.swiper-button-prev'),
+      },
+      touchEventsTarget: 'container',
+      simulateTouch: true,
+    });
+  });
+
   // 图片轮播（画廊：4.5张，不循环）
   var imageSwiperGalleryEl = document.querySelector('.image-swiper-gallery');
   if (imageSwiperGalleryEl) {

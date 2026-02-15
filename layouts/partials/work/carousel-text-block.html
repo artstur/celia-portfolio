@@ -1,0 +1,71 @@
+{{/*
+  carousel-text-block.html
+  ========================
+  左文右轮播 / 左轮播右文 组件。
+
+  参数：
+    - title        (string, 可选)   标题
+    - paragraphs   (slice, 可选)    段落列表，支持 HTML
+    - listItems    (slice, 可选)    列表项
+    - images       (slice, 必填)    图片列表，每项为 dict("src" "..." "alt" "...")
+    - reverse      (bool, 可选)     true = 左图右文（默认 false = 左文右图）
+    - insertBreakBetweenParagraphs (bool, 可选)
+*/}}
+
+{{- $classes := "site-work-detail-page-template-chart-with-content" -}}
+{{- if .reverse -}}
+  {{- $classes = printf "%s %s" $classes "site-work-detail-page-template-chart-with-content--reversed" -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  {{- if .reverse }}
+    <div class="site-work-detail-page-template-chart-with-content-img">
+      <div class="swiper inline-carousel-swiper">
+        <div class="swiper-wrapper">
+          {{- range .images }}
+            <div class="swiper-slide">
+              <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy">
+            </div>
+          {{- end }}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  {{- end }}
+
+  <div class="site-work-detail-page-template-chart-with-content-text">
+    {{- with .title }}
+      <h4>{{ . }}</h4>
+    {{- end }}
+    {{- range $index, $paragraph := .paragraphs }}
+      <p>{{ $paragraph | safeHTML }}</p>
+      {{- if and $.insertBreakBetweenParagraphs (lt (add $index 1) (len $.paragraphs)) }}
+        <br>
+      {{- end }}
+    {{- end }}
+    {{- with .listItems }}
+      <ul>
+        {{- range . }}
+          <li>{{ . | safeHTML }}</li>
+        {{- end }}
+      </ul>
+    {{- end }}
+  </div>
+
+  {{- if not .reverse }}
+    <div class="site-work-detail-page-template-chart-with-content-img">
+      <div class="swiper inline-carousel-swiper">
+        <div class="swiper-wrapper">
+          {{- range .images }}
+            <div class="swiper-slide">
+              <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy">
+            </div>
+          {{- end }}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  {{- end }}
+</div>
