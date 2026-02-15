@@ -112,17 +112,10 @@
     </div>
   </div>
 
-  <!-- Collaboration and Medium Info -->
-  <div class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
-    <div class="container">
-      <div class="site-work-template-plain-text">
-        <p style="color: gray;"><b>In Collaboration With</b></p>
-        <p>Jiaying Qin, Tara Sun, Barbara Miglietti, Lafina Eptaminitaki</p>
-        <p style="color: gray;"><b>Medium</b></p>
-        <p style="color: gray;">Fabric, Light, Fake Blood, Fishing Weight</p>
-      </div>
-    </div>
-  </div>
+  {{ partial "work/collaboration-meta.html" (dict
+    "collaborators" "Jiaying Qin, Tara Sun, Barbara Miglietti, Lafina Eptaminitaki"
+    "medium" "Fabric, Light, Fake Blood, Fishing Weight"
+  ) }}
 
 </section>
 

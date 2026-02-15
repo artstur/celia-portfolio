@@ -162,15 +162,13 @@
         </div>
       </div>
 
-      <div class="site-work-template-plain-text">
-        <p style="color: gray;"><b>In Collaboration With</b></p>
-        <p><a href="https://yiouwang.org/" target="_blank">Yiou Wang</a></p>
-        <p style="color: gray;"><b>Medium</b></p>
-        <p style="color: gray;">VR, Sound, Particle System</p>
-      </div>
-
     </div>
   </div>
+
+  {{ partial "work/collaboration-meta.html" (dict
+    "collaborators" "<a href=\"https://yiouwang.org/\" target=\"_blank\">Yiou Wang</a>"
+    "medium" "VR, Sound, Particle System"
+  ) }}
 
 </section>
 

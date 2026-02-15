@@ -161,13 +161,11 @@
 
     &-page-template {
       height: auto;
-      padding-left: 3%;
-      padding-right: 3%;
+      padding: 3%;
       background-color: white;
 
       @include mobile {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 3% 5%;
       }
 
       &--spaced {
@@ -177,7 +175,6 @@
       &-header {
 
         padding: 10px;
-        margin-top: 5%;
 
         // 紧凑模式：用于图文间夹文字等场景
         &--compact {
@@ -191,13 +188,7 @@
           text-align: center;
           color: black;
           font-size: 30px;
-          margin-top: 50px;
           padding-bottom: 30px;
-
-          @include mobile {
-            margin-top: 70px;
-            // font-size: 22px;
-          }
         }
 
         h4 {
@@ -219,11 +210,29 @@
         p {
           font-family: $myriad-font;
           font-size: 18px;
+          line-height: 1.6em;
+          margin-bottom: 10px;
           text-align: left;
           color: black;
 
           @include mobile {
             font-size: 14px;
+          }
+        }
+
+        ul {
+          font-family: $myriad-font;
+          color: black;
+          padding-left: 20px;
+          margin-top: 8px;
+
+          li {
+            font-size: 18px;
+            line-height: 1.6em;
+
+            @include mobile {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -233,6 +242,8 @@
 
         p {
           font-family: $myriad-font;
+          font-size: 18px;
+          line-height: 1.6em;
           color: black;
         }
 
@@ -251,6 +262,8 @@
         p {
           font-family: $myriad-font;
           font-size: 18px;
+          line-height: 1.6em;
+          margin-bottom: 10px;
           text-align: left;
           color: black;
 
@@ -263,7 +276,8 @@
       &-chart-with-content {
 
         display: flex;
-        align-items: flex-start;
+        align-items: center;
+        gap: 4%;
         padding-top: 3%;
         padding-bottom: 3%;
 
@@ -279,8 +293,8 @@
         }
 
         &-img {
-
-          width: 200%;
+          flex: 1;
+          min-width: 0;
 
           /* 移动端样式 */
           @include mobile {
@@ -288,48 +302,61 @@
           }
 
           img {
-            width: 98%;
-            // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),              /* 下方阴影 */
-            //   0 -4px 8px rgba(0, 0, 0, 0.1); /* 上方阴影 */
+            width: 100%;
             height: auto;
+          }
+
+          .inline-carousel-swiper {
+            img {
+              max-height: 640px;
+              width: auto;
+              margin: 0 auto;
+              display: block;
+              object-fit: contain;
+            }
           }
         }
 
         &-text {
-          padding-left: 1%;
-          padding-right: 1%;
-          max-width: 50%;
+          flex: 1;
+          min-width: 0;
+          box-sizing: border-box;
+          font-family: $myriad-font;
+          color: black;
 
           @include mobile {
-            max-width: 100%;
+            width: 100%;
           }
 
           h4 {
             margin-bottom: 16px;
-          }
-
-          ul {
             font-family: $myriad-font;
             color: black;
           }
 
           p {
-            font-family: $myriad-font;
-            color: black;
             font-size: 18px;
-            line-height: 1.8em;
-            margin-bottom: 12px;
+            line-height: 1.6em;
+            margin-bottom: 10px;
 
             @include mobile {
               font-size: 14px;
             }
           }
 
+          ul {
+            padding-left: 20px;
+            margin-top: 8px;
+          }
+
           li {
-            font-family: $myriad-font;
-            color: black;
-            line-height: 1.5em;
-            padding-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.6em;
+            padding-bottom: 8px;
+
+            @include mobile {
+              font-size: 14px;
+            }
           }
         }
 
@@ -358,7 +385,8 @@
             font-family: $myriad-font;
             color: black;
             font-size: 18px;
-            line-height: 1.5em;
+            line-height: 1.6em;
+            margin-bottom: 10px;
 
             @include mobile {
               font-size: 14px;
@@ -418,7 +446,8 @@
 
           p {
             font-size: 18px;
-            line-height: 1.5em;
+            line-height: 1.6em;
+            margin-bottom: 10px;
 
             @include mobile {
               font-size: 14px;
@@ -557,12 +586,11 @@
             font-family: $myriad-font;
             color: black;
             font-size: 18px;
-            line-height: 1.5em;
-            margin-bottom: 0.5rem;
+            line-height: 1.6em;
+            margin-bottom: 10px;
 
             @include mobile {
               font-size: 14px;
-              margin-bottom: 0.5rem;
             }
           }
 
@@ -645,8 +673,8 @@
             font-family: $myriad-font;
             font-size: 18px;
             color: black;
-            line-height: 1.5em;
-            margin-bottom: 0.9rem;
+            line-height: 1.6em;
+            margin-bottom: 10px;
 
             @include mobile {
               font-size: 14px;
