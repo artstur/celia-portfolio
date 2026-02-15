@@ -1,9 +1,9 @@
 // Sandscape: 文字 + 图片（上静态下轮播）左右并排布局
 .sandscape-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 4%;
-  padding: 2% 0;
+  padding: 3% 0;
 
   @include mobile {
     flex-direction: column;
