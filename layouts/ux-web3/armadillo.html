@@ -72,25 +72,17 @@
         </p>
       </div>
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/desk-research-presentation.jpg"
-            alt="problem space">
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <p><b>Takeaways:</b></p>
-          <ul>
-            <li>The typical target user is 24-45 year old investors who are more likely to trust technology + advisors,
-              which accounts for about 25% of US stock market trading volume.</li>
-            <li>I suggest to highlight our high tech strengths like AI, data mining, investment module, graph, HCI,
-              blockchain and data process, which plays an important role in attracting them and let them trust in our
-              platform.</li>
-            <li>According to the research, services we provide could include personal investment strategy, reliable
-              platform with certificated analysts, information processing, and solid research and stock market news.</li>
-          </ul>
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "imageSrc" "https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/desk-research-presentation.jpg"
+        "imageAlt" "problem space"
+        "introHtml" "<p><b>Takeaways:</b></p>"
+        "listItems" (slice
+          "The typical target user is 24-45 year old investors who are more likely to trust technology + advisors, which accounts for about 25% of US stock market trading volume."
+          "I suggest to highlight our high tech strengths like AI, data mining, investment module, graph, HCI, blockchain and data process, which plays an important role in attracting them and let them trust in our platform."
+          "According to the research, services we provide could include personal investment strategy, reliable platform with certificated analysts, information processing, and solid research and stock market news."
+        )
+        "reverse" true
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>II. Competitive & Industry Landscape</h4>
@@ -197,31 +189,23 @@
         <h3>03. Ideation</h3>
       </div>
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <h4>I. Storyboard</h4>
-          <p>I considered different use cases of our platform. Thinking through the users' needs and pain points, I
-            developed a storyboard to show what the possible improved user journey could be, and how users interact with
-            various touchpoints in a user-friendly way.</p>
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/storyboard-01.jpg"
-            alt="storyboard-01">
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "title" "I. Storyboard"
+        "paragraphs" (slice "I considered different use cases of our platform. Thinking through the users' needs and pain points, I developed a storyboard to show what the possible improved user journey could be, and how users interact with various touchpoints in a user-friendly way.")
+        "imageSrc" "https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/storyboard-01.jpg"
+        "imageAlt" "storyboard-01"
+      ) }}
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/prioritization.jpg"
-            alt="prioritization">
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <h4>II. Prioritization</h4>
-          <p>I then discussed with stakeholders and narrowed down the design scope. We agreed to focus first on designs
-            that allow users to subscribe models and use the projection function of the platform.</p>
-          <p>I listed improvements that the new design made, to make sure everyone is on the same page.</p>
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "title" "II. Prioritization"
+        "paragraphs" (slice
+          "I then discussed with stakeholders and narrowed down the design scope. We agreed to focus first on designs that allow users to subscribe models and use the projection function of the platform."
+          "I listed improvements that the new design made, to make sure everyone is on the same page."
+        )
+        "imageSrc" "https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/prioritization.jpg"
+        "imageAlt" "prioritization"
+        "reverse" true
+      ) }}
 
     </div>
   </div>
@@ -307,16 +291,12 @@
         <h4>III. Product Handoff</h4>
       </div>
 
-      <div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-chart-with-content-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/armadillo/handoff/handoff.gif" alt="handoff">
-        </div>
-        <div class="site-work-detail-page-template-chart-with-content-text">
-          <p>After user testing and iterating, I improved the design and features based on users' feedback received.
-            Three UI design groups also aligned design details at this stage. Then I submitted the final design handoff
-            to stakeholders.</p>
-        </div>
-      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "paragraphs" (slice "After user testing and iterating, I improved the design and features based on users' feedback received. Three UI design groups also aligned design details at this stage. Then I submitted the final design handoff to stakeholders.")
+        "imageSrc" "https://cdn.celiasy.com/images/ux-web3/armadillo/handoff/handoff.gif"
+        "imageAlt" "handoff"
+        "reverse" true
+      ) }}
 
     </div>
   </div>
