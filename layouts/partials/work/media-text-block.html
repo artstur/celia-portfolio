@@ -1,13 +1,9 @@
-<<<<<<< Updated upstream
-<div class="site-work-detail-page-template-chart-with-content" data-aos="fade-in" data-aos-duration="1500">
-=======
 {{- $classes := "site-work-detail-page-template-chart-with-content" -}}
 {{- if .reverse -}}
   {{- $classes = printf "%s %s" $classes "site-work-detail-page-template-chart-with-content--reversed" -}}
 {{- end -}}
 
 <div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
->>>>>>> Stashed changes
   {{- if .reverse }}
     <div class="site-work-detail-page-template-chart-with-content-img">
       <img loading="lazy" src="{{ .imageSrc }}" alt="{{ .imageAlt }}">
