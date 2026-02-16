@@ -18,31 +18,14 @@
 
 <section class="site-work-detail">
 
-  <div class="site-work-detail-front"
-    style="background-image:url('https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/title-page2.jpg') ;">
-    <div class="site-work-detail-front-info">
-      <div class="site-work-detail-front-info-box">
-        <row>
-          <div class="site-work-detail-front-info-title" data-aos="fade-in" data-aos-duration="1500">
-            <h3 style="color: #9DA9B9;">Trust Finance</h3>
-          </div>
-        </row>
-        <row>
-          <div class="site-work-detail-front-info-content" data-aos="fade-in" data-aos-duration="1500">
-            <p style="color: #9DA9B9;">Enabling Simple and Real Time Payments, HR Benefits, and Accounting for Crypto
-              Businesses and Personal Users.</p>
-          </div>
-        </row>
-        <row>
-          <div class="site-work-detail-front-info-btn" data-aos="fade-in" data-aos-duration="1500">
-            <div class="trust-finance-blue">
-              <a href="#problem-space" class="btn btn-primary" style="color: #9DA9B9;">Learn More</a>
-            </div>
-          </div>
-        </row>
-      </div>
-    </div>
-  </div>
+  {{ partial "work/detail-front.html" (dict
+    "backgroundImage" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/title-page2.jpg"
+    "title" "Trust Finance"
+    "description" "Enabling Simple and Real Time Payments, HR Benefits, and Accounting for Crypto Businesses and Personal Users."
+    "buttonHref" "#problem-space"
+    "textColor" "#9DA9B9"
+    "buttonWrapperClass" "trust-finance-blue"
+  ) }}
 
   <div id="problem-space" class="site-work-detail-page" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">

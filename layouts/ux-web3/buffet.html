@@ -17,31 +17,13 @@
 
 <section class="site-work-detail">
 
-  <div class="site-work-detail-front"
-    style="background-image:url('https://cdn.celiasy.com/images/ux-web3/buffet/front%20page.jpg') ;">
-    <div class="site-work-detail-front-info">
-      <div class="site-work-detail-front-info-box">
-        <row>
-          <div class="site-work-detail-front-info-title" data-aos="fade-in" data-aos-duration="1500">
-            <h3 style="color: #7B8C72;">Eat to Earn</h3>
-          </div>
-        </row>
-        <row>
-          <div class="site-work-detail-front-info-content" data-aos="fade-in" data-aos-duration="1500">
-            <p style="color: #7B8C72;">Buffet is an NFT-based social-fi and game-fi app that incentives you to eat
-              healthy by rewarding you in NFT and crypto.</p>
-          </div>
-        </row>
-        <row>
-          <div class="site-work-detail-front-info-btn" data-aos="fade-in" data-aos-duration="1500">
-            <div>
-              <a href="#problem-space" class="btn btn-primary" style="color: #7B8C72;">Learn More</a>
-            </div>
-          </div>
-        </row>
-      </div>
-    </div>
-  </div>
+  {{ partial "work/detail-front.html" (dict
+    "backgroundImage" "https://cdn.celiasy.com/images/ux-web3/buffet/front%20page.jpg"
+    "title" "Eat to Earn"
+    "description" "Buffet is an NFT-based social-fi and game-fi app that incentives you to eat healthy by rewarding you in NFT and crypto."
+    "buttonHref" "#problem-space"
+    "textColor" "#7B8C72"
+  ) }}
 
   <!-- Problem Space -->
   <div id="problem-space" class="site-work-detail-page" data-aos="fade-in" data-aos-duration="1500">
