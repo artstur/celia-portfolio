@@ -257,6 +257,33 @@
         }
       }
 
+      // 统一留白：轮播后主要由轮播底部提供间距，标题仅保留轻微上间距
+      .auto-carousel {
+        margin-bottom: 1.5rem;
+
+        @include mobile {
+          margin-bottom: 1rem;
+        }
+      }
+
+      // 图表后接标题时保持一致间距
+      &-chart + &-header {
+        margin-top: 2rem;
+
+        @include mobile {
+          margin-top: 1.25rem;
+        }
+      }
+
+      // 轮播后接标题时，标题只做轻微上间距
+      .auto-carousel + &-header {
+        margin-top: 0.5rem;
+
+        @include mobile {
+          margin-top: 0.35rem;
+        }
+      }
+
       &-caption {
         padding: 10px;
 
