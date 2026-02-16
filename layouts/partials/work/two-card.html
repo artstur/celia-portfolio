@@ -13,19 +13,28 @@
         - text     (string, 可选)
         - listItems (slice, 可选，支持 HTML)
     - class (string, 可选) 容器附加 class
+    - cardBgColor (string, 可选) 卡片背景色
+    - textColor   (string, 可选) 卡片文字色
 */}}
 
 {{- $classes := "site-work-template-two-card" -}}
 {{- with .class -}}
   {{- $classes = printf "%s %s" $classes . -}}
 {{- end -}}
+{{- $style := "" -}}
+{{- with .cardBgColor -}}
+  {{- $style = printf "%s--two-card-bg:%s;" $style . -}}
+{{- end -}}
+{{- with .textColor -}}
+  {{- $style = printf "%s--two-card-text:%s;" $style . -}}
+{{- end -}}
 
-<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500" {{ if $style }}{{ printf "style=%q" $style | safeHTMLAttr }}{{ end }}>
   {{- range .cards }}
     {{- $card := . -}}
     <div class="site-work-template-two-card-card">
       {{- with .imageSrc }}
-        <img loading="lazy" src="{{ . }}" alt="{{ default "" $card.imageAlt }}" {{ with $card.imageStyle }}style="{{ . }}"{{ end }}>
+        <img loading="lazy" src="{{ . }}" alt="{{ default "" $card.imageAlt }}" {{ with $card.imageStyle }}{{ printf "style=%q" . | safeHTMLAttr }}{{ end }}>
       {{- end }}
       {{- with .title }}
         <h4>{{ . }}</h4>

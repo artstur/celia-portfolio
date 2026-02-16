@@ -1,0 +1,37 @@
+---
+description: Hugo partial 中动态 style 的安全输出与组件复用规范
+globs: "layouts/**/*.html"
+alwaysApply: false
+---
+
+# Hugo Partial Safe Style
+
+在 Hugo 模板（尤其 partial）里，凡是动态拼接 HTML 属性，必须使用安全属性输出，避免被过滤成 `ZgotmplZ`。
+
+## 动态 style 属性
+
+```go-html-template
+{{/* ✅ 正确 */}}
+<div {{ printf "style=%q" $style | safeHTMLAttr }}></div>
+```
+
+```go-html-template
+{{/* ❌ 错误：会触发 Hugo 安全过滤，可能变成 ZgotmplZ */}}
+<div style="{{ $style }}"></div>
+```
+
+## 动态图片内联样式
+
+```go-html-template
+{{ with .imageStyle }}{{ printf "style=%q" . | safeHTMLAttr }}{{ end }}
+```
+
+## 组件复用约束
+
+- 已抽成 partial 的结构，不要在页面里回退为硬编码重复块。
+- 页面个性化（如卡片底色、文字色）优先通过 partial 参数传递，不新增页面专用样式分支。
+
+## 修改后自检
+
+- 本地构建后，确认生成 HTML 中不存在 `style="ZgotmplZ"`。
+- 颜色类参数应在最终 HTML 中输出为真实 CSS 变量（如 `--two-card-bg`）。
