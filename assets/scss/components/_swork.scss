@@ -3,16 +3,17 @@
   &-header {
     padding: 150px 0 0;
 
-    @include mobile {
-      display: none;
-    }
+    // @include mobile {
+    // 根据要求这里不隐藏
+    //   display: none;
+    // }
 
-    &--visible-mobile {
-      @include mobile {
-        display: block;
-        padding: 80px 0 0;
-      }
-    }
+    // &--visible-mobile {
+    //   @include mobile {
+    //     display: block;
+    //     padding: 80px 0 0;
+    //   }
+    // }
 
     margin-bottom: 20px;
 
@@ -793,7 +794,8 @@
 
           @include mobile {
             width: 90%;
-            max-height: 70%;
+            margin-top: 25%;
+            max-height: 50%;
           }
 
         }

@@ -53,32 +53,29 @@
         </p>
       </div>
 
-      <div class="site-work-template-two-card" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-template-two-card-card">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/employee.png"
-            alt="employee">
-          <h4>Businesses</h4>
-          <ul>
-            <li><strong>Paying salaries in crypto can be time consuming.</strong> DAO and crypto startups founders have
-              to make individual payments to team members from their own wallet in a process that can take hours.</li>
-            <br>
-            <li><strong>There's no cohesive audit trail</strong> if you're a crypto company. Crypto transactions can
-              span a dozen different wallets or products.</li>
-          </ul>
-        </div>
-        <div class="site-work-template-two-card-card">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/business.png"
-            alt="business" style="width: 16%">
-          <h4>Employees</h4>
-          <ul>
-            <li><strong>Moving income to investment accounts takes between 4 - 7 days</strong> for funds to be available
-              for investment.</li>
-            <br>
-            <li><strong>It is impossible for employees to manage and configure their investment asset</strong> (savings,
-              investment or retirement accounts - 401k or IRA) in real time.</li>
-          </ul>
-        </div>
-      </div>
+      {{ partial "work/two-card.html" (dict
+        "cards" (slice
+          (dict
+            "imageSrc" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/employee.png"
+            "imageAlt" "employee"
+            "title" "Businesses"
+            "listItems" (slice
+              "<strong>Paying salaries in crypto can be time consuming.</strong> DAO and crypto startups founders have to make individual payments to team members from their own wallet in a process that can take hours."
+              "<strong>There's no cohesive audit trail</strong> if you're a crypto company. Crypto transactions can span a dozen different wallets or products."
+            )
+          )
+          (dict
+            "imageSrc" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/business.png"
+            "imageAlt" "business"
+            "imageStyle" "width: 16%"
+            "title" "Employees"
+            "listItems" (slice
+              "<strong>Moving income to investment accounts takes between 4 - 7 days</strong> for funds to be available for investment."
+              "<strong>It is impossible for employees to manage and configure their investment asset</strong> (savings, investment or retirement accounts - 401k or IRA) in real time."
+            )
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-more" data-aos="fade-in" data-aos-duration="1500">
         <p>What will it take for DAO, NFT, and DeFi businesses to scale and onboard the next 1 billion users?</p>
@@ -143,24 +140,26 @@
         <h4>I. Why Now</h4>
       </div>
 
-      <div class="site-work-template-two-card" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-template-two-card-card">
-          <h4>Rapid growth in the number of DAOs</h4>
-          <ul>
-            <li>8.8x in # of DAOs</li>
-            <li>8.5x in # of proposals</li>
-            <li>8.3x in # of votes</li>
-            <li>Total Treasury: ~$8.8B in 2022</li>
-          </ul>
-        </div>
-        <div class="site-work-template-two-card-card">
-          <h4>Rapid growth in the number of NFT collections</h4>
-          <ul>
-            <li>Daily volume increased 90x from $622M in 2021 to $54.6B in 2022</li>
-            <li>Daily active address increased by 65% to 550k</li>
-          </ul>
-        </div>
-      </div>
+      {{ partial "work/two-card.html" (dict
+        "cards" (slice
+          (dict
+            "title" "Rapid growth in the number of DAOs"
+            "listItems" (slice
+              "8.8x in # of DAOs"
+              "8.5x in # of proposals"
+              "8.3x in # of votes"
+              "Total Treasury: ~$8.8B in 2022"
+            )
+          )
+          (dict
+            "title" "Rapid growth in the number of NFT collections"
+            "listItems" (slice
+              "Daily volume increased 90x from $622M in 2021 to $54.6B in 2022"
+              "Daily active address increased by 65% to 550k"
+            )
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>Growth in talents need in Web3</h4>
@@ -408,29 +407,31 @@
           flexible experience for users.</p>
       </div>
 
-      <div class="site-work-template-two-card" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-template-two-card-card">
-          <h4>Principle 1: Meet the users' need</h4>
-          <p>Center on improving users' experience, and meeting their needs that we learned from user research with the
-            product.</p>
-        </div>
-        <div class="site-work-template-two-card-card">
-          <h4>Principle 2: Clear hierarchy</h4>
-          <p>Ensures smooth navigation throughout the application with clear information and visual hierarchy.</p>
-        </div>
-      </div>
+      {{ partial "work/two-card.html" (dict
+        "cards" (slice
+          (dict
+            "title" "Principle 1: Meet the users' need"
+            "text" "Center on improving users' experience, and meeting their needs that we learned from user research with the product."
+          )
+          (dict
+            "title" "Principle 2: Clear hierarchy"
+            "text" "Ensures smooth navigation throughout the application with clear information and visual hierarchy."
+          )
+        )
+      ) }}
 
-      <div class="site-work-template-two-card" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-template-two-card-card">
-          <h4>Principle 3: Keep it consistent</h4>
-          <p>Familiar the design to users by sharing some similarities with other payment products they regularly use.
-          </p>
-        </div>
-        <div class="site-work-template-two-card-card">
-          <h4>Principle 4: Less is more</h4>
-          <p>Reduce clutter and keep things simple to focus user's attention and decrease cognitive load.</p>
-        </div>
-      </div>
+      {{ partial "work/two-card.html" (dict
+        "cards" (slice
+          (dict
+            "title" "Principle 3: Keep it consistent"
+            "text" "Familiar the design to users by sharing some similarities with other payment products they regularly use."
+          )
+          (dict
+            "title" "Principle 4: Less is more"
+            "text" "Reduce clutter and keep things simple to focus user's attention and decrease cognitive load."
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
         <img loading="lazy"
@@ -560,26 +561,28 @@
           ecosystem. Customer acquisition comes from two sources:</p>
       </div>
 
-      <div class="site-work-template-two-card" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-template-two-card-card">
-          <h4>Partnerships &amp; Referral Program</h4>
-          <ul>
-            <li>Ecosystem Partnerships: Polygon, SuperFluid, Chainlink</li>
-            <li>Supporting NFT and DAO projects: PrimeDAO, MakerDAO</li>
-            <li>Participation in hackathons and Crypto events: ETH Global, Permissionless, Consensus</li>
-            <li>Business and Personal user referral program</li>
-          </ul>
-        </div>
-        <div class="site-work-template-two-card-card">
-          <h4>Online &amp; Offline Channels</h4>
-          <ul>
-            <li>Email Marketing</li>
-            <li>Online campaigns on LinkedIn, Google Adwords, Instagram</li>
-            <li>Brand advertising and content marketing</li>
-            <li>Events (Webinars, AMAs)</li>
-          </ul>
-        </div>
-      </div>
+      {{ partial "work/two-card.html" (dict
+        "cards" (slice
+          (dict
+            "title" "Partnerships &amp; Referral Program"
+            "listItems" (slice
+              "Ecosystem Partnerships: Polygon, SuperFluid, Chainlink"
+              "Supporting NFT and DAO projects: PrimeDAO, MakerDAO"
+              "Participation in hackathons and Crypto events: ETH Global, Permissionless, Consensus"
+              "Business and Personal user referral program"
+            )
+          )
+          (dict
+            "title" "Online &amp; Offline Channels"
+            "listItems" (slice
+              "Email Marketing"
+              "Online campaigns on LinkedIn, Google Adwords, Instagram"
+              "Brand advertising and content marketing"
+              "Events (Webinars, AMAs)"
+            )
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>II. Revenue Model</h4>
