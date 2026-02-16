@@ -35,20 +35,24 @@
         <p>Buffet imagines a world where we get rewarded for eating healthy:</p>
       </div>
 
-      <div class="site-work-template-two-card" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-template-two-card-card">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/buffet/social%20connection.png"
-            alt="Token Model">
-          <h4>Token Model</h4>
-          <p>Earn NFT and crypto by eating healthy</p>
-        </div>
-        <div class="site-work-template-two-card-card">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/ux-web3/buffet/token%20model.png"
-            alt="Social Network Model">
-          <h4>Social Network Model</h4>
-          <p>Combine social-fi and game-fi to engage more users</p>
-        </div>
-      </div>
+      {{ partial "work/two-card.html" (dict
+        "cardBgColor" "#B6C4B3"
+        "textColor" "#1F2A1F"
+        "cards" (slice
+          (dict
+            "imageSrc" "https://cdn.celiasy.com/images/ux-web3/buffet/social%20connection.png"
+            "imageAlt" "Token Model"
+            "title" "Token Model"
+            "text" "Earn NFT and crypto by eating healthy"
+          )
+          (dict
+            "imageSrc" "https://cdn.celiasy.com/images/ux-web3/buffet/token%20model.png"
+            "imageAlt" "Social Network Model"
+            "title" "Social Network Model"
+            "text" "Combine social-fi and game-fi to engage more users"
+          )
+        )
+      ) }}
     </div>
   </div>
 

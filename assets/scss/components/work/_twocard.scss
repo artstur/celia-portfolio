@@ -12,7 +12,7 @@
         }
 
         &-card {
-            background-color: #d0d8e5;
+            background-color: var(--two-card-bg, #d0d8e5);
             border-radius: 10px;
             margin: 2%;
             padding: 2%;
@@ -36,7 +36,7 @@
             h4 {
                 font-family: $myriad-font;
                 text-align: center;
-                color: black;
+                color: var(--two-card-text, black);
                 font-size: 24px;
                 margin-bottom: 20px;
 
@@ -47,13 +47,13 @@
 
             ul {
                 font-family: $myriad-font;
-                color: black;
+                color: var(--two-card-text, black);
                 list-style: none;
                 padding: 0;
             }
 
             ul li {
-                color: black;
+                color: var(--two-card-text, black);
                 margin-bottom: 10px;
                 font-size: 16px;
                 line-height: 1.5;
@@ -61,23 +61,10 @@
 
             p {
                 font-family: $myriad-font;
-                color: black;
+                color: var(--two-card-text, black);
                 font-size: 16px;
                 line-height: 1.5;
                 margin-bottom: 0;
-            }
-        }
-
-        &--buffet {
-            .site-work-template-two-card-card {
-                background-color: #B6C4B3;
-            }
-
-            .site-work-template-two-card-card h4,
-            .site-work-template-two-card-card p,
-            .site-work-template-two-card-card ul,
-            .site-work-template-two-card-card ul li {
-                color: #1F2A1F;
             }
         }
 
