@@ -1,0 +1,48 @@
+{{ $videos := .videos }}
+{{ $showNavigation := .showNavigation | default false }}
+{{ $showPagination := .showPagination | default false }}
+{{ $showAllButton := .showAllButton | default false }}
+{{ $allButtonText := .allButtonText | default "All Videos" }}
+
+<div class="site-work-video-carousel">
+  <div class="swiper video-swiper">
+    <div class="swiper-wrapper">
+      {{ range $videos }}
+        {{ $videoTitle := .title | default "" }}
+        {{ $videoSrc := .src | default "" }}
+        {{ $videoThumb := .thumb | default "" }}
+        {{ $videoAuthor := .author | default "" }}
+        {{ $videoDuration := .duration | default "" }}
+        {{ $videoDesc := .desc | default "" }}
+        {{ $overlayTitle := .overlayTitle | default $videoTitle }}
+        {{ $videoAlt := .alt | default $videoTitle }}
+        <div class="swiper-slide video-slide"
+          data-video-src="{{ $videoSrc }}"
+          data-video-title="{{ $videoTitle }}"
+          data-video-author="{{ $videoAuthor }}"
+          data-video-duration="{{ $videoDuration }}"
+          data-video-thumb="{{ $videoThumb }}"
+          data-video-desc="{{ $videoDesc }}">
+          <img class="video-cover" src="{{ $videoThumb }}" alt="{{ $videoAlt }}">
+          <div class="video-overlay">
+            <h3 class="video-overlay-title">{{ $overlayTitle }}</h3>
+            <button class="video-play-btn" aria-label="Play video">
+              <i class="fa-regular fa-circle-play"></i>
+              <span>Play Video</span>
+            </button>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    {{ if $showNavigation }}
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    {{ end }}
+    {{ if $showPagination }}
+      <div class="swiper-pagination"></div>
+    {{ end }}
+  </div>
+  {{ if $showAllButton }}
+    <button class="video-all-btn">{{ $allButtonText }} <i class="fa-solid fa-plus"></i></button>
+  {{ end }}
+</div>

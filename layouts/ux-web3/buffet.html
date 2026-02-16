@@ -182,16 +182,25 @@
       </div>
 
       <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-            src="https://www.youtube.com/embed/qsWdiJ_nJE8" title="Buffet Demo" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+        {{ partial "work/video-carousel.html" (dict
+          "videos" (slice
+            (dict
+              "src" "https://www.youtube.com/embed/qsWdiJ_nJE8?autoplay=1"
+              "title" "Buffet Demo"
+              "author" "Buffet Team"
+              "duration" ""
+              "thumb" "https://img.youtube.com/vi/qsWdiJ_nJE8/maxresdefault.jpg"
+              "desc" "Buffet is an NFT-based social-fi and game-fi app that rewards people for eating healthy."
+              "alt" "Buffet Demo"
+              "overlayTitle" "Buffet Demo"
+            )
+          )
+        ) }}
       </div>
 
     </div>
   </div>
+  {{ partial "work/video-modal.html" . }}
 
   <!-- 04. Impact & Reflections -->
   <div id="04-Impact-Reflections" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">

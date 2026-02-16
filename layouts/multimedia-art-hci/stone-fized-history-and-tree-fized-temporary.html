@@ -14,52 +14,23 @@
 </section>
 <section class="site-work-detail">
 
-  <!-- 视频轮播（封面视图） -->
-  <div class="site-work-video-carousel" data-aos="fade-in" data-aos-duration="1500">
-    <div class="swiper video-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide video-slide"
-          data-video-src="https://www.youtube.com/embed/rQpU4eSV5i8?autoplay=1"
-          data-video-title="Stone-fized History and Tree-fized Temporary"
-          data-video-author="Shuyue Li"
-          data-video-duration=""
-          data-video-thumb="https://img.youtube.com/vi/rQpU4eSV5i8/maxresdefault.jpg"
-          data-video-desc="VR film installation (Best viewed in installation, YoutubeVR on VR headsets will give you access to a reduced resolution version)">
-          <img class="video-cover" src="https://img.youtube.com/vi/rQpU4eSV5i8/maxresdefault.jpg" alt="Stone-fized History and Tree-fized Temporary - VR Film">
-          <div class="video-overlay">
-            <h3 class="video-overlay-title">Stone-fized History and Tree-fized Temporary</h3>
-            <button class="video-play-btn" aria-label="Play video">
-              <i class="fa-regular fa-circle-play"></i>
-              <span>Play Video</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div data-aos="fade-in" data-aos-duration="1500">
+    {{ partial "work/video-carousel.html" (dict
+      "videos" (slice
+        (dict
+          "src" "https://www.youtube.com/embed/rQpU4eSV5i8?autoplay=1"
+          "title" "Stone-fized History and Tree-fized Temporary"
+          "author" "Shuyue Li"
+          "duration" ""
+          "thumb" "https://img.youtube.com/vi/rQpU4eSV5i8/maxresdefault.jpg"
+          "desc" "VR film installation (Best viewed in installation, YoutubeVR on VR headsets will give you access to a reduced resolution version)"
+          "alt" "Stone-fized History and Tree-fized Temporary - VR Film"
+          "overlayTitle" "Stone-fized History and Tree-fized Temporary"
+        )
+      )
+    ) }}
   </div>
-
-  <!-- 视频播放 Modal -->
-  <div class="video-modal" id="videoModal">
-    <div class="video-modal-top">
-      <button class="video-modal-close" aria-label="Close">&times;</button>
-    </div>
-    <div class="video-modal-body">
-      <div class="video-modal-player">
-        <div class="video-modal-iframe-wrap">
-          <iframe id="videoModalIframe" src="about:blank" title="Video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="video-modal-info">
-        <h3 class="video-modal-title"></h3>
-        <p class="video-modal-author"></p>
-        <p class="video-modal-desc"></p>
-      </div>
-    </div>
-    <div class="video-modal-thumbs" id="videoModalThumbs">
-    </div>
-  </div>
+  {{ partial "work/video-modal.html" . }}
 
   <div id="Introduction" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">

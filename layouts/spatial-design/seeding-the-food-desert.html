@@ -208,52 +208,23 @@
     </div>
   </div>
 
-  <!-- 视频封面 -->
-  <div class="site-work-video-carousel" data-aos="fade-in" data-aos-duration="1500">
-    <div class="swiper video-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide video-slide"
-          data-video-src="https://www.youtube.com/embed/BQBZiFlWEWs?autoplay=1"
-          data-video-title="Seeding The Food Desert"
-          data-video-author="Celia Shuyue Li"
-          data-video-duration=""
-          data-video-thumb="https://img.youtube.com/vi/BQBZiFlWEWs/maxresdefault.jpg"
-          data-video-desc="">
-          <img class="video-cover" src="https://img.youtube.com/vi/BQBZiFlWEWs/maxresdefault.jpg" alt="Seeding The Food Desert">
-          <div class="video-overlay">
-            <h3 class="video-overlay-title">Seeding The Food Desert</h3>
-            <button class="video-play-btn" aria-label="Play video">
-              <i class="fa-regular fa-circle-play"></i>
-              <span>Play Video</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div data-aos="fade-in" data-aos-duration="1500">
+    {{ partial "work/video-carousel.html" (dict
+      "videos" (slice
+        (dict
+          "src" "https://www.youtube.com/embed/BQBZiFlWEWs?autoplay=1"
+          "title" "Seeding The Food Desert"
+          "author" "Celia Shuyue Li"
+          "duration" ""
+          "thumb" "https://img.youtube.com/vi/BQBZiFlWEWs/maxresdefault.jpg"
+          "desc" ""
+          "alt" "Seeding The Food Desert"
+          "overlayTitle" "Seeding The Food Desert"
+        )
+      )
+    ) }}
   </div>
-
-  <!-- 视频播放 Modal -->
-  <div class="video-modal" id="videoModal">
-    <div class="video-modal-top">
-      <button class="video-modal-close" aria-label="Close">&times;</button>
-    </div>
-    <div class="video-modal-body">
-      <div class="video-modal-player">
-        <div class="video-modal-iframe-wrap">
-          <iframe id="videoModalIframe" src="about:blank" title="Video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="video-modal-info">
-        <h3 class="video-modal-title"></h3>
-        <p class="video-modal-author"></p>
-        <p class="video-modal-desc"></p>
-      </div>
-    </div>
-    <div class="video-modal-thumbs" id="videoModalThumbs">
-    </div>
-  </div>
+  {{ partial "work/video-modal.html" . }}
 
   {{ partial "work/collaboration-meta.html" (dict
     "collaborators" "Zeqi Liu"

@@ -14,89 +14,47 @@
 </section>
 <section class="site-work-detail">
 
-  <!-- 视频轮播（封面视图） -->
-  <div class="site-work-video-carousel" data-aos="fade-in" data-aos-duration="1500">
-    <div class="swiper video-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide video-slide"
-          data-video-src="https://www.youtube.com/embed/7ByGB9I9jSM?autoplay=1"
-          data-video-title="Knowing River Through Sound"
-          data-video-author="Shuyue Li &middot; 01:42"
-          data-video-duration="01:42"
-          data-video-thumb="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/title%20page.jpg"
-          data-video-desc="&ldquo;Knowing River through Sound&rdquo; is a multimedia work by Shuyue Li and Yiou Wang that exposes the audience to the voice of the Mystic River in a form of an audiovisual, spatio-temporal imagination that merges present-day and historic migration of bodies of water, fish, plants and humans, establishing a de-anthropocentric animist epistemology to probe our connection to the riverscape.&lt;br&gt;&lt;br&gt;While the original film is in 4k, the Youtube trailer is a reduced resolution version. It was shared as part of the Soma Salon, at MIT ACT Cube, 2022.">
-          <img class="video-cover" src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/title%20page.jpg" alt="Knowing River Through Sound - VR Film">
-          <div class="video-overlay">
-            <h3 class="video-overlay-title">Knowing River Through Sound</h3>
-            <button class="video-play-btn" aria-label="Play video">
-              <i class="fa-regular fa-circle-play"></i>
-              <span>Play Video</span>
-            </button>
-          </div>
-        </div>
-        <div class="swiper-slide video-slide"
-          data-video-src="https://www.youtube.com/embed/iQhBbUTCe_U?autoplay=1"
-          data-video-title="Knowing River Through Sound | Mystic Murmuring"
-          data-video-author="Shuyue Li &middot; 00:57"
-          data-video-duration="00:57"
-          data-video-thumb="https://img.youtube.com/vi/iQhBbUTCe_U/maxresdefault.jpg"
-          data-video-desc="Sound generates movement">
-          <img class="video-cover" src="https://img.youtube.com/vi/iQhBbUTCe_U/maxresdefault.jpg" alt="Knowing River Through Sound - Video 2">
-          <div class="video-overlay">
-            <h3 class="video-overlay-title">Knowing River Through Sound</h3>
-            <button class="video-play-btn" aria-label="Play video">
-              <i class="fa-regular fa-circle-play"></i>
-              <span>Play Video</span>
-            </button>
-          </div>
-        </div>
-        <div class="swiper-slide video-slide"
-          data-video-src="https://www.youtube.com/embed/pwRjr_3D2CI?autoplay=1"
-          data-video-title="Knowing River Through Sound | Talk with Mystic River"
-          data-video-author="Shuyue Li &middot; 01:48"
-          data-video-duration="01:48"
-          data-video-thumb="https://img.youtube.com/vi/pwRjr_3D2CI/maxresdefault.jpg"
-          data-video-desc="A soundscape of Mystic River">
-          <img class="video-cover" src="https://img.youtube.com/vi/pwRjr_3D2CI/maxresdefault.jpg" alt="Knowing River Through Sound - Video 3">
-          <div class="video-overlay">
-            <h3 class="video-overlay-title">Knowing River Through Sound</h3>
-            <button class="video-play-btn" aria-label="Play video">
-              <i class="fa-regular fa-circle-play"></i>
-              <span>Play Video</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-    <button class="video-all-btn">All Videos <i class="fa-solid fa-plus"></i></button>
+  <div data-aos="fade-in" data-aos-duration="1500">
+    {{ partial "work/video-carousel.html" (dict
+      "videos" (slice
+        (dict
+          "src" "https://www.youtube.com/embed/7ByGB9I9jSM?autoplay=1"
+          "title" "Knowing River Through Sound"
+          "author" "Shuyue Li &middot; 01:42"
+          "duration" "01:42"
+          "thumb" "https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/title%20page.jpg"
+          "desc" "&ldquo;Knowing River through Sound&rdquo; is a multimedia work by Shuyue Li and Yiou Wang that exposes the audience to the voice of the Mystic River in a form of an audiovisual, spatio-temporal imagination that merges present-day and historic migration of bodies of water, fish, plants and humans, establishing a de-anthropocentric animist epistemology to probe our connection to the riverscape.&lt;br&gt;&lt;br&gt;While the original film is in 4k, the Youtube trailer is a reduced resolution version. It was shared as part of the Soma Salon, at MIT ACT Cube, 2022."
+          "alt" "Knowing River Through Sound - VR Film"
+          "overlayTitle" "Knowing River Through Sound"
+        )
+        (dict
+          "src" "https://www.youtube.com/embed/iQhBbUTCe_U?autoplay=1"
+          "title" "Knowing River Through Sound | Mystic Murmuring"
+          "author" "Shuyue Li &middot; 00:57"
+          "duration" "00:57"
+          "thumb" "https://img.youtube.com/vi/iQhBbUTCe_U/maxresdefault.jpg"
+          "desc" "Sound generates movement"
+          "alt" "Knowing River Through Sound - Video 2"
+          "overlayTitle" "Knowing River Through Sound"
+        )
+        (dict
+          "src" "https://www.youtube.com/embed/pwRjr_3D2CI?autoplay=1"
+          "title" "Knowing River Through Sound | Talk with Mystic River"
+          "author" "Shuyue Li &middot; 01:48"
+          "duration" "01:48"
+          "thumb" "https://img.youtube.com/vi/pwRjr_3D2CI/maxresdefault.jpg"
+          "desc" "A soundscape of Mystic River"
+          "alt" "Knowing River Through Sound - Video 3"
+          "overlayTitle" "Knowing River Through Sound"
+        )
+      )
+      "showNavigation" true
+      "showPagination" true
+      "showAllButton" true
+      "allButtonText" "All Videos"
+    ) }}
   </div>
-
-  <!-- 视频播放 Modal -->
-  <div class="video-modal" id="videoModal">
-    <div class="video-modal-top">
-      <button class="video-modal-close" aria-label="Close">&times;</button>
-    </div>
-    <div class="video-modal-body">
-      <div class="video-modal-player">
-        <div class="video-modal-iframe-wrap">
-          <iframe id="videoModalIframe" src="about:blank" title="Video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="video-modal-info">
-        <h3 class="video-modal-title"></h3>
-        <p class="video-modal-author"></p>
-        <p class="video-modal-desc"></p>
-      </div>
-    </div>
-    <div class="video-modal-thumbs" id="videoModalThumbs">
-      <!-- 缩略图由 JS 动态生成 -->
-    </div>
-  </div>
+  {{ partial "work/video-modal.html" . }}
 
   <div id="Introduction" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">
