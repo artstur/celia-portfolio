@@ -19,23 +19,12 @@
 
 <section class="site-work-detail">
 
-  <div class="site-work-detail-front"
-    style="background-image:url('https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/front-page.jpg') ;">
-    <div class="site-work-detail-front-info">
-      <div class="site-work-detail-front-info-box">
-          <div class="site-work-detail-front-info-title">
-            <h3>Armadillo</h3>
-          </div>
-          <div class="site-work-detail-front-info-content">
-            <p>Armadillo provides retail investors with better analytical information, and helps them make good
-              investment decisions.</p>
-          </div>
-          <div class="site-work-detail-front-info-btn"><a
-              href="#problem-space" class="btn btn-primary">Learn More</a>
-          </div>
-      </div>
-    </div>
-  </div>
+  {{ partial "work/detail-front.html" (dict
+    "backgroundImage" "https://cdn.celiasy.com/images/ux-web3/armadillo/compressed/front-page.jpg"
+    "title" "Armadillo"
+    "description" "Armadillo provides retail investors with better analytical information, and helps them make good investment decisions."
+    "buttonHref" "#problem-space"
+  ) }}
 
   <div id="problem-space" class="site-work-detail-page">
     <div class="container">

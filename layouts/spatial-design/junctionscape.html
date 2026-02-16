@@ -27,22 +27,12 @@
 
 <section class="site-work-detail">
 
-  <div class="site-work-detail-front"
-    style="background-image:url('https://cdn.celiasy.com/images/spatial-design/junctionscape/title%20page.jpg') ;">
-    <div class="site-work-detail-front-info">
-      <div class="site-work-detail-front-info-box">
-          <div class="site-work-detail-front-info-title">
-            <h3>JunctionScape</h3>
-          </div>
-          <div class="site-work-detail-front-info-content">
-            <p>Define a new riverfront public space by introducing water from the Charles River and urban grids from the city to the site.</p>
-          </div>
-          <div class="site-work-detail-front-info-btn"><a
-              href="#problem-space" class="btn btn-primary">Learn More</a>
-          </div>
-      </div>
-    </div>
-  </div>
+  {{ partial "work/detail-front.html" (dict
+    "backgroundImage" "https://cdn.celiasy.com/images/spatial-design/junctionscape/title%20page.jpg"
+    "title" "JunctionScape"
+    "description" "Define a new riverfront public space by introducing water from the Charles River and urban grids from the city to the site."
+    "buttonHref" "#problem-space"
+  ) }}
 
   <div id="problem-space" class="site-work-detail-page">
     <div class="container">

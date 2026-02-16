@@ -19,22 +19,12 @@
 
 <section class="site-work-detail">
 
-  <div class="site-work-detail-front"
-    style="background-image:url('https://cdn.celiasy.com/images/ux-web3/payblocks-banking/front%20page.jpg') ;">
-    <div class="site-work-detail-front-info">
-      <div class="site-work-detail-front-info-box">
-        <div class="site-work-detail-front-info-title">
-          <h3>PayBlocks Banking</h3>
-        </div>
-        <div class="site-work-detail-front-info-content">
-          <p>Playing an important role as one of the infrastructures of crypto banking solutions, and onboarding the
-            next 1 billion Web3 residents.</p>
-        </div>
-        <div class="site-work-detail-front-info-btn"><a href="#discovery" class="btn btn-primary">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{ partial "work/detail-front.html" (dict
+    "backgroundImage" "https://cdn.celiasy.com/images/ux-web3/payblocks-banking/front%20page.jpg"
+    "title" "PayBlocks Banking"
+    "description" "Playing an important role as one of the infrastructures of crypto banking solutions, and onboarding the next 1 billion Web3 residents."
+    "buttonHref" "#discovery"
+  ) }}
 
   <div id="discovery" class="site-work-detail-page">
     <div class="container">

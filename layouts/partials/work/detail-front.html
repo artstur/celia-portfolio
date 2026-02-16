@@ -1,0 +1,36 @@
+{{/*
+  detail-front.html
+  =================
+  通用 work detail 首屏组件（site-work-detail-front）。
+
+  参数：
+    - backgroundImage (string, 必填) 背景图 URL
+    - title           (string, 必填) 标题
+    - description     (string, 必填) 描述文案
+    - buttonHref      (string, 可选) 按钮跳转锚点，默认 #problem-space
+    - buttonLabel     (string, 可选) 按钮文案，默认 Learn More
+    - textColor       (string, 可选) 标题/描述/按钮文字共用颜色
+    - buttonWrapperClass (string, 可选) 按钮外层 class（如 trust-finance-blue）
+*/}}
+
+{{- $buttonHref := default "#problem-space" .buttonHref -}}
+{{- $buttonLabel := default "Learn More" .buttonLabel -}}
+{{- $textColor := .textColor -}}
+
+<div class="site-work-detail-front" style="background-image:url('{{ .backgroundImage }}');">
+  <div class="site-work-detail-front-info">
+    <div class="site-work-detail-front-info-box">
+      <div class="site-work-detail-front-info-title" data-aos="fade-in" data-aos-duration="1500">
+        <h3{{ with $textColor }} style="color: {{ . }};"{{ end }}>{{ .title }}</h3>
+      </div>
+      <div class="site-work-detail-front-info-content" data-aos="fade-in" data-aos-duration="1500">
+        <p{{ with $textColor }} style="color: {{ . }};"{{ end }}>{{ .description }}</p>
+      </div>
+      <div class="site-work-detail-front-info-btn" data-aos="fade-in" data-aos-duration="1500">
+        {{- with .buttonWrapperClass }}<div class="{{ . }}">{{ end -}}
+          <a href="{{ $buttonHref }}" class="btn btn-primary"{{ with $textColor }} style="color: {{ . }};"{{ end }}>{{ $buttonLabel }}</a>
+        {{- with .buttonWrapperClass }}</div>{{ end -}}
+      </div>
+    </div>
+  </div>
+</div>
