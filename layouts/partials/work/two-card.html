@@ -1,0 +1,45 @@
+{{/*
+  two-card.html
+  =============
+  通用双卡片组件。
+
+  参数：
+    - cards (slice, 必填)
+      每项支持：
+        - imageSrc (string, 可选)
+        - imageAlt (string, 可选)
+        - imageStyle (string, 可选)
+        - title    (string, 可选)
+        - text     (string, 可选)
+        - listItems (slice, 可选，支持 HTML)
+    - class (string, 可选) 容器附加 class
+*/}}
+
+{{- $classes := "site-work-template-two-card" -}}
+{{- with .class -}}
+  {{- $classes = printf "%s %s" $classes . -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  {{- range .cards }}
+    {{- $card := . -}}
+    <div class="site-work-template-two-card-card">
+      {{- with .imageSrc }}
+        <img loading="lazy" src="{{ . }}" alt="{{ default "" $card.imageAlt }}" {{ with $card.imageStyle }}style="{{ . }}"{{ end }}>
+      {{- end }}
+      {{- with .title }}
+        <h4>{{ . }}</h4>
+      {{- end }}
+      {{- with .text }}
+        <p>{{ . }}</p>
+      {{- end }}
+      {{- with .listItems }}
+        <ul>
+          {{- range . }}
+            <li>{{ . | safeHTML }}</li>
+          {{- end }}
+        </ul>
+      {{- end }}
+    </div>
+  {{- end }}
+</div>
