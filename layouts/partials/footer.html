@@ -228,10 +228,13 @@
       return window.innerWidth <= 575;
     }
 
-    var carouselEl = document.querySelector('.site-work-video-carousel');
+    function getCarouselEl(slide) {
+      return slide ? slide.closest('.site-work-video-carousel') : null;
+    }
 
     // 停止内联播放
     function stopInline(slide) {
+      var carouselEl = getCarouselEl(slide);
       var inlineIframe = slide.querySelector('iframe');
       if (inlineIframe) inlineIframe.remove();
       slide.classList.remove('playing');
@@ -244,6 +247,7 @@
 
     // 移动端：在封面原地嵌入 iframe 播放
     function playInline(slide, index) {
+      var carouselEl = getCarouselEl(slide);
       if (slide.classList.contains('playing')) return;
       var src = videos[index] ? videos[index].src : '';
       if (!src) return;

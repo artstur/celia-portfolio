@@ -182,18 +182,18 @@
         <p>Millennials and freelancer talents are the greatest drivers of payroll crypto payment.</p>
       </div>
 
-      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-01.png"
-            alt="crypto payment percentage 01">
-        </div>
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-02.png"
-            alt="crypto payment percentage 02">
-        </div>
-      </div>
+      {{ partial "work/two-chart.html" (dict
+        "images" (slice
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-01.png"
+            "alt" "crypto payment percentage 01"
+          )
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-02.png"
+            "alt" "crypto payment percentage 02"
+          )
+        )
+      ) }}
 
     </div>
   </div>
@@ -234,33 +234,35 @@
         <p><b>Business Users</b></p>
       </div>
 
-      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona1.png" alt="persona 1">
-        </div>
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona2.png" alt="persona 2">
-        </div>
-      </div>
+      {{ partial "work/two-chart.html" (dict
+        "images" (slice
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona1.png"
+            "alt" "persona 1"
+          )
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona2.png"
+            "alt" "persona 2"
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <p><b>Personal Users</b></p>
       </div>
 
-      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona-template3.png"
-            alt="persona template 3">
-        </div>
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy"
-            src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona-template4.png"
-            alt="persona template 4">
-        </div>
-      </div>
+      {{ partial "work/two-chart.html" (dict
+        "images" (slice
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona-template3.png"
+            "alt" "persona template 3"
+          )
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/persona-template4.png"
+            "alt" "persona template 4"
+          )
+        )
+      ) }}
 
     </div>
   </div>
@@ -425,8 +427,7 @@
   </div>
 
   <!-- Prototyping: Prototypes & Wireflows -->
-  <div class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500"
-    style="background-color:var(--accent-color);">
+  <div class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
@@ -479,7 +480,8 @@
   </div>
 
   <!-- 04. Detailed Design -->
-  <div id="04-Detailed-Design" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
+  <div id="04-Detailed-Design" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500"
+    style="background-color:var(--accent-color);">
     <div class="container">
 
       <div class="site-work-detail-page-template-header">
@@ -522,16 +524,39 @@
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>II. Demo Videos</h4>
-        <p><b>Business Version</b> developed during ETH Global HackMoney</p>
-        <p><b>Personal Version</b> developed during ETH NYC Hackathon</p>
       </div>
+
+      {{ partial "work/two-video-embed.html" (dict
+        "videos" (slice
+          (dict
+            "src" "https://www.youtube.com/embed/aRVrHcDsfGs?autoplay=1"
+            "title" "Trust Finance Business Version Demo"
+            "author" "Trust Finance Team"
+            "desc" "Business version demo developed during ETH Global HackMoney."
+            "thumb" "https://img.youtube.com/vi/aRVrHcDsfGs/maxresdefault.jpg"
+            "alt" "Trust Finance Business Version Demo"
+            "overlayTitle" "Business Version Demo"
+            "introHtml" "<b>Business Version</b> developed during ETH Global HackMoney"
+          )
+          (dict
+            "src" "https://www.youtube.com/embed/o6dQC0WZObE?autoplay=1"
+            "title" "Trust Finance Personal Version Demo"
+            "author" "Trust Finance Team"
+            "desc" "Personal version demo developed during ETH NYC Hackathon."
+            "thumb" "https://img.youtube.com/vi/o6dQC0WZObE/maxresdefault.jpg"
+            "alt" "Trust Finance Personal Version Demo"
+            "overlayTitle" "Personal Version Demo"
+            "introHtml" "<b>Personal Version</b> developed during ETH NYC Hackathon"
+          )
+        )
+      ) }}
 
     </div>
   </div>
+  {{ partial "work/video-modal.html" . }}
 
   <!-- 05. Product Development -->
-  <div id="05-Product-Development" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500"
-    style="background-color:var(--accent-color);">
+  <div id="05-Product-Development" class="site-work-detail-page-template" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">
 
       <div class="site-work-detail-page-template-header">
@@ -544,10 +569,11 @@
           ecosystem. Customer acquisition comes from two sources:</p>
       </div>
 
-      {{ partial "work/two-card.html" (dict
-        "cards" (slice
+      {{ partial "work/two-text.html" (dict
+        "class" "site-work-detail-page-template-two-text--subsection"
+        "columns" (slice
           (dict
-            "title" "Partnerships &amp; Referral Program"
+            "title" "Partnerships & Referral Program"
             "listItems" (slice
               "Ecosystem Partnerships: Polygon, SuperFluid, Chainlink"
               "Supporting NFT and DAO projects: PrimeDAO, MakerDAO"
@@ -556,7 +582,7 @@
             )
           )
           (dict
-            "title" "Online &amp; Offline Channels"
+            "title" "Online & Offline Channels"
             "listItems" (slice
               "Email Marketing"
               "Online campaigns on LinkedIn, Google Adwords, Instagram"
@@ -571,15 +597,18 @@
         <h4>II. Revenue Model</h4>
       </div>
 
-      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
-        <img loading="lazy"
-          src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/revenue-model.jpg" alt="revenue model">
-      </div>
-
-      <div class="site-work-detail-page-template-chart" data-aos="fade-in" data-aos-duration="1500">
-        <img loading="lazy"
-          src="https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/cost-model.jpg" alt="cost model">
-      </div>
+      {{ partial "work/two-chart.html" (dict
+        "images" (slice
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/revenue-model.jpg"
+            "alt" "revenue model"
+          )
+          (dict
+            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/cost-model.jpg"
+            "alt" "cost model"
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>III. Product Roadmap</h4>

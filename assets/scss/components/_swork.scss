@@ -174,8 +174,16 @@
       }
 
       &-header {
-
         padding: 10px;
+        margin-top: 2rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @include mobile {
+          margin-top: 1.25rem;
+        }
 
         // 紧凑模式：用于图文间夹文字等场景
         &--compact {
@@ -266,24 +274,6 @@
         }
       }
 
-      // 图表后接标题时保持一致间距
-      &-chart + &-header {
-        margin-top: 2rem;
-
-        @include mobile {
-          margin-top: 1.25rem;
-        }
-      }
-
-      // 轮播后接标题时，标题只做轻微上间距
-      .auto-carousel + &-header {
-        margin-top: 0.5rem;
-
-        @include mobile {
-          margin-top: 0.35rem;
-        }
-      }
-
       &-caption {
         padding: 10px;
 
@@ -366,6 +356,7 @@
             font-size: 18px;
             line-height: 1.6em;
             margin-bottom: 10px;
+            color: black;
 
             @include mobile {
               font-size: 14px;
@@ -381,6 +372,7 @@
             font-size: 18px;
             line-height: 1.6em;
             padding-bottom: 8px;
+            color: black;
 
             @include mobile {
               font-size: 14px;
@@ -435,6 +427,19 @@
               @include mobile {
                 font-size: 14px;
               }
+            }
+          }
+        }
+      }
+
+      // 子层级双栏标题：用于区分 section 内的次级信息标题
+      &-two-text--subsection {
+        .site-work-detail-page-template-two-text-col {
+          h4 {
+            font-size: 20px;
+
+            @include mobile {
+              font-size: 15px;
             }
           }
         }
@@ -760,6 +765,15 @@
             font-family: $myriad-font;
             color: black;
             font-size: 14px;
+          }
+
+          .site-work-detail-page-template-video-intro {
+            font-size: 16px;
+            line-height: 1.2;
+
+            @include mobile {
+              font-size: 16px;
+            }
           }
         }
 

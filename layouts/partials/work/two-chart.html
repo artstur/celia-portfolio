@@ -1,0 +1,29 @@
+{{/*
+  two-chart.html
+  ==============
+  通用左右双图组件。
+
+  参数：
+    - images (slice, 必填)
+      每项支持：
+        - src (string, 必填)
+        - alt (string, 可选)
+        - captionHtml (string, 可选，支持 HTML)
+    - class (string, 可选) 容器附加 class
+*/}}
+
+{{- $classes := "site-work-detail-page-template-two-chart" -}}
+{{- with .class -}}
+  {{- $classes = printf "%s %s" $classes . -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  {{- range .images }}
+    <div class="site-work-detail-page-template-two-chart-img">
+      <img loading="lazy" src="{{ .src }}" alt="{{ default "" .alt }}">
+      {{- with .captionHtml }}
+        <p>{{ . | safeHTML }}</p>
+      {{- end }}
+    </div>
+  {{- end }}
+</div>

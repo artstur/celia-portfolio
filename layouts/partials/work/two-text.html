@@ -1,0 +1,40 @@
+{{/*
+  two-text.html
+  =============
+  通用双栏文本组件。
+
+  参数：
+    - columns (slice, 必填)
+      每项支持：
+        - title (string, 可选)
+        - paragraphs (slice, 可选)
+        - listItems (slice, 可选，支持 HTML)
+    - class (string, 可选) 容器附加 class
+*/}}
+
+{{- $classes := "site-work-detail-page-template-two-text" -}}
+{{- with .class -}}
+  {{- $classes = printf "%s %s" $classes . -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  {{- range .columns }}
+    <div class="site-work-detail-page-template-two-text-col">
+      {{- with .title }}
+        <h4>{{ . }}</h4>
+      {{- end }}
+      {{- with .paragraphs }}
+        {{- range . }}
+          <p>{{ . | safeHTML }}</p>
+        {{- end }}
+      {{- end }}
+      {{- with .listItems }}
+        <ul>
+          {{- range . }}
+            <li>{{ . | safeHTML }}</li>
+          {{- end }}
+        </ul>
+      {{- end }}
+    </div>
+  {{- end }}
+</div>
