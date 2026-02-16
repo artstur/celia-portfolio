@@ -149,16 +149,18 @@
         <p>Vacant lots also will be planting test areas for students to study the plant growth habits and ratios of mixing them. Their temporary properties enable residents to organize annual based festivals there. Besides, art installations for butterflies could be built along vacant lots to attract wild animals.</p>
       </div>
 
-      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/9.jpg"
-            alt="Vacant Lots as Exchange Centers 1">
-        </div>
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/15.jpg"
-            alt="Vacant Lots as Exchange Centers 2">
-        </div>
-      </div>
+      {{ partial "work/two-chart.html" (dict
+        "images" (slice
+          (dict
+            "src" "https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/9.jpg"
+            "alt" "Vacant Lots as Exchange Centers 1"
+          )
+          (dict
+            "src" "https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/15.jpg"
+            "alt" "Vacant Lots as Exchange Centers 2"
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>III. Parkways as Food Resources</h4>
@@ -167,16 +169,18 @@
         <p>From the research we can found, there are many vacant lots in priority areas and scattered. Crime rate in this area is high. By designing vacant lots, we hope to use them as urban generators and lower the crime ratio, improving social equality and inclusion in the diversive neighborhood.</p>
       </div>
 
-      <div class="site-work-detail-page-template-two-chart" data-aos="fade-in" data-aos-duration="1500">
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/10.jpg"
-            alt="Parkways as Food Resources 1">
-        </div>
-        <div class="site-work-detail-page-template-two-chart-img">
-          <img loading="lazy" src="https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/13.jpg"
-            alt="Parkways as Food Resources 2">
-        </div>
-      </div>
+      {{ partial "work/two-chart.html" (dict
+        "images" (slice
+          (dict
+            "src" "https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/10.jpg"
+            "alt" "Parkways as Food Resources 1"
+          )
+          (dict
+            "src" "https://cdn.celiasy.com/images/spatial-design/Seeding%20the%20Food%20Desert/13.jpg"
+            "alt" "Parkways as Food Resources 2"
+          )
+        )
+      ) }}
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <h4>IV. Embrace Wildlife in Daily Life</h4>

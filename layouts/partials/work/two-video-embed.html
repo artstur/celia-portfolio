@@ -1,0 +1,60 @@
+{{/*
+  two-video-embed.html
+  ====================
+  通用双列视频组件（支持移动端换行，复用全局 video modal）。
+
+  参数：
+    - videos (slice, 必填)
+      每项支持：
+        - src (string, 必填) 视频嵌入链接（建议带 autoplay 参数）
+        - title (string, 可选) 视频标题
+        - author (string, 可选) 作者/团队
+        - desc (string, 可选) 描述文案
+        - thumb (string, 可选) 封面图 URL
+        - alt (string, 可选) 封面 alt
+        - overlayTitle (string, 可选) 覆盖层标题
+        - duration (string, 可选) 时长
+        - introHtml (string, 可选，支持 HTML) 视频上方介绍文案
+    - class (string, 可选) 容器附加 class
+*/}}
+
+{{- $classes := "site-work-detail-page-template-two-chart" -}}
+{{- with .class -}}
+  {{- $classes = printf "%s %s" $classes . -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  {{- range .videos }}
+    {{- $videoTitle := .title | default "" }}
+    {{- $videoSrc := .src | default "" }}
+    {{- $videoThumb := .thumb | default "" }}
+    {{- $videoAuthor := .author | default "" }}
+    {{- $videoDuration := .duration | default "" }}
+    {{- $videoDesc := .desc | default "" }}
+    {{- $overlayTitle := .overlayTitle | default $videoTitle }}
+    {{- $videoAlt := .alt | default $videoTitle }}
+    <div class="site-work-detail-page-template-two-chart-img">
+      {{- with .introHtml }}
+        <p class="site-work-detail-page-template-video-intro">{{ . | safeHTML }}</p>
+      {{- end }}
+      <div class="site-work-video-carousel">
+        <div class="video-slide"
+          data-video-src="{{ $videoSrc }}"
+          data-video-title="{{ $videoTitle }}"
+          data-video-author="{{ $videoAuthor }}"
+          data-video-duration="{{ $videoDuration }}"
+          data-video-thumb="{{ $videoThumb }}"
+          data-video-desc="{{ $videoDesc }}">
+          <img class="video-cover" loading="lazy" src="{{ $videoThumb }}" alt="{{ $videoAlt }}">
+          <div class="video-overlay">
+            <h3 class="video-overlay-title">{{ $overlayTitle }}</h3>
+            <button class="video-play-btn" aria-label="Play video">
+              <i class="fa-regular fa-circle-play"></i>
+              <span>Play Video</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{- end }}
+</div>
