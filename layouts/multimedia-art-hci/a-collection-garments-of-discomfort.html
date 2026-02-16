@@ -65,52 +65,23 @@
     </div>
   </div>
 
-  <!-- Video Section -->
-  <div class="site-work-video-carousel" data-aos="fade-in" data-aos-duration="1500">
-    <div class="swiper video-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide video-slide"
-          data-video-src="https://www.youtube.com/embed/P8ShCn6hi4g?autoplay=1"
-          data-video-title="Garments of Discomfort"
-          data-video-author="Shuyue Li"
-          data-video-duration=""
-          data-video-thumb="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/front-4.png"
-          data-video-desc="A Collection: Garments of Discomfort &mdash; a counter-prosthetic that aims to irritate and unease the body, mimicking the symptoms of menstruation.">
-          <img class="video-cover" src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/front-4.png" alt="Garments of Discomfort">
-          <div class="video-overlay">
-            <h3 class="video-overlay-title">Garments of Discomfort</h3>
-            <button class="video-play-btn" aria-label="Play video">
-              <i class="fa-regular fa-circle-play"></i>
-              <span>Play Video</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div data-aos="fade-in" data-aos-duration="1500">
+    {{ partial "work/video-carousel.html" (dict
+      "videos" (slice
+        (dict
+          "src" "https://www.youtube.com/embed/P8ShCn6hi4g?autoplay=1"
+          "title" "Garments of Discomfort"
+          "author" "Shuyue Li"
+          "duration" ""
+          "thumb" "https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/front-4.png"
+          "desc" "A Collection: Garments of Discomfort &mdash; a counter-prosthetic that aims to irritate and unease the body, mimicking the symptoms of menstruation."
+          "alt" "Garments of Discomfort"
+          "overlayTitle" "Garments of Discomfort"
+        )
+      )
+    ) }}
   </div>
-
-  <!-- Video Modal -->
-  <div class="video-modal" id="videoModal">
-    <div class="video-modal-top">
-      <button class="video-modal-close" aria-label="Close">&times;</button>
-    </div>
-    <div class="video-modal-body">
-      <div class="video-modal-player">
-        <div class="video-modal-iframe-wrap">
-          <iframe id="videoModalIframe" src="about:blank" title="Video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="video-modal-info">
-        <h3 class="video-modal-title"></h3>
-        <p class="video-modal-author"></p>
-        <p class="video-modal-desc"></p>
-      </div>
-    </div>
-    <div class="video-modal-thumbs" id="videoModalThumbs">
-    </div>
-  </div>
+  {{ partial "work/video-modal.html" . }}
 
   {{ partial "work/collaboration-meta.html" (dict
     "collaborators" "Jiaying Qin, Tara Sun, Barbara Miglietti, Lafina Eptaminitaki"
