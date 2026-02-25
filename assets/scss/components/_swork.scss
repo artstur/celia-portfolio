@@ -258,6 +258,7 @@
 
         img {
           width: 100%;
+          display: block;
 
           @include mobile {
             margin-bottom: 5%;

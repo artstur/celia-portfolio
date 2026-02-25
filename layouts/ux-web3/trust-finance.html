@@ -168,32 +168,37 @@
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <p><b>Freelancer Economy</b></p>
         <ul>
-          <li>57.3M people in the US are freelancers</li>
-          <li>Freelancers in the US contribute $1.4 Trillion to the economy every year</li>
-          <li>51% of the US workforce will be freelancers by 2027</li>
+          <li><span style="font-size: 1.4em; color: #3851FF;">57.3M</span> people in the US are freelancers</li>
+          <li>Freelancers in the US contribute <span style="font-size: 1.4em; color: #3851FF;">$1.4 Trillion</span> to the economy every year</li>
+          <li><span style="font-size: 1.4em; color: #3851FF;">51%</span> of the US workforce will be freelancers by 2027</li>
         </ul>
       </div>
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
         <p><b>Crypto Payments Boom</b></p>
-        <p>Currently 2300 business accepting crypto</p>
-        <p>Research conducted by SoFi shows 36% of workers want the ability to receive part or all of their paycheck in
-          cryptocurrency, and 42% would like to receive NFTs as a performance reward.</p>
-        <p>Millennials and freelancer talents are the greatest drivers of payroll crypto payment.</p>
+        {{ partial "work/three-stat.html" (dict
+          "items" (slice
+            (dict
+              "type" "chart"
+              "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-01.png"
+              "alt" "crypto payment percentage 01"
+            )
+            (dict
+              "type" "chart"
+              "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-02.png"
+              "alt" "crypto payment percentage 02"
+            )
+            (dict
+              "type" "text"
+              "contentHtml" "Currently <span class=\"site-work-detail-page-template-three-stat__highlight\">2300</span> business accepting crypto"
+            )
+          )
+        ) }}
+        <p>Research conducted by SoFi shows <span style="font-size: 1.4em; color: #3851FF;">36%</span> of workers want the ability to receive part or all of their paycheck in
+          cryptocurrency, and <span style="font-size: 1.4em; color: #3851FF;">42%</span> would like to receive NFTs as a performance reward.</p>
+        <p class="site-work-three-stat-callout">Millennials and freelancer talents are the greatest drivers of payroll crypto payment.</p>
       </div>
 
-      {{ partial "work/two-chart.html" (dict
-        "images" (slice
-          (dict
-            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-01.png"
-            "alt" "crypto payment percentage 01"
-          )
-          (dict
-            "src" "https://cdn.celiasy.com/images/ux-web3/trust-finance/compressed/crypto-payment-percentage-02.png"
-            "alt" "crypto payment percentage 02"
-          )
-        )
-      ) }}
 
     </div>
   </div>
@@ -352,8 +357,8 @@
   </div>
 
   <!-- Requirements Gathering: Functional & Technical Requirements -->
-  <div class="site-work-detail-page-template site-work-detail-page-template--spaced" data-aos="fade-in"
-    data-aos-duration="1500">
+  <div class="site-work-detail-page-template" data-aos="fade-in"
+    data-aos-duration="1500" style="background-color:var(--accent-color);">
     <div class="container">
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">

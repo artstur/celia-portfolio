@@ -1,0 +1,34 @@
+{{/*
+  three-stat.html
+  ===============
+  三列统计展示组件：图表与文案混排，一行三个对象。
+
+  参数：
+    - items (slice, 必填)
+      每项支持：
+        - type (string, 必填) "chart" | "text"
+        - src (string, chart 时必填) 图片地址
+        - alt (string, chart 时可选)
+        - contentHtml (string, text 时必填，支持 HTML)
+    - class (string, 可选) 容器附加 class
+*/}}
+
+{{- $classes := "site-work-detail-page-template-three-stat" -}}
+{{- with .class -}}
+  {{- $classes = printf "%s %s" $classes . -}}
+{{- end -}}
+
+<div class="{{ $classes }}" data-aos="fade-in" data-aos-duration="1500">
+  {{- range .items }}
+    {{- if eq .type "chart" }}
+      <div class="site-work-detail-page-template-three-stat__item site-work-detail-page-template-three-stat__item--chart">
+        <img loading="lazy" src="{{ .src }}" alt="{{ default "" .alt }}">
+      </div>
+    {{- else if eq .type "text" }}
+      <div class="site-work-detail-page-template-three-stat__item site-work-detail-page-template-three-stat__item--text">
+        {{- /* 去除 p 前空白 */ -}}
+        <p>{{ .contentHtml | safeHTML }}</p>
+      </div>
+    {{- end }}
+  {{- end }}
+</div>
