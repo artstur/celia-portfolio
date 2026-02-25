@@ -74,10 +74,12 @@ textarea.form-control{
   font-family: 'Myriad Pro';
   src: url('/fonts/MyriadPro-Regular.otf') format('truetype');
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Myriad Pro';
   src: url('/fonts/MyriadPro-Semibold.otf') format('truetype');
   font-weight: 600;
+  font-display: swap;
 }
