@@ -10,8 +10,12 @@
   {{ end }}
   {{ hugo.Generator }}
 
+  {{ "<!-- Google Fonts -->" | safeHTML }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap">
+
   {{ "<!-- Bootstrap -->" | safeHTML }}
-  {{ $bootstrap := resources.Get "css/bootstrap.css" | minify }}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
   {{ "<!-- font-awesome -->" | safeHTML }}
   <!-- <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" /> -->
