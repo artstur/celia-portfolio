@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /Users/zwh/Workspace/celia-portfolio/assets/js/*.js)",
+      "Bash(du -h /Users/zwh/Workspace/celia-portfolio/assets/js/*)",
+      "Bash(wc -l /Users/zwh/Workspace/celia-portfolio/assets/scss/components/*.scss)",
+      "Bash(find /Users/zwh/Workspace/celia-portfolio/assets/scss -name \"*.scss\" -type f -exec wc -l {} ;)",
+      "Bash(du -sh /Users/zwh/Workspace/celia-portfolio/static/images*)",
+      "Bash(du -h /Users/zwh/Workspace/celia-portfolio/public/scss/style.min.*.css)",
+      "Bash(find /Users/zwh/Workspace/celia-portfolio/layouts -name \"*.html\" -exec grep -l \"TODO\\\\|FIXME\\\\|HACK\" {} ;)",
+      "Bash(xargs du -h)",
+      "Bash(grep -c \"style=\" /Users/zwh/Workspace/celia-portfolio/layouts/partials/work/*.html)",
+      "Bash(grep -n \"font-face\\\\|@import.*font\\\\|googleapis\" /Users/zwh/Workspace/celia-portfolio/assets/scss/*.scss)",
+      "Bash(xargs cat)",
+      "Bash(wc -l /Users/zwh/Workspace/celia-portfolio/layouts/*/baseof.html)"
+    ]
+  }
+}
