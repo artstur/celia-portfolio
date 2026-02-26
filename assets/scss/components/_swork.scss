@@ -920,3 +920,74 @@
     }
   }
 }
+
+// Trust Finance – Why Now: left text + right chart
+.trust-finance-why-now {
+  display: flex;
+  align-items: flex-start;
+  gap: 4%;
+  padding: 2% 1%;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__block {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-family: $myriad-font;
+      font-size: 18px;
+      line-height: 1.6em;
+      color: black;
+      margin-bottom: 6px;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+    ul {
+      font-family: $myriad-font;
+      color: black;
+      padding-left: 20px;
+      margin-top: 4px;
+
+      li {
+        font-size: 16px;
+        line-height: 1.6em;
+        margin-bottom: 4px;
+
+        @include mobile {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  &__chart {
+    flex: 1.1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
