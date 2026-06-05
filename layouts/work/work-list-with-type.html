@@ -11,17 +11,13 @@
       </div>
       <div class="row">
         <div class="site-work-intro-content col-md-6" data-aos="fade-in" data-aos-duration="1500">
-          <p>
-            <p>{{ .Params.intro_content}}</p>
-            </p>
+          <p>{{ .Params.intro_content}}</p>
         </div>
       </div>
     </div>
 </section>
 
 <div class="site-work-divider"></div>
-
-</section> 
 
 <section class="site-work-works">
   <div class="container">
@@ -32,7 +28,7 @@
         {{ if eq $element.type $.Params.data_type }}
         <a class="site-work-works-image-item" href="{{ .url }}" target="_self" data-aos="fade-in" data-aos-duration="1500">
           <div class="site-work-works-image-item-mask">
-            <img src="{{ .img }}" alt="Image">
+            <img src="{{ .img }}" alt="{{ .title }}" loading="lazy" decoding="async">
             <span class="site-work-works-image-item-title">{{ .title }}</span>
           </div>
         </a>
