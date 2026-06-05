@@ -17,8 +17,17 @@
 
     margin-bottom: 20px;
 
+    @include mobile {
+      padding: 104px 0 0;
+      margin-bottom: 12px;
+    }
+
     &-title {
       margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 12px;
+      }
 
       a {
         text-decoration: underline;
@@ -48,6 +57,12 @@
         &:hover {
           opacity: 0.6;
         }
+      }
+    }
+
+    p {
+      @include mobile {
+        font-size: 15px;
       }
     }
 
@@ -809,7 +824,7 @@
       background-position: center;
 
       @include mobile {
-        height: 600px;
+        height: 560px;
         background-attachment: scroll; // fixed 在 iOS Safari 不支持
       }
 
@@ -821,8 +836,11 @@
         width: auto;
 
         @include mobile {
-          margin-top: 15%;
-          margin-left: 10%;
+          min-height: 420px;
+          margin-top: 8%;
+          margin-left: 0;
+          place-items: center;
+          width: 100%;
         }
 
         &-box {
@@ -835,9 +853,10 @@
 
 
           @include mobile {
-            width: 90%;
-            margin-top: 25%;
-            max-height: 50%;
+            width: calc(100% - 48px);
+            margin-top: 18%;
+            max-height: none;
+            padding: 22px 18px 24px;
           }
 
         }
@@ -862,8 +881,9 @@
           padding-right: 10%;
 
           @include mobile {
-            padding-left: 2%;
-            padding-right: 2%;
+            margin-top: 0;
+            padding-left: 0;
+            padding-right: 0;
           }
 
           p {
@@ -874,6 +894,12 @@
             font-size: 18px;
             line-height: 1.5em;
             letter-spacing: 0.01em;
+
+            @include mobile {
+              padding: 0;
+              font-size: 17px;
+              line-height: 1.45em;
+            }
           }
         }
 
@@ -881,6 +907,10 @@
           margin-top: 5%;
           display: flex;
           justify-content: center;
+
+          @include mobile {
+            margin-top: 18px;
+          }
 
           a {
             font-family: $myriad-font;
@@ -890,6 +920,11 @@
             background-color: rgb(202, 193, 210);
             border: 1px solid rgb(202, 193, 210);
             transition: all 0.3s ease;
+
+            @include mobile {
+              min-width: 160px;
+              padding: 10px 26px;
+            }
           }
 
           a:hover {
