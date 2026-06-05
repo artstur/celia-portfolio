@@ -1,12 +1,31 @@
 <head>
   <meta charset="utf-8" />
-  <title>{{ .Title }}</title>
+  {{- $description := default .Site.Params.description .Params.description -}}
+  {{- $title := .Title -}}
+  {{- $permalink := .Permalink -}}
+  {{- $ogType := cond .IsPage "article" "website" -}}
+  <title>{{ $title }}</title>
 
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  {{ with $description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
   {{ with .Site.Params.author }}
   <meta name="author" content="{{ . }}">
+  {{ end }}
+  <link rel="canonical" href="{{ $permalink }}">
+  <meta property="og:title" content="{{ $title }}">
+  {{ with $description }}
+  <meta property="og:description" content="{{ . }}">
+  {{ end }}
+  <meta property="og:url" content="{{ $permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:type" content="{{ $ogType }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ $title }}">
+  {{ with $description }}
+  <meta name="twitter:description" content="{{ . }}">
   {{ end }}
   {{ hugo.Generator }}
 
