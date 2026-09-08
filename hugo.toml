@@ -38,48 +38,13 @@ googleAnalytics  = "G-S5RBWMEYXS"
 # Site Params
 [params]
   owner = "Celia Shuyue Li"
-  logo = "images/logo.png"
-  logo_footer = "images/logo-footer.png"
   favicon_icon = "images/favicon.png"
   favicon_shortcut_icon = "images/favicon.png"
   custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
-  dateFormat = "26 FEB 1994"
   # Meta data
   description = "Portfolio of Celia Shuyue Li, an AI product designer, multimedia artist, and spatial designer integrating people, design, art, and technology."
   author = "Celia Shuyue Li"
   # Google Analytics (legacy placeholder, actual config is at top-level googleAnalytics)
-  # We're using formspree.io for form handling, paste your formspree url below
-  fabform  = "https://fabform.io/f/USAg2Jl"
-
-  # Contact Form
-  [params.contactForm]
-    placeholder_first_name        = "First Name"
-    placeholder_last_name         = "Last Name"
-    placeholder_email             = "Email"
-    placeholder_project_type      = "Project Type"
-    placeholder_about_the_project = "About the Project"
-    send_message                  = "Send Message"
-
-    [[params.contactForm.projectType]]
-      value = "gd"
-      title  = "Graphics Design"
-    [[params.contactForm.projectType]]
-      value = "wd"
-      title  = "Web Design"
-  
-  
-
-  # Banner Section
-  [params.banner]
-    enable                = true
-    background_image      = "images/backgrounds/hero-background.jpg"
-    heading               = "Celia Shuyue Li Portfolio"
-    tagline               = "WE WORK HARD, WE PLAY HARD"
-    primary_button        = "See Our Works"
-    primary_button_url    = "portfolio"
-    secondary_button      = "Connect with Us"
-    secondary_button_url  = "contact"
-
 
   [params.intro]
     intro_content = "Hi! I'm Celia, an AI product designer and multimedia artist. I work on integrating people, design, art, and technology."
@@ -103,48 +68,3 @@ googleAnalytics  = "G-S5RBWMEYXS"
     primary_button_url  = "contact"
     secondary_button    = "Not Convinced"
     secondary_button_url = "portfolio"
-
-  [params.footer]
-    params.footer.qr_print = false
-    # Footer Contact Info
-    [params.footer.contactInfo]
-      title   = "Contact Info"
-      address = "713 Elmwood St.<br>Prior Lake, MN 55372"
-      phone   = "409-896-1444"
-      email   = "info@roxo.co"
-      # Footer Sitemap
-      [params.footer.sitemap]
-        title   = "Sitemap"
-        [[params.footer.sitemap.link]]
-          name = "About Company"
-          url  = "about"
-        [[params.footer.sitemap.link]]
-          name = "Projects"
-          url  = "portfolio"
-        [[params.footer.sitemap.link]]
-          name = "Blog"
-          url  = "blog"
-        [[params.footer.sitemap.link]]
-          name = "Contact"
-          url  = "contact"
-      # Footer Social Media
-      [params.footer.social]
-        title   = "Social Media"
-        [[params.footer.social.link]]
-          name = "Medium"
-          url  = "#"
-        [[params.footer.social.link]]
-          name = "Behance"
-          url  = "#"
-        [[params.footer.social.link]]
-          name = "Dribbble"
-          url  = "#"
-        [[params.footer.social.link]]
-          name = "Instagram"
-          url  = "#"
-      # Footer Service
-      [params.footer.service]
-        title       = "We help brands:"
-        description = "develop design solutions<br>produce valuable cultural content<br>create fresh brand experience"
-      [params.footer.back_to_top]
-        description = "I want to <br> visit again"
