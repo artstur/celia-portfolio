@@ -1,17 +1,6 @@
 {{ define "main" }}
 
-<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="site-work-header-title">Knowing River Through Sound</h3>
-        <p class="site-work-header-project-desc"><a
-            href="https://act.mit.edu/event/soma-salon-002-art-public-sphere-choreographing-the-city/"
-            target="_blank">MIT Art & Public Sphere Exhibition</a></p>
-      </div>
-    </div>
-  </div>
-</section>
+{{ partial "work/page-header.html" . }}
 <section class="site-work-detail">
 
   <div data-aos="fade-in" data-aos-duration="1500">
@@ -89,36 +78,10 @@
           The VR film elicited the response of moving and dancing in the river in many of the audience.</p>
       </div>
 
-      <div class="site-work-template-image-slide" data-aos="fade-in" data-aos-duration="1500">
-        <!-- Slider main container -->
-        <div class="swiper image-swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/1.jpg" alt="Knowing River Through Sound - VR film still 1" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/2.jpg" alt="Knowing River Through Sound - VR film still 2" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/3.jpg" alt="Knowing River Through Sound - VR film still 3" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/4.jpg" alt="Knowing River Through Sound - exhibition view 1" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/5.jpg" alt="Knowing River Through Sound - exhibition view 2" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/6.jpg" alt="Knowing River Through Sound - exhibition view 3" loading="lazy">
-            </div>
-          </div>
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
+      {{ partial "work/image-slide.html" (dict
+        "images" .Params.gallery_images
+        "swiperClass" "image-swiper"
+      ) }}
 
     </div>
   </div>

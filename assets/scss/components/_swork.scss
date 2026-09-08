@@ -200,13 +200,6 @@
           margin-top: 1.25rem;
         }
 
-        // 紧凑模式：用于图文间夹文字等场景
-        &--compact {
-          margin-top: 0;
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-
         h3 {
           font-family: $myriad-font;
           text-align: center;
@@ -793,22 +786,6 @@
           }
         }
 
-      }
-
-      &-more {
-        padding: 5%;
-        margin-top: 5%;
-
-        p {
-          font-family: $myriad-font;
-          font-size: 24px;
-          text-align: center;
-          color: black;
-
-          @include mobile {
-            font-size: 18px;
-          }
-        }
       }
     }
 

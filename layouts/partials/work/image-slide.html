@@ -1,0 +1,24 @@
+{{/*
+  image-slide.html
+  ================
+  work 详情页通用图片画廊组件（site-work-template-image-slide + swiper）。
+
+  参数：
+    - images      (slice of dict, 必填) 图片列表，每项含 src / alt
+    - swiperClass (string, 必填) swiper 块的附加 class（如 image-swiper / image-swiper-gallery）
+    - prevClass   (string, 可选) 上一张按钮的附加 class
+    - nextClass   (string, 可选) 下一张按钮的附加 class
+*/}}
+<div class="site-work-template-image-slide" data-aos="fade-in" data-aos-duration="1500">
+  <div class="swiper {{ .swiperClass }}">
+    <div class="swiper-wrapper">
+      {{- range .images }}
+      <div class="swiper-slide site-work-template-image-slide-img">
+        <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy">
+      </div>
+      {{- end }}
+    </div>
+    <div class="swiper-button-prev{{ with .prevClass }} {{ . }}{{ end }}"></div>
+    <div class="swiper-button-next{{ with .nextClass }} {{ . }}{{ end }}"></div>
+  </div>
+</div>

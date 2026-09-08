@@ -14,16 +14,7 @@
   }
 </style>
 
-<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="site-work-header-title">JunctionScape</h3>
-        <p class="site-work-header-desc">Landscape Architecture Core Studio I</p>
-      </div>
-    </div>
-  </div>
-</section>
+{{ partial "work/page-header.html" . }}
 
 <section class="site-work-detail">
 
@@ -150,26 +141,14 @@
       </div>
 
       <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper auto-carousel-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-title="Master Plan">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/master%20plan.jpg" alt="Master Plan" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Wetland & Platform">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/wetland%26platform.jpg" alt="Wetland & Platform" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Reflection Pool">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/reflection%20&%20swimming%20pool.jpg" alt="Reflection & Swimming Pool" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Water Square">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/water%20square.jpg" alt="Water Square" loading="lazy">
-            </div>
-          </div>
-          <div class="auto-carousel-overlay">
-            <span class="auto-carousel-title">Master Plan</span>
-            <span class="auto-carousel-counter">1/4</span>
-          </div>
-        </div>
+        {{ partial "work/auto-carousel.html" (dict
+          "images" (slice
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/master%20plan.jpg" "alt" "Master Plan" "title" "Master Plan")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/wetland%26platform.jpg" "alt" "Wetland & Platform" "title" "Wetland & Platform")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/reflection%20&%20swimming%20pool.jpg" "alt" "Reflection & Swimming Pool" "title" "Reflection Pool")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/water%20square.jpg" "alt" "Water Square" "title" "Water Square")
+          )
+        ) }}
       </div>
 
     </div>
@@ -233,26 +212,10 @@
         <p>The model tests the space sequence of urban, main road, parking lot, grove, sidewalk, swimming pool and the river; as well as the use of materials and different tree species - Oaks and American Elms are used to create shades and seasonal change, while Redwoods are used to create skyline at waterfront.</p>
       </div>
 
-      <div class="site-work-template-image-slide" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper image-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/model1.jpg" alt="Testing Model 1" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/model2.jpg" alt="Testing Model 2" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/model3.jpg" alt="Testing Model 3" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/model4.jpg" alt="Testing Model 4" loading="lazy">
-            </div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
+      {{ partial "work/image-slide.html" (dict
+        "images" .Params.gallery_images
+        "swiperClass" "image-swiper"
+      ) }}
 
     </div>
   </div>
@@ -274,20 +237,12 @@
         </div>
         <div class="site-work-detail-page-template-junctionscape-impact-split-media">
           <div class="auto-carousel">
-            <div class="swiper auto-carousel-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" data-slide-title="Summer Swimming Pool">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/summer%20swimming%20pool.jpg" alt="Summer Swimming Pool" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Winter Reflection Pool">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/winter%20reflection%20pool.jpg" alt="Winter Reflection Pool" loading="lazy">
-                </div>
-              </div>
-              <div class="auto-carousel-overlay">
-                <span class="auto-carousel-title">Summer Swimming Pool</span>
-                <span class="auto-carousel-counter">1/2</span>
-              </div>
-            </div>
+            {{ partial "work/auto-carousel.html" (dict
+              "images" (slice
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/summer%20swimming%20pool.jpg" "alt" "Summer Swimming Pool" "title" "Summer Swimming Pool")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/junctionscape/compressed/winter%20reflection%20pool.jpg" "alt" "Winter Reflection Pool" "title" "Winter Reflection Pool")
+              )
+            ) }}
           </div>
         </div>
       </div>
