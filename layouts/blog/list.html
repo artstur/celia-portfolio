@@ -27,9 +27,7 @@
           <div class="site-blog-post-content">
             <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <p>
-              {{ .Summary }} ...
-            </p>
+            {{ .Summary }} ...
             <a href="{{ .Permalink }}" class="read-more">{{ .Site.Params.blog.read_more }}</a>
           </div>
         </article>
