@@ -1,15 +1,6 @@
 {{ define "main" }}
 
-<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="site-work-header-title">A Collection: Garments of Discomfort</h3>
-        <p class="site-work-header-project-desc">Harvard Kirkland Gallery Exhibition &middot; Interrogative Design</p>
-      </div>
-    </div>
-  </div>
-</section>
+{{ partial "work/page-header.html" . }}
 
 <section class="site-work-detail">
 
@@ -17,44 +8,12 @@
     <div class="container">
 
       <!-- Image Gallery: Garments and Technical Drawings -->
-      <div class="site-work-template-image-slide" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper image-swiper-gallery">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/SHORTS.jpg" alt="Bleeding Shorts" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/220425_Technical%20Drawings-05.jpg" alt="Bleeding Shorts - Technical Drawing" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/COAT.jpg" alt="Fatigue Coat" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/220425_Technical%20Drawings-02.jpg" alt="Fatigue Coat - Technical Drawing" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/SKIRT.jpg" alt="Bloated Skirt" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/220425_Technical%20Drawings-01.jpg" alt="Bloated Skirt - Technical Drawing" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/BRA.jpg" alt="Swelling Bra" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/220425_Technical%20Drawings-03.jpg" alt="Swelling Bra - Technical Drawing" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/HAT.jpg" alt="Insomnia Hat" loading="lazy">
-            </div>
-            <div class="swiper-slide site-work-template-image-slide-img">
-              <img src="https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/220425_Technical%20Drawings-04.jpg" alt="Insomnia Hat - Technical Drawing" loading="lazy">
-            </div>
-          </div>
-          <div class="swiper-button-prev image-swiper-gallery-prev"></div>
-          <div class="swiper-button-next image-swiper-gallery-next"></div>
-        </div>
-      </div>
+      {{ partial "work/image-slide.html" (dict
+        "images" .Params.gallery_images
+        "swiperClass" "image-swiper-gallery"
+        "prevClass" "image-swiper-gallery-prev"
+        "nextClass" "image-swiper-gallery-next"
+      ) }}
 
       <!-- Project Description -->
       <div class="site-work-template-plain-text">

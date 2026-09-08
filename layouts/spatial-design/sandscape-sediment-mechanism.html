@@ -2,16 +2,7 @@
 
 {{ partial "accent-color-style.html" . }}
 
-<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="site-work-header-title">Sandscape: Sediment Mechanism</h3>
-        <p class="site-work-header-desc">Landscape Architecture Core Studio III</p>
-      </div>
-    </div>
-  </div>
-</section>
+{{ partial "work/page-header.html" . }}
 
 <section class="site-work-detail">
 
@@ -45,20 +36,12 @@
       </div>
 
       <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper auto-carousel-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-title="Current Territory">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Final%20Review2.jpg" alt="Current Territory" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Future Territory">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Final%20Review3.jpg" alt="Future Territory" loading="lazy">
-            </div>
-          </div>
-          <div class="auto-carousel-overlay">
-            <span class="auto-carousel-title">Current Territory</span>
-            <span class="auto-carousel-counter">1/2</span>
-          </div>
-        </div>
+        {{ partial "work/auto-carousel.html" (dict
+          "images" (slice
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Final%20Review2.jpg" "alt" "Current Territory" "title" "Current Territory")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Final%20Review3.jpg" "alt" "Future Territory" "title" "Future Territory")
+          )
+        ) }}
       </div>
 
     </div>
@@ -75,20 +58,12 @@
       </div>
 
       <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper auto-carousel-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-title="Undersea Dredge Scars">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent3.jpg" alt="Undersea Dredge Scars 1" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Undersea Dredge Scars">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent4.jpg" alt="Undersea Dredge Scars 2" loading="lazy">
-            </div>
-          </div>
-          <div class="auto-carousel-overlay">
-            <span class="auto-carousel-title">Undersea Dredge Scars</span>
-            <span class="auto-carousel-counter">1/2</span>
-          </div>
-        </div>
+        {{ partial "work/auto-carousel.html" (dict
+          "images" (slice
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent3.jpg" "alt" "Undersea Dredge Scars 1" "title" "Undersea Dredge Scars")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent4.jpg" "alt" "Undersea Dredge Scars 2" "title" "Undersea Dredge Scars")
+          )
+        ) }}
       </div>
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
@@ -96,20 +71,12 @@
       </div>
 
       <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper auto-carousel-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-title="Coastal Scallop Farms">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent1.jpg" alt="Coastal Scallop Farms 1" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Coastal Scallop Farms">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent2.jpg" alt="Coastal Scallop Farms 2" loading="lazy">
-            </div>
-          </div>
-          <div class="auto-carousel-overlay">
-            <span class="auto-carousel-title">Coastal Scallop Farms</span>
-            <span class="auto-carousel-counter">1/2</span>
-          </div>
-        </div>
+        {{ partial "work/auto-carousel.html" (dict
+          "images" (slice
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent1.jpg" "alt" "Coastal Scallop Farms 1" "title" "Coastal Scallop Farms")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/agent2.jpg" "alt" "Coastal Scallop Farms 2" "title" "Coastal Scallop Farms")
+          )
+        ) }}
       </div>
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
@@ -188,26 +155,14 @@
               alt="Offshore Site Testing">
           </div>
           <div class="sandscape-row__carousel auto-carousel">
-            <div class="swiper auto-carousel-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" data-slide-title="Offshore Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing2.jpg" alt="Offshore Site Testing 2" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Offshore Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing3.jpg" alt="Offshore Site Testing 3" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Offshore Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing4.jpg" alt="Offshore Site Testing 4" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Offshore Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing5.jpg" alt="Offshore Site Testing 5" loading="lazy">
-                </div>
-              </div>
-              <div class="auto-carousel-overlay">
-                <span class="auto-carousel-title">Offshore Site Testing</span>
-                <span class="auto-carousel-counter">1/4</span>
-              </div>
-            </div>
+            {{ partial "work/auto-carousel.html" (dict
+              "images" (slice
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing2.jpg" "alt" "Offshore Site Testing 2" "title" "Offshore Site Testing")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing3.jpg" "alt" "Offshore Site Testing 3" "title" "Offshore Site Testing")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing4.jpg" "alt" "Offshore Site Testing 4" "title" "Offshore Site Testing")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing5.jpg" "alt" "Offshore Site Testing 5" "title" "Offshore Site Testing")
+              )
+            ) }}
           </div>
         </div>
       </div>
@@ -219,26 +174,14 @@
               alt="Inland Site Testing">
           </div>
           <div class="sandscape-row__carousel auto-carousel">
-            <div class="swiper auto-carousel-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" data-slide-title="Inland Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing7.jpg" alt="Inland Site Testing 7" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Inland Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing8.jpg" alt="Inland Site Testing 8" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Inland Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing9.jpg" alt="Inland Site Testing 9" loading="lazy">
-                </div>
-                <div class="swiper-slide" data-slide-title="Inland Site Testing">
-                  <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing10.jpg" alt="Inland Site Testing 10" loading="lazy">
-                </div>
-              </div>
-              <div class="auto-carousel-overlay">
-                <span class="auto-carousel-title">Inland Site Testing</span>
-                <span class="auto-carousel-counter">1/4</span>
-              </div>
-            </div>
+            {{ partial "work/auto-carousel.html" (dict
+              "images" (slice
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing7.jpg" "alt" "Inland Site Testing 7" "title" "Inland Site Testing")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing8.jpg" "alt" "Inland Site Testing 8" "title" "Inland Site Testing")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing9.jpg" "alt" "Inland Site Testing 9" "title" "Inland Site Testing")
+                (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/testing10.jpg" "alt" "Inland Site Testing 10" "title" "Inland Site Testing")
+              )
+            ) }}
           </div>
         </div>
         <div class="sandscape-row__text">
@@ -270,23 +213,13 @@
       </div>
 
       <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper auto-carousel-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-title="Underwater Ruins and Hatchery">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Underwater%20Ruins%20and%20Hatchery.jpg" alt="Underwater Ruins and Hatchery" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Diving with Dredge Scars">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Diving%20with%20Dredge%20Scars.jpg" alt="Diving with Dredge Scars" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Fishing at Sea">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Fishing%20at%20Sea.jpg" alt="Fishing at Sea" loading="lazy">
-            </div>
-          </div>
-          <div class="auto-carousel-overlay">
-            <span class="auto-carousel-title">Underwater Ruins and Hatchery</span>
-            <span class="auto-carousel-counter">1/3</span>
-          </div>
-        </div>
+        {{ partial "work/auto-carousel.html" (dict
+          "images" (slice
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Underwater%20Ruins%20and%20Hatchery.jpg" "alt" "Underwater Ruins and Hatchery" "title" "Underwater Ruins and Hatchery")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Diving%20with%20Dredge%20Scars.jpg" "alt" "Diving with Dredge Scars" "title" "Diving with Dredge Scars")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Fishing%20at%20Sea.jpg" "alt" "Fishing at Sea" "title" "Fishing at Sea")
+          )
+        ) }}
       </div>
 
       <div class="site-work-detail-page-template-header" data-aos="fade-in" data-aos-duration="1500">
@@ -304,23 +237,13 @@
       </div>
 
       <div class="auto-carousel" data-aos="fade-in" data-aos-duration="1500">
-        <div class="swiper auto-carousel-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-title="Coastal Contouring Farms">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Coastal%20Contouring%20Farms.jpg" alt="Coastal Contouring Farms" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Fishing in Contour">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Fishing%20in%20Contour.jpg" alt="Fishing in Contour" loading="lazy">
-            </div>
-            <div class="swiper-slide" data-slide-title="Living with Coastal Farms">
-              <img src="https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Living%20with%20Coastal%20Farms.jpg" alt="Living with Coastal Farms" loading="lazy">
-            </div>
-          </div>
-          <div class="auto-carousel-overlay">
-            <span class="auto-carousel-title">Coastal Contouring Farms</span>
-            <span class="auto-carousel-counter">1/3</span>
-          </div>
-        </div>
+        {{ partial "work/auto-carousel.html" (dict
+          "images" (slice
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Coastal%20Contouring%20Farms.jpg" "alt" "Coastal Contouring Farms" "title" "Coastal Contouring Farms")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Fishing%20in%20Contour.jpg" "alt" "Fishing in Contour" "title" "Fishing in Contour")
+            (dict "src" "https://cdn.celiasy.com/images/spatial-design/sandscape-sediment-mechanism/compressed/Living%20with%20Coastal%20Farms.jpg" "alt" "Living with Coastal Farms" "title" "Living with Coastal Farms")
+          )
+        ) }}
       </div>
 
     </div>

@@ -1,0 +1,30 @@
+{{/*
+  page-header.html
+  ================
+  work 详情页通用页头组件（site-work-header）。
+
+  参数（从页面上下文读取，调用方式：{{ partial "work/page-header.html" . }}）：
+    - work_header_title           (string, 必填) 标题
+    - work_header_desc_class      (string, 可选) 描述 <p> 的 class
+    - work_header_desc_html       (string, 可选) 描述内容，safeHTML 输出（可含内联 <a>）
+    - work_header_role            (string, 可选) Role 行（纯文本）
+    - work_header_disclaimer_html (string, 可选) Disclaimer 行（纯文本）
+*/}}
+<section class="site-work-header" data-aos="fade-in" data-aos-duration="1500">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="site-work-header-title">{{ .Params.work_header_title }}</h3>
+        {{- with .Params.work_header_desc_html }}
+        <p class="{{ $.Params.work_header_desc_class }}">{{ . | safeHTML }}</p>
+        {{- end }}
+        {{- with .Params.work_header_role }}
+        <p class="site-work-header-role">{{ . }}</p>
+        {{- end }}
+        {{- with .Params.work_header_disclaimer_html }}
+        <p class="site-work-header-disclaimer">{{ . }}</p>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>
