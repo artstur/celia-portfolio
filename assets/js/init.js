@@ -9,7 +9,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 // ========== Swiper: 图片轮播 ==========
 const imageSwiper = new Swiper('.image-swiper', {
   loop: false,
-  autoPlay: {
+  autoplay: {
     delay: 1000,
   },
   slidesPerView: 1,
