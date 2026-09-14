@@ -14,7 +14,7 @@
     <div class="swiper-wrapper">
       {{- range .images }}
       <div class="swiper-slide site-work-template-image-slide-img">
-        <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy">
+        <img src="{{ .src }}" alt="{{ .alt }}"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }} loading="lazy" decoding="async">
       </div>
       {{- end }}
     </div>

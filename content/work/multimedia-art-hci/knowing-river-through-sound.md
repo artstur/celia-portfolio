@@ -4,7 +4,7 @@ type: 'multimedia-art-hci'
 layout: 'knowing-river-through-sound'
 work_header_title: "Knowing River Through Sound"
 work_header_desc_class: 'site-work-header-project-desc'
-work_header_desc_html: '<a href="https://act.mit.edu/event/soma-salon-002-art-public-sphere-choreographing-the-city/" target="_blank">MIT Art & Public Sphere Exhibition</a>'
+work_header_desc_html: '<a href="https://act.mit.edu/event/soma-salon-002-art-public-sphere-choreographing-the-city/" target="_blank" rel="noopener noreferrer">MIT Art & Public Sphere Exhibition</a>'
 gallery_images:
   - src: "https://cdn.celiasy.com/images/multimedia-art/knowing-river-through-sound/compressed/1.jpg"
     alt: "Knowing River Through Sound - VR film still 1"

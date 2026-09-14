@@ -1,13 +1,9 @@
 // ========== AOS (Animate on Scroll) ==========
 AOS.init();
 
-// ========== Smooth Scroll ==========
-var scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000
-});
-
 // ========== Swiper: 图片轮播 ==========
-const imageSwiper = new Swiper('.image-swiper', {
+var imageSwiperEl = document.querySelector('.image-swiper');
+var imageSwiper = imageSwiperEl && window.Swiper ? new Swiper(imageSwiperEl, {
   loop: false,
   autoplay: {
     delay: 1000,
@@ -27,10 +23,11 @@ const imageSwiper = new Swiper('.image-swiper', {
   },
   touchEventsTarget: 'container',
   simulateTouch: true,
-});
+}) : null;
 
 // ========== Swiper: 内联轮播（左右布局，每次1张，自动播放）==========
 document.querySelectorAll('.inline-carousel-swiper').forEach(function(el) {
+  if (!window.Swiper) return;
   new Swiper(el, {
     loop: true,
     slidesPerView: 1,
@@ -53,7 +50,7 @@ document.querySelectorAll('.inline-carousel-swiper').forEach(function(el) {
 
 // ========== Swiper: 图片轮播（画廊：4.5张，不循环）==========
 var imageSwiperGalleryEl = document.querySelector('.image-swiper-gallery');
-if (imageSwiperGalleryEl) {
+if (imageSwiperGalleryEl && window.Swiper) {
   new Swiper('.image-swiper-gallery', {
     loop: false,
     slidesPerView: 2,
@@ -75,7 +72,7 @@ if (imageSwiperGalleryEl) {
 
 // ========== Swiper: 视频轮播（封面视图）==========
 var videoSwiperEl = document.querySelector('.video-swiper');
-var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
+var videoSwiper = videoSwiperEl && window.Swiper ? new Swiper(videoSwiperEl, {
   loop: false,
   slidesPerView: 1,
   spaceBetween: 0,
@@ -104,6 +101,8 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
   var closeBtn = modal.querySelector('.video-modal-close');
   var slides = document.querySelectorAll('.video-slide');
   var allVideosBtn = document.querySelector('.video-all-btn');
+  var returnFocus = null;
+  var previousBodyOverflow = '';
 
   // 收集所有视频数据
   var videos = [];
@@ -124,8 +123,10 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
   function buildThumbs() {
     thumbsContainer.innerHTML = '';
     videos.forEach(function(v, i) {
-      var div = document.createElement('div');
+      var div = document.createElement('button');
+      div.type = 'button';
       div.className = 'video-modal-thumb' + (i === currentIndex ? ' active' : '');
+      div.setAttribute('aria-label', 'Play ' + v.title);
       var html = '<img src="' + v.thumb + '" alt="' + v.title + '">';
       // "Now Playing" 标签
       if (i === currentIndex) {
@@ -156,17 +157,24 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
   }
 
   // 打开 Modal
-  function openModal(index) {
+  function openModal(index, trigger) {
+    returnFocus = trigger || document.activeElement;
+    previousBodyOverflow = document.body.style.overflow;
     playVideo(index);
     modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    closeBtn.focus();
   }
 
   // 关闭 Modal
   function closeModal() {
     modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
     iframe.src = 'about:blank';
-    document.body.style.overflow = '';
+    document.body.style.overflow = previousBodyOverflow;
+    if (returnFocus && document.contains(returnFocus)) returnFocus.focus();
+    returnFocus = null;
   }
 
   // 判断是否为移动端（与 SCSS $mobile 断点 575px 一致）
@@ -201,6 +209,7 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
     // 嵌入 iframe
     var inlineIframe = document.createElement('iframe');
     inlineIframe.src = src;
+    inlineIframe.title = (videos[index].title || 'Video') + ' video player';
     inlineIframe.setAttribute('allowfullscreen', '');
     inlineIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
     inlineIframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
@@ -256,7 +265,7 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
       if (isMobile()) {
         playInline(slide, i);
       } else {
-        openModal(i);
+        openModal(i, slide.querySelector('.video-play-btn'));
       }
     });
   });
@@ -266,7 +275,7 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
     allVideosBtn.addEventListener('click', function(e) {
       e.preventDefault();
       var activeIndex = videoSwiper ? videoSwiper.activeIndex : 0;
-      openModal(activeIndex);
+      openModal(activeIndex, allVideosBtn);
     });
   }
 
@@ -289,10 +298,29 @@ var videoSwiper = videoSwiperEl ? new Swiper('.video-swiper', {
     if (e.target === modal) closeModal();
   });
 
-  // ESC 键关闭
+  // ESC 关闭；Tab 保持在模态窗口内。
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
+      return;
+    }
+
+    if (e.key === 'Tab' && modal.classList.contains('active')) {
+      var focusable = Array.prototype.filter.call(
+        modal.querySelectorAll('button, [href], iframe, [tabindex]:not([tabindex="-1"])'),
+        function(element) { return !element.disabled && element.offsetParent !== null; }
+      );
+      if (!focusable.length) return;
+
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 })();
