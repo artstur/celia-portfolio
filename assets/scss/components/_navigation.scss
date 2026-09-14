@@ -185,3 +185,62 @@
     }
   }
 }
+
+// ===== 折叠菜单面板重设计（≤991px，含手机 ≤575px）=====
+// 修复：顶级项居中但子菜单左对齐的混排；子菜单沿用桌面悬浮下拉的
+// min-width/阴影导致层级混乱；行距松散占半屏。
+// 设计：全左对齐、紧凑行高、子菜单缩进+左侧竖线明确从属、顶部发丝线分界。
+.site-navigation {
+  @include desktop {
+    .navbar-collapse {
+      margin-top: 8px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      max-height: calc(100vh - 130px);
+      overflow-y: auto;
+      padding: 4px 0 8px;
+    }
+
+    .nav-item {
+      text-align: left;
+    }
+
+    .nav-item .nav-link {
+      justify-content: flex-start;
+      width: 100%;
+      min-height: 48px;
+      padding: 13px 20px;
+      font-size: 17px;
+      color: $text-color-dark;
+    }
+
+    // 下拉触发项：箭头推到行尾，作为展开指示
+    .nav-item .dropdown-toggle-link .has-dropdown-icon {
+      margin-left: auto;
+      font-size: 0.8em;
+      color: $dark-gray;
+    }
+
+    // 子菜单：缩进面板 + 左侧竖线，明确从属关系
+    .nav-item .nav-dropdown {
+      margin: 0 12px 8px;
+      padding: 2px 0;
+      min-width: 0;
+      background: #FAFAFB;
+      border-left: 2px solid rgba(0, 0, 0, 0.7);
+      border-radius: 0 4px 4px 0;
+      box-shadow: none;
+
+      .nav-link {
+        font-size: 15px;
+        min-height: 44px;
+        padding: 11px 16px;
+        color: $dark-gray;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.045);
+          color: $text-color-dark;
+        }
+      }
+    }
+  }
+}
