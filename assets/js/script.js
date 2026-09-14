@@ -108,6 +108,7 @@
 
   document.addEventListener('keydown', function (event) {
     if (event.key !== 'Escape' || !isCollapsedMode()) return;
+    if (!navbar || !navbar.classList.contains('show')) return;
     closeDropdowns();
     setNavbarExpanded(false);
     if (navbarToggler) navbarToggler.focus();

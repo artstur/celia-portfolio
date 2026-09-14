@@ -27,11 +27,11 @@
           {{ end }}
           <div class="site-blog-post-content">
             <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
             <p>
               {{ .Summary | plainify }} ...
             </p>
-            <a href="{{ .Permalink }}" class="read-more">{{ .Site.Params.blog.read_more }}</a>
+            <a href="{{ .Permalink }}" class="read-more" aria-label="{{ .Site.Params.blog.read_more }}: {{ .Title }}">{{ .Site.Params.blog.read_more }}</a>
           </div>
         </article>
       </div>

@@ -8,7 +8,7 @@
     - images (slice of dict, 必填) 图片列表，每项含 src / alt / title（title 对应 data-slide-title，
       且首项 title 即 overlay 初始标题，counter 初始值固定为 1/N，运行时由脚本重写）
 */}}
-<div class="swiper auto-carousel-swiper">
+<div class="swiper auto-carousel-swiper" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="autoCarouselModal" aria-label="Open {{ (index .images 0).title }} image gallery">
   <div class="swiper-wrapper">
     {{- range .images }}
     <div class="swiper-slide" data-slide-title="{{ .title }}">

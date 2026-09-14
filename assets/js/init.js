@@ -1,11 +1,26 @@
 // ========== AOS (Animate on Scroll) ==========
-AOS.init();
+if (window.AOS) {
+  window.AOS.init();
+}
+
+var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function pauseAutoplayWhileFocused(swiper, element) {
+  if (!swiper || prefersReducedMotion || !swiper.autoplay) return;
+
+  element.addEventListener('focusin', function() {
+    swiper.autoplay.stop();
+  });
+  element.addEventListener('focusout', function(event) {
+    if (!element.contains(event.relatedTarget)) swiper.autoplay.start();
+  });
+}
 
 // ========== Swiper: 图片轮播 ==========
 var imageSwiperEl = document.querySelector('.image-swiper');
 var imageSwiper = imageSwiperEl && window.Swiper ? new Swiper(imageSwiperEl, {
   loop: false,
-  autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
+  autoplay: prefersReducedMotion ? false : {
     delay: 4000,
     pauseOnMouseEnter: true,
     disableOnInteraction: false,
@@ -26,16 +41,18 @@ var imageSwiper = imageSwiperEl && window.Swiper ? new Swiper(imageSwiperEl, {
   touchEventsTarget: 'container',
   simulateTouch: true,
 }) : null;
+pauseAutoplayWhileFocused(imageSwiper, imageSwiperEl);
 
 // ========== Swiper: 内联轮播（左右布局，每次1张，自动播放）==========
 document.querySelectorAll('.inline-carousel-swiper').forEach(function(el) {
   if (!window.Swiper) return;
-  new Swiper(el, {
+  var inlineSwiper = new Swiper(el, {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 0,
-    autoplay: {
-      delay: 1200,
+    autoplay: prefersReducedMotion ? false : {
+      delay: 4000,
+      pauseOnMouseEnter: true,
       disableOnInteraction: false,
     },
     speed: 300,
@@ -48,6 +65,7 @@ document.querySelectorAll('.inline-carousel-swiper').forEach(function(el) {
     touchEventsTarget: 'container',
     simulateTouch: true,
   });
+  pauseAutoplayWhileFocused(inlineSwiper, el);
 });
 
 // ========== Swiper: 图片轮播（画廊：4.5张，不循环）==========

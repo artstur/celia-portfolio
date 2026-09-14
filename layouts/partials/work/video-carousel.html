@@ -27,8 +27,8 @@
           data-video-desc="{{ $videoDesc }}">
           <img class="video-cover" src="{{ $videoThumb }}" alt="{{ $videoAlt }}"{{ with $videoWidth }} width="{{ . }}"{{ end }}{{ with $videoHeight }} height="{{ . }}"{{ end }} decoding="async">
           <div class="video-overlay">
-            <h3 class="video-overlay-title">{{ $overlayTitle }}</h3>
-            <button class="video-play-btn" aria-label="Play video">
+            <h2 class="video-overlay-title">{{ $overlayTitle }}</h2>
+            <button class="video-play-btn" type="button" aria-label="Play {{ $videoTitle }}">
               <i class="fa-regular fa-circle-play"></i>
               <span>Play Video</span>
             </button>
@@ -45,6 +45,6 @@
     {{ end }}
   </div>
   {{ if $showAllButton }}
-    <button class="video-all-btn">{{ $allButtonText }} <i class="fa-solid fa-plus"></i></button>
+    <button class="video-all-btn" type="button">{{ $allButtonText }} <i class="fa-solid fa-plus"></i></button>
   {{ end }}
 </div>

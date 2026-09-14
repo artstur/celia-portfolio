@@ -10,22 +10,22 @@
 */}}
 
 <!-- 自动轮播 Modal -->
-<div class="auto-carousel-modal" id="autoCarouselModal">
-  <button class="auto-carousel-modal-close" aria-label="Close">&times;</button>
+<div class="auto-carousel-modal" id="autoCarouselModal" role="dialog" aria-modal="true" aria-labelledby="autoCarouselModalTitle" aria-hidden="true">
+  <button class="auto-carousel-modal-close" type="button" aria-label="Close image gallery">&times;</button>
   <div class="auto-carousel-modal-body">
     <div class="auto-carousel-modal-swiper-wrap">
-      <button class="auto-carousel-modal-nav auto-carousel-modal-prev" aria-label="Previous">
+      <button class="auto-carousel-modal-nav auto-carousel-modal-prev" type="button" aria-label="Previous image">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
       <div class="swiper auto-carousel-modal-swiper">
         <div class="swiper-wrapper" id="autoCarouselModalSlides"></div>
       </div>
-      <button class="auto-carousel-modal-nav auto-carousel-modal-next" aria-label="Next">
+      <button class="auto-carousel-modal-nav auto-carousel-modal-next" type="button" aria-label="Next image">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>
     <div class="auto-carousel-modal-caption">
-      <span class="auto-carousel-modal-title"></span>
+      <span class="auto-carousel-modal-title" id="autoCarouselModalTitle"></span>
     </div>
   </div>
 </div>
@@ -33,11 +33,16 @@
 <!-- 自动轮播脚本 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  if (!window.Swiper) return;
+
   var modal = document.getElementById('autoCarouselModal');
   var modalSlidesContainer = document.getElementById('autoCarouselModalSlides');
   var modalTitle = modal.querySelector('.auto-carousel-modal-title');
   var modalCloseBtn = modal.querySelector('.auto-carousel-modal-close');
   var modalSwiper = null;
+  var returnFocus = null;
+  var previousBodyOverflow = '';
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // 初始化所有自动轮播
   document.querySelectorAll('.auto-carousel-swiper').forEach(function(el) {
@@ -45,14 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var titleEl = el.querySelector('.auto-carousel-title');
     var slides = el.querySelectorAll('.swiper-slide');
     var totalSlides = slides.length;
-    var autoplayDelay = 500;
+    var autoplayDelay = 4000;
 
     var swiper = new Swiper(el, {
       loop: true,
       slidesPerView: 1,
       spaceBetween: 0,
-      autoplay: {
+      autoplay: prefersReducedMotion ? false : {
         delay: autoplayDelay,
+        pauseOnMouseEnter: true,
         disableOnInteraction: false,
       },
       speed: 600,
@@ -73,8 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     swiper.on('slideChange', function() { updateOverlay(); });
     updateOverlay();
 
-    // 点击打开 modal
-    el.addEventListener('click', function() {
+    function openCarouselModal() {
       var slides = el.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)');
       var title = el.querySelector('.auto-carousel-title');
       var titleText = title ? title.textContent : '';
@@ -95,8 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       modalTitle.textContent = titleText;
+      returnFocus = el;
+      previousBodyOverflow = document.body.style.overflow;
       modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      if (swiper.autoplay) swiper.autoplay.stop();
 
       // 销毁旧的 modal swiper
       if (modalSwiper) { modalSwiper.destroy(true, true); }
@@ -110,24 +119,63 @@ document.addEventListener('DOMContentLoaded', function() {
           prevEl: '.auto-carousel-modal-prev',
         },
       });
+      modalCloseBtn.focus();
+    }
+
+    // 点击或键盘操作打开 modal
+    el.addEventListener('click', openCarouselModal);
+    el.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openCarouselModal();
+      }
     });
+
+    if (!prefersReducedMotion && swiper.autoplay) {
+      el.addEventListener('focusin', function() { swiper.autoplay.stop(); });
+      el.addEventListener('focusout', function(event) {
+        if (!el.contains(event.relatedTarget) && !modal.classList.contains('active')) {
+          swiper.autoplay.start();
+        }
+      });
+    }
   });
 
-  // 关闭 modal
-  modalCloseBtn.addEventListener('click', function() {
+  function closeModal() {
     modal.classList.remove('active');
-    document.body.style.overflow = '';
-  });
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = previousBodyOverflow;
+    if (returnFocus && document.contains(returnFocus)) returnFocus.focus();
+    returnFocus = null;
+  }
+
+  // 关闭 modal
+  modalCloseBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    if (e.target === modal) closeModal();
   });
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
+      closeModal();
+      return;
+    }
+
+    if (e.key === 'Tab' && modal.classList.contains('active')) {
+      var focusable = Array.prototype.filter.call(
+        modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])'),
+        function(element) { return !element.disabled && element.offsetParent !== null; }
+      );
+      if (!focusable.length) return;
+
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 });

@@ -27,9 +27,12 @@
                   {{ .Name }}<i class="fa-solid fa-angle-down has-dropdown-icon" aria-hidden="true"></i>
                 </a>
                 
-                <div class="nav-dropdown" role="menu">
+                <div class="nav-dropdown">
+                    <a class="nav-link nav-dropdown-overview" href="{{ .URL | relURL }}">
+                    All {{ .Name }}
+                    </a>
                     {{ range .Children }}
-                    <a class="nav-link" role="menuitem" href="{{ .URL | relURL }}">
+                    <a class="nav-link" href="{{ .URL | relURL }}">
                     {{ .Name }}
                     </a>
                     {{- end }}
