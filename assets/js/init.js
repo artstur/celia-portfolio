@@ -5,8 +5,10 @@ AOS.init();
 var imageSwiperEl = document.querySelector('.image-swiper');
 var imageSwiper = imageSwiperEl && window.Swiper ? new Swiper(imageSwiperEl, {
   loop: false,
-  autoplay: {
-    delay: 1000,
+  autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
+    delay: 4000,
+    pauseOnMouseEnter: true,
+    disableOnInteraction: false,
   },
   slidesPerView: 1,
   spaceBetween: 10,
