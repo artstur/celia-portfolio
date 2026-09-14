@@ -423,6 +423,10 @@
   min-width: 240px;
   cursor: pointer;
   border: 2px solid transparent;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: inherit;
   transition: border-color 0.3s ease;
 
   @include tablet {

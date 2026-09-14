@@ -5,5 +5,5 @@ layout: 'seeding-the-food-desert'
 accent_color: '#8B9C7E'
 work_header_title: "Seeding the Food Desert: School System Activated Rewilding City"
 work_header_desc_class: 'site-work-header-project-desc'
-work_header_desc_html: '<a href="https://www.gsd.harvard.edu/2022/05/designing-for-a-new-wilderness/" target="_blank">Harvard GSD News</a>, ASLA Nominated'
+work_header_desc_html: '<a href="https://www.gsd.harvard.edu/2022/05/designing-for-a-new-wilderness/" target="_blank" rel="noopener noreferrer">Harvard GSD News</a>, ASLA Nominated'
 ---

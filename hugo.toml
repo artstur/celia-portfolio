@@ -3,6 +3,7 @@ languageCode     = "en-us"
 title            = "Celia Shuyue Li"
 summarylength    = 25
 googleAnalytics  = "G-S5RBWMEYXS"
+disableKinds     = ["taxonomy", "term"]
 
 # Site Menus
 [menu]
@@ -38,8 +39,8 @@ googleAnalytics  = "G-S5RBWMEYXS"
 # Site Params
 [params]
   owner = "Celia Shuyue Li"
-  favicon_icon = "images/favicon.png"
-  favicon_shortcut_icon = "images/favicon.png"
+  favicon_icon = "images/favicon-32.png"
+  favicon_apple_touch_icon = "images/apple-touch-icon.png"
   custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
   # Meta data
   description = "Portfolio of Celia Shuyue Li, an AI product designer, multimedia artist, and spatial designer integrating people, design, art, and technology."

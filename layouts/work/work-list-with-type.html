@@ -4,9 +4,9 @@
     <div class="container">
       <div class="row">
         <div class="site-work-intro-link col-md-10" data-aos="fade-in" data-aos-duration="1500">
-          <h2>
+          <h1>
               <a target="_self">{{ .Params.header_title}}</a>
-          </h2>
+          </h1>
         </div>
       </div>
       <div class="row">
@@ -28,7 +28,7 @@
         {{ if eq $element.type $.Params.data_type }}
         <a class="site-work-works-image-item" href="{{ .url }}" target="_self" data-aos="fade-in" data-aos-duration="1500">
           <div class="site-work-works-image-item-mask">
-            <img src="{{ .img }}" alt="{{ .title }}" loading="lazy" decoding="async">
+            <img src="{{ .img }}" alt="{{ .title }}" width="1920" height="1920" loading="lazy" decoding="async">
             <span class="site-work-works-image-item-title">{{ .title }}</span>
           </div>
         </a>

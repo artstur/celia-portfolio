@@ -13,7 +13,7 @@
           </div>
           <div class="site-project-single-image">
             {{ range .Params.project_images }}
-            <img src="{{ . | absURL }}" alt="project image">
+            <img src="{{ . | absURL }}" alt="{{ $.Title }} project image" width="366" height="510" loading="lazy" decoding="async">
             {{ end }}
           </div>
           {{ if .NextInSection }}
@@ -24,7 +24,7 @@
                   Next Project
                 </span>
               </span>
-              <img src="{{ "images/to-top.svg" | absURL }}" alt="next project">
+              <img src="{{ "images/to-top.svg" | absURL }}" alt="" width="26.071" height="32.634">
             </a>
           </div>
           {{ end }}

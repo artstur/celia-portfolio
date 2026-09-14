@@ -6,8 +6,8 @@
       <div class="col-lg-8">
         <article class="site-blog-details">
           <p><span>{{ .PublishDate.Format "January 2, 2006" }}</span> by <span>{{ .Params.author }}</span></p>
-          <h2 class="blog-title">{{ .Title }}</h2>
-          <img class="feature-image" src="{{ .Params.feature_image | absURL }}" alt="blog-feature-image">
+          <h1 class="blog-title">{{ .Title }}</h1>
+          <img class="feature-image" src="{{ .Params.feature_image | absURL }}" alt="{{ .Title }}" width="1920" height="500">
           {{ .Content }}
         </article>
       </div>
