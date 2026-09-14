@@ -27,8 +27,13 @@
         display: block;
         margin-bottom: 10px;
       }
-      h3{
+      h2{
         margin-bottom: 0;
+        font-size: 30px;
+        line-height: 1.3;
+        @include mobile{
+          font-size: 26px;
+        }
         a{
           color: $text-color-dark;
           transition: 0.3s ease;

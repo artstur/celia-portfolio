@@ -51,9 +51,12 @@
 
   var modal = document.createElement('div');
   modal.className = 'site-work-final-image-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Full-size project image');
   modal.setAttribute('aria-hidden', 'true');
   modal.innerHTML =
-    '<button type="button" class="site-work-final-image-modal-close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="site-work-final-image-modal-close" aria-label="Close full-size image">&times;</button>' +
     '<div class="site-work-final-image-modal-body">' +
     '  <img class="site-work-final-image-modal-image" alt="">' +
     '</div>';
@@ -61,20 +64,27 @@
 
   var modalImage = modal.querySelector('.site-work-final-image-modal-image');
   var closeBtn = modal.querySelector('.site-work-final-image-modal-close');
+  var returnFocus = null;
+  var previousBodyOverflow = '';
 
-  function openModal(src, alt) {
+  function openModal(src, alt, trigger) {
+    returnFocus = trigger;
+    previousBodyOverflow = document.body.style.overflow;
     modalImage.src = src;
     modalImage.alt = alt || '';
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    closeBtn.focus();
   }
 
   function closeModal() {
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
     modalImage.src = '';
-    document.body.style.overflow = '';
+    document.body.style.overflow = previousBodyOverflow;
+    if (returnFocus && document.contains(returnFocus)) returnFocus.focus();
+    returnFocus = null;
   }
 
   document.addEventListener('click', function (event) {
@@ -87,7 +97,7 @@
     var src = window.matchMedia('(min-width: 768px)').matches ? desktopSrc : mobileSrc;
     if (!src) return;
 
-    openModal(src, alt);
+    openModal(src, alt, trigger);
   });
 
   closeBtn.addEventListener('click', closeModal);
@@ -97,6 +107,12 @@
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
+      return;
+    }
+
+    if (event.key === 'Tab' && modal.classList.contains('active')) {
+      event.preventDefault();
+      closeBtn.focus();
     }
   });
 })();

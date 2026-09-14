@@ -5,7 +5,7 @@ image: images/blog/blog-post-03.jpg
 feature_image: images/blog/blog-details-image.jpg
 author: Alexender Schoitiz
 ---
-### Black Lines brand identity, by & Smith
+## Black Lines brand identity, by & Smith
 
 Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.
 

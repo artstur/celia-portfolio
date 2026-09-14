@@ -31,8 +31,8 @@
           </div>
           <div class="site-project-item-content">
             <span>{{ delimit .Params.category ", " }}</span>
-            <h3>{{ .Title }}</h3>
-            <a href="{{ .Permalink }}" class="read-more">{{ .Site.Params.portfolio.view_project }}</a>
+            <h2>{{ .Title }}</h2>
+            <a href="{{ .Permalink }}" class="read-more" aria-label="{{ .Site.Params.portfolio.view_project }}: {{ .Title }}">{{ .Site.Params.portfolio.view_project }}</a>
           </div>
         </div>
       </div>

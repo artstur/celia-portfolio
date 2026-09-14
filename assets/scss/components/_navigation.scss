@@ -196,7 +196,10 @@
       margin-top: 8px;
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       max-height: calc(100vh - 130px);
+      max-height: calc(100dvh - 130px);
       overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
       padding: 4px 0 8px;
     }
 
