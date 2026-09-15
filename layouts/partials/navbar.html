@@ -28,9 +28,6 @@
                 </a>
                 
                 <div class="nav-dropdown">
-                    <a class="nav-link nav-dropdown-overview" href="{{ .URL | relURL }}">
-                    All {{ .Name }}
-                    </a>
                     {{ range .Children }}
                     <a class="nav-link" href="{{ .URL | relURL }}">
                     {{ .Name }}
