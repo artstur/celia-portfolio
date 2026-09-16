@@ -207,8 +207,9 @@ var videoSwiper = videoSwiperEl && window.Swiper ? new Swiper(videoSwiperEl, {
   }
 
   // 停止内联播放
-  function stopInline(slide) {
+  function stopInline(slide, restoreFocus) {
     var carouselEl = getCarouselEl(slide);
+    var inlineReturnFocus = slide.__inlineReturnFocus;
     var inlineIframe = slide.querySelector('iframe');
     if (inlineIframe) inlineIframe.remove();
     slide.classList.remove('playing');
@@ -217,14 +218,20 @@ var videoSwiper = videoSwiperEl && window.Swiper ? new Swiper(videoSwiperEl, {
       if (toolbar) toolbar.remove();
       carouselEl.classList.remove('has-playing');
     }
+    if (restoreFocus && inlineReturnFocus && document.contains(inlineReturnFocus)) {
+      inlineReturnFocus.focus();
+    }
+    slide.__inlineReturnFocus = null;
   }
 
   // 移动端：在封面原地嵌入 iframe 播放
-  function playInline(slide, index) {
+  function playInline(slide, index, trigger) {
     var carouselEl = getCarouselEl(slide);
     if (slide.classList.contains('playing')) return;
     var src = videos[index] ? videos[index].src : '';
     if (!src) return;
+    slide.__inlineReturnFocus = trigger || document.activeElement;
+    var inlineCloseBtn = null;
 
     // 嵌入 iframe
     var inlineIframe = document.createElement('iframe');
@@ -261,21 +268,22 @@ var videoSwiper = videoSwiperEl && window.Swiper ? new Swiper(videoSwiperEl, {
       toolbar.appendChild(sep);
 
       // 关闭按钮
-      var closeBtn = document.createElement('button');
-      closeBtn.className = 'video-inline-toolbar-btn';
-      closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-      closeBtn.setAttribute('aria-label', 'Close video');
-      closeBtn.addEventListener('click', function(e) {
+      inlineCloseBtn = document.createElement('button');
+      inlineCloseBtn.className = 'video-inline-toolbar-btn';
+      inlineCloseBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      inlineCloseBtn.setAttribute('aria-label', 'Close video');
+      inlineCloseBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        stopInline(slide);
+        stopInline(slide, true);
       });
-      toolbar.appendChild(closeBtn);
+      toolbar.appendChild(inlineCloseBtn);
 
       carouselEl.insertBefore(toolbar, carouselEl.firstChild);
     }
 
     slide.classList.add('playing');
     if (carouselEl) carouselEl.classList.add('has-playing');
+    if (inlineCloseBtn) inlineCloseBtn.focus();
   }
 
   // 封面轮播 Play Video 按钮点击
@@ -283,7 +291,7 @@ var videoSwiper = videoSwiperEl && window.Swiper ? new Swiper(videoSwiperEl, {
     slide.addEventListener('click', function(e) {
       e.preventDefault();
       if (isMobile()) {
-        playInline(slide, i);
+        playInline(slide, i, slide.querySelector('.video-play-btn'));
       } else {
         openModal(i, slide.querySelector('.video-play-btn'));
       }
