@@ -11,9 +11,10 @@
   }
 
   function closeDropdowns(except) {
-    document.querySelectorAll('.has-dropdown.open').forEach(function (item) {
+    document.querySelectorAll('.has-dropdown.open, .has-dropdown.escape-closed').forEach(function (item) {
       if (item === except) return;
       item.classList.remove('open');
+      item.classList.remove('escape-closed');
       var link = item.querySelector('.dropdown-toggle-link');
       if (link) link.setAttribute('aria-expanded', 'false');
     });
@@ -55,11 +56,27 @@
     });
 
     parent.addEventListener('focusin', function () {
-      if (!isCollapsedMode()) link.setAttribute('aria-expanded', 'true');
+      if (!isCollapsedMode() && !parent.classList.contains('escape-closed')) {
+        link.setAttribute('aria-expanded', 'true');
+      }
     });
 
     parent.addEventListener('focusout', function (event) {
       if (!isCollapsedMode() && !parent.contains(event.relatedTarget)) {
+        parent.classList.remove('escape-closed');
+        link.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    parent.addEventListener('mouseenter', function () {
+      if (!isCollapsedMode()) {
+        parent.classList.remove('escape-closed');
+        link.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    parent.addEventListener('mouseleave', function () {
+      if (!isCollapsedMode() && !parent.contains(document.activeElement)) {
         link.setAttribute('aria-expanded', 'false');
       }
     });
@@ -107,7 +124,18 @@
   }
 
   document.addEventListener('keydown', function (event) {
-    if (event.key !== 'Escape' || !isCollapsedMode()) return;
+    if (event.key === 'Escape' && !isCollapsedMode()) {
+      var activeDropdown = document.activeElement && document.activeElement.closest('.has-dropdown');
+      if (!activeDropdown) return;
+      var activeDropdownLink = activeDropdown.querySelector('.dropdown-toggle-link');
+      if (!activeDropdownLink) return;
+      activeDropdownLink.focus();
+      activeDropdown.classList.add('escape-closed');
+      activeDropdownLink.setAttribute('aria-expanded', 'false');
+      return;
+    }
+
+    if (event.key !== 'Escape') return;
     if (!navbar || !navbar.classList.contains('show')) return;
     closeDropdowns();
     setNavbarExpanded(false);
