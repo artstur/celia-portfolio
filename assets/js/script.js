@@ -126,7 +126,12 @@
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && !isCollapsedMode()) {
       var activeDropdown = document.activeElement && document.activeElement.closest('.has-dropdown');
-      if (!activeDropdown) return;
+      if (!activeDropdown) {
+        // 下拉可能只由 hover 展开，焦点并不在它里面；回退到当前展开的那个，
+        // 否则 Escape 对鼠标用户完全无效。
+        activeDropdown = document.querySelector('.has-dropdown.open, .has-dropdown:hover');
+        if (!activeDropdown) return;
+      }
       var activeDropdownLink = activeDropdown.querySelector('.dropdown-toggle-link');
       if (!activeDropdownLink) return;
       activeDropdownLink.focus();
