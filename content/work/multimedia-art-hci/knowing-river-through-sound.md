@@ -3,6 +3,7 @@ title: "Knowing River Through Sound | Celia Shuyue Li"
 type: 'multimedia-art-hci'
 layout: 'knowing-river-through-sound'
 work_header_title: "Knowing River Through Sound"
+has_carousel: true
 work_header_desc_class: 'site-work-header-project-desc'
 work_header_desc_html: '<a href="https://act.mit.edu/event/soma-salon-002-art-public-sphere-choreographing-the-city/" target="_blank" rel="noopener noreferrer">MIT Art & Public Sphere Exhibition</a>'
 gallery_images:

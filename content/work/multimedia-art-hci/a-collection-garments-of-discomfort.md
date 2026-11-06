@@ -3,6 +3,7 @@ title: "A Collection: Garments of Discomfort | Celia Shuyue Li"
 type: 'multimedia-art-hci'
 layout: 'a-collection-garments-of-discomfort'
 work_header_title: "A Collection: Garments of Discomfort"
+has_carousel: true
 work_header_desc_class: 'site-work-header-project-desc'
 work_header_desc_html: "Harvard Kirkland Gallery Exhibition &middot; Interrogative Design"
 gallery_images:

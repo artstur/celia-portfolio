@@ -60,7 +60,7 @@ hugo --minify --destination "$build_dir" --cacheDir "$build_dir/.cache"
 3. 在 `data/works.yml` 的 `work_item` 添加 `title`、`img`、`url`、`type`。分类列表按 `type` 与 `_index.md` 的 `data_type` 精确匹配；仅新增内容文件不会自动出现卡片。
 4. URL 使用 `/work/<category>/<slug>`；`type` 指定模板目录，`layout` 使用不带目录的模板名。分类 `_index.md` 使用 `type: 'work'`、`layout: 'work-list-with-type'`。模板共用 `layouts/_default/baseof.html`。
 
-详情页的 `work_header_title` 同时控制 Swiper CSS/JS 的加载。新增轮播时要保留该字段，并按需引入图片或视频弹窗 partial。
+详情页的 `work_header_title` 只用于渲染作品页头部。Swiper CSS/JS 由独立标记 `has_carousel: true` 控制：新增轮播时要在 front matter 里加上该字段，并按需引入图片或视频弹窗 partial。没有轮播的作品页不要加，避免白载一份 Swiper。
 
 主要作品图片来自 `https://cdn.celiasy.com/images/`，视频使用外部嵌入；Hugo 构建不会验证这些远端资源。可用 [iLoveIMG](https://www.iloveimg.com/zh-cn/compress-image/compress-jpg) 压缩 JPG。`format_file.py` 会直接将指定目录内的文件名改成小写并用连字符替换空格，使用前须确认资源 URL 和引用也会同步更新。
 

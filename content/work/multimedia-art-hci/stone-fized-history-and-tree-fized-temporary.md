@@ -3,6 +3,7 @@ title: "Stone-fized History and Tree-fized Temporary | Celia Shuyue Li"
 type: 'multimedia-art-hci'
 layout: 'stone-fized-history-and-tree-fized-temporary'
 work_header_title: "Stone-fized History and Tree-fized Temporary"
+has_carousel: true
 work_header_desc_class: 'site-work-header-project-desc'
 work_header_desc_html: '<a href="https://virtualxdesign.mit.edu/4182-augmented-historical-pedagogies" target="_blank" rel="noopener noreferrer">Onsite Project Augmented Historical Pedagogies with MIT & TU Berlin</a>'
 gallery_images:

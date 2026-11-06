@@ -4,6 +4,7 @@ type: 'spatial-design'
 layout: 'junctionscape'
 accent_color: '#EAD1D3'
 work_header_title: "JunctionScape"
+has_carousel: true
 work_header_desc_class: 'site-work-header-desc'
 work_header_desc_html: "Landscape Architecture Core Studio I"
 gallery_images:
