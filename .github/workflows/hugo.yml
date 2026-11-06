@@ -54,9 +54,13 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          # Pages 的 base_url 在未开启 Enforce HTTPS 时会是 http://，这里统一升级为
+          # https，避免 canonical / og:url / sitemap / 站内绝对链接落到 http。
+          BASE_URL="${{ steps.pages.outputs.base_url }}"
+          BASE_URL="${BASE_URL/http:\/\//https://}"
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${BASE_URL}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
