@@ -30,7 +30,7 @@
   width: 40px;
   height: 40px;
   margin-top: -20px;
-  top: 50%;
+  top: var(--swiper-navigation-top-offset, 50%);
   transform: none;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.55);
@@ -70,7 +70,7 @@
     margin-top: -20px; /* 高度的一半，精确垂直居中 */
     background-color: rgba(0, 0, 0, 0.55);
     border-radius: 4px;
-    top: 50%;
+    top: var(--swiper-navigation-top-offset, 50%);
     transform: none;
     transition: background-color 0.3s, opacity 0.3s;
 
