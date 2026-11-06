@@ -41,7 +41,7 @@ hugo --minify --destination "$build_dir" --cacheDir "$build_dir/.cache"
 | `layouts/partials/auto-carousel-modal.html` | 自动图片轮播及共享图库弹窗，含初始化脚本 |
 | `static/` | 直接复制到输出目录的本地图片、字体、robots.txt |
 
-主导航为 About、Work、Contact，Logo 返回首页。Work 下有 `multimedia-art-hci`、`spatial-design`、`ux-web3` 三类。`content/blog/` 与 `content/portfolio/` 虽未出现在主导航，仍会生成可访问页面。
+主导航为 About、Work、Contact，Logo 返回首页。Work 下有 `multimedia-art-hci`、`spatial-design`、`ux-web3` 三类。站内只保留这三个作品分类，首页即为作品总览（`layouts/index.html` = work-intro + work-list + CTA）。
 
 ### 新增或修改作品
 
@@ -58,7 +58,7 @@ hugo --minify --destination "$build_dir" --cacheDir "$build_dir/.cache"
 
 2. 在 `layouts/ux-web3/project.html` 定义 `main` 块并复用作品组件。作品正文主要在模板内；默认的 `layouts/_default/single.html` 主块为空，单独新增 Markdown 正文不会自动成为作品详情。
 3. 在 `data/works.yml` 的 `work_item` 添加 `title`、`img`、`url`、`type`。分类列表按 `type` 与 `_index.md` 的 `data_type` 精确匹配；仅新增内容文件不会自动出现卡片。
-4. URL 使用 `/work/<category>/<slug>`；`type` 指定模板目录，`layout` 使用不带目录的模板名。分类 `_index.md` 使用 `type: 'work'`、`layout: 'work-list-with-type'`。模板共用 `layouts/_default/baseof.html`。
+4. URL 使用 `/work/<category>/<slug>/`（带尾斜杠，与 Hugo 生成的 permalink 一致）；`type` 指定模板目录，`layout` 使用不带目录的模板名。分类 `_index.md` 使用 `type: 'work'`、`layout: 'work-list-with-type'`。模板共用 `layouts/_default/baseof.html`。
 
 详情页的 `work_header_title` 只用于渲染作品页头部。Swiper CSS/JS 由独立标记 `has_carousel: true` 控制：新增轮播时要在 front matter 里加上该字段，并按需引入图片或视频弹窗 partial。没有轮播的作品页不要加，避免白载一份 Swiper。
 

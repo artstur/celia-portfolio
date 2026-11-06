@@ -50,18 +50,11 @@ disableKinds     = ["taxonomy", "term"]
   [params.intro]
     intro_content = "Hi! I'm Celia, an AI product designer and multimedia artist. I work on integrating people, design, art, and technology."
 
-  [params.blog]
-    read_more             = "read more"
-
-  [params.portfolio]
-    view_project = "view project"
-    scroll_down = "scroll down"
-
   [params.call_to_action]
     enable              = true
     background_image    = "images/backgrounds/cta-background.jpg"
     title               = "LET’S WORK TOGETHER"
     primary_button      = "Submit Query"
-    primary_button_url  = "contact"
+    primary_button_url  = "contact/"
     secondary_button    = "Not Convinced"
-    secondary_button_url = "portfolio"
+    secondary_button_url = "work/"

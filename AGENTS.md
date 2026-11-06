@@ -1,6 +1,6 @@
 # 项目工作约定
 
-- 先读 [README.md](README.md) 中的运行、内容映射及验证说明。以当前模板、配置与命令输出为事实来源；不要把旧 blog/portfolio 页面当成可随意删除的无用文件。
+- 先读 [README.md](README.md) 中的运行、内容映射及验证说明。以当前模板、配置与命令输出为事实来源；站内只有 `content/work/` 下的三个作品分类和 About/Contact 页面，没有 blog/portfolio 分区，不要凭旧模板习惯去新增它们。
 - 这是 Hugo 静态站点，无 Node 构建链或后端。命令入口为 `hugo server` 和 `HUGO_ENVIRONMENT=production HUGO_ENV=production hugo --minify`；CI 版本见 `.github/workflows/hugo.yml`。
 - 修改作品须同时检查内容 front matter、对应详情模板及 `data/works.yml` 卡片。具体模板和样式规则见下文。
 - 导航交互由 `assets/js/script.js` 实现，Bootstrap 仅提供 CSS。不要因 HTML 保留 `data-toggle` 属性就重新引入旧 vendor/jQuery/Bootstrap JS。
