@@ -10,30 +10,30 @@ disableKinds     = ["taxonomy", "term"]
   # Navbar Menus
   [[menu.nav]]
     name    = "About"
-    url     = "about"
+    url     = "about/"
     weight  = 1
   [[menu.nav]]
     name    = "Work"
-    url     = "work"
+    url     = "work/"
     weight  = 2
   [[menu.nav]]
     name    = "Contact"
-    url     = "contact"
+    url     = "contact/"
     weight  = 3
   [[menu.nav]]
     parent = "Work"
     name = "Multimedia Art & HCI"
-    url = "work/multimedia-art-hci"
+    url = "work/multimedia-art-hci/"
     weight  = 1
   [[menu.nav]]
     parent = "Work"
     name = "Spatial Design"
-    url = "work/spatial-design"
+    url = "work/spatial-design/"
     weight  = 2
   [[menu.nav]]
     parent = "Work"
     name = "UX & Web3"
-    url = "work/ux-web3"
+    url = "work/ux-web3/"
     weight  = 3
 
 # Site Params
