@@ -41,7 +41,7 @@ hugo --minify --destination "$build_dir" --cacheDir "$build_dir/.cache"
 | `layouts/partials/auto-carousel-modal.html` | 自动图片轮播及共享图库弹窗，含初始化脚本 |
 | `static/` | 直接复制到输出目录的本地图片、字体、robots.txt |
 
-主导航为 About、Work、Contact，Logo 返回首页。Work 下有 `multimedia-art-hci`、`spatial-design`、`ux-web3` 三类。站内只保留这三个作品分类，首页即为作品总览（`layouts/index.html` = work-intro + work-list + CTA）。
+主导航为 About、Work、Contact，Logo 返回首页。Work 下有 `multimedia-art-hci`、`spatial-design`、`ux-web3` 三类。站内只保留这三个作品分类，首页即为作品总览（`layouts/index.html` = work-intro + work-list）。
 
 ### 新增或修改作品
 
