@@ -95,6 +95,9 @@
 
     margin-bottom: 50px;
 
+    .workbench-demo::cue {
+      font-size: clamp(0.6875rem, 1.2vw, 1.125rem);
+    }
 
     &-page {
       height: auto;
