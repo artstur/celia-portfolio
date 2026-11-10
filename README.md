@@ -33,7 +33,7 @@
   <tr>
     <th width="33%">Multimedia Art &amp; HCI</th>
     <th width="33%">Spatial Design</th>
-    <th width="33%">UX &amp; Web3</th>
+    <th width="33%">Product Design</th>
   </tr>
   <tr>
     <td valign="top">

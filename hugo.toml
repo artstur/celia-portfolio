@@ -32,7 +32,7 @@ disableKinds     = ["taxonomy", "term"]
     weight  = 2
   [[menu.nav]]
     parent = "Work"
-    name = "UX & Web3"
+    name = "Product Design"
     url = "work/ux-web3/"
     weight  = 3
 
