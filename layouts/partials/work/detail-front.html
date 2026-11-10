@@ -17,7 +17,7 @@
 {{- $buttonLabel := default "Learn More" .buttonLabel -}}
 {{- $textColor := .textColor -}}
 
-<div class="site-work-detail-front" style="background-image:url('{{ .backgroundImage }}');">
+<div class="site-work-detail-front" style="background-image:url('{{ partial "work/image-url.html" .backgroundImage }}');">
   <div class="site-work-detail-front-info">
     <div class="site-work-detail-front-info-box">
       <div class="site-work-detail-front-info-title" data-aos="fade-in" data-aos-duration="1500">

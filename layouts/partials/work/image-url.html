@@ -1,0 +1,9 @@
+{{- $url := . -}}
+{{- if strings.HasPrefix $url "/" -}}
+  {{- with resources.Get (strings.TrimPrefix "/" $url) -}}
+    {{- /* Keep the original URL available to previously cached pages. */ -}}
+    {{- $original := .RelPermalink -}}
+    {{- $url = (. | fingerprint).RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}
