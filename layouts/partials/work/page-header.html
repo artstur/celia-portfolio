@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="site-work-header-title{{ if .Params.work_header_compact_title }} site-work-header-title--compact{{ end }}">{{ .Params.work_header_title }}</h1>
+        <h1 class="site-work-header-title">{{ .Params.work_header_title }}</h1>
         {{- with .Params.work_header_desc_html }}
         <p class="{{ $.Params.work_header_desc_class }}">{{ . | safeHTML }}</p>
         {{- end }}
