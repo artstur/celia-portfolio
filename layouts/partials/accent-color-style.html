@@ -5,8 +5,16 @@
   }
   /* Problem Space 区块背景色 */
   .site-work-detail-page {
-    background-color: var(--accent-color) !important;
+    background-color: {{ with .Params.accent_surface_color }}{{ . | safeCSS }}{{ else }}var(--accent-color){{ end }} !important;
   }
+  {{ with .Params.accent_surface_color }}
+  .site-work-detail-page-header h3 {
+    color: var(--accent-color);
+  }
+  .site-work-detail-page-header h3::after {
+    background-color: var(--accent-color);
+  }
+  {{ end }}
   /* Problem Space 区块内的正文与链接：文字直接落在 accent 底色上，
      需要按底色重新算，不能沿用页面默认的 $text-color。
      accent 取 20% 混纯黑是能让所有在用 accent 都过 WCAG AA 的最高比例
