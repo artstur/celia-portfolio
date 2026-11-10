@@ -1,0 +1,76 @@
+{{ define "main" }}
+{{ partial "accent-color-style.html" . }}
+{{ partial "work/page-header.html" . }}
+
+<section class="site-work-detail">
+  {{ partial "work/detail-front.html" (dict
+    "backgroundImage" "/images/ux-web3/self-evolving-ai-workbench/hero.jpg"
+    "title" "From Chat to Feature"
+    "description" "What if a message about a missing feature could set the change in motion, right where you wrote it?"
+    "buttonHref" "#demo"
+    "buttonLabel" "Watch Demo"
+  ) }}
+
+  <div class="site-work-detail-page">
+    <div class="container">
+      <div class="site-work-detail-page-header">
+        <h3>Problem Space</h3>
+        <p>A friend taps a photo in our chat, expects it to open, and tells me when it doesn’t. That message already describes the interaction, the expectation and the gap. What would it take for the workbench to use that feedback?</p>
+        <p>I built twelve plugins for DeepSeek Harness around a broader design question. If people can change a tool by describing what they need, which parts should the designer define up front, and which can take shape through use?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header">
+        <h3>01. Three Ways Ideas Travel</h3>
+      </div>
+      {{ partial "work/media-text-block.html" (dict
+        "imageSrc" "/images/ux-web3/self-evolving-ai-workbench/workspace.jpg"
+        "imageAlt" "The workbench sidebar alongside a list of feedback items and their iteration status"
+        "paragraphs" (slice
+          "I started with three places where ideas take shape. In <b>Notes</b> I keep thoughts I want to return to. <b>Face-to-Face</b> records a conversation and separates the speakers so I can revisit who said what. <b>Messages</b> holds exchanges with contacts, alongside a chat where I can leave notes to myself."
+          "These forms carry different context. In a transcript it matters who said something. In a chat it matters what they were replying to. Each plugin keeps its own format and offers the same two operations, search and read. In the composer I can type <b>#</b> to choose what the agent sees, whether I’m referring to a note or a conversation."
+        )
+        "insertBreakBetweenParagraphs" true
+      ) }}
+    </div>
+  </div>
+
+  <div id="demo" class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header">
+        <h3>02. A Message Becomes a Product Change</h3>
+        <p>A contact mentioned that tapping a picture in Messages did nothing. With automatic iteration enabled, the plugin picked up the feedback and opened a DeepSeek Harness session. The agent added a full-size image preview and recorded the change in Notes. The next time someone opened a picture in that workbench, a tap was all it took. They could use the feature without ever seeing the conversation that produced it.</p>
+        <p>The recording follows another small change, this time from my chat with myself. I wanted to edit my avatar in the same place as my name. You can follow the request from Messages to the agent’s work and the resulting version entry.</p>
+      </div>
+      <figure class="site-work-detail-page-template-chart">
+        <video class="w-100" controls playsinline preload="metadata" poster="/images/ux-web3/self-evolving-ai-workbench/workspace.jpg" aria-label="Self-Evolving AI Workbench demo">
+          <source src="/media/self-evolving-ai-workbench/demo.mp4" type="video/mp4">
+          <track kind="captions" src="/media/self-evolving-ai-workbench/demo.en.vtt" srclang="en" label="English" default>
+        </video>
+        <figcaption>Workbench walkthrough · 62 seconds · <a href="https://github.com/artstur/dsh-plugins/releases/tag/demo-video-2026-11-09">Original recording</a></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header">
+        <h3>03. Designing for a Product That Can Change</h3>
+      </div>
+      {{ partial "work/two-text.html" (dict "columns" (slice
+        (dict "title" "What should stay familiar?" "paragraphs" (slice
+          "The plugins changed what I think a product designer needs to specify. A new source can join the workbench if it knows how to return a search result and open the underlying item. For the person using it, the familiar parts are a reference in the composer and an identifiable source in the question."
+          "I would design those shared interactions first. For example, if someone adds a reading list tomorrow, its entries should fit the same reference picker. The workbench can gain a capability without asking people to learn another way to use their material."
+        ))
+        (dict "title" "Who gets to change the tool?" "paragraphs" (slice
+          "A contact can spot a problem. I decide whether the workbench may act on incoming feedback. In dry-run mode I can see which messages qualify. With automatic iteration enabled, the agent can try a change or record why it skipped one. The original request and outcome stay together in Notes."
+          "The next design question is scope. An image preview might help everyone in a chat, while a larger font might suit just one reader. I would test whether people can predict who will see a change before they let the agent make it."
+        ))
+      )) }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -30,6 +30,11 @@ work_item:
     url: "/work/spatial-design/junctionscape/"
     type: "spatial-design"
 
+  - title: "Self-Evolving AI Workbench"
+    img: "/images/ux-web3/self-evolving-ai-workbench/cover.jpg"
+    url: "/work/ux-web3/self-evolving-ai-workbench/"
+    type: "ux-web3"
+
   - title: "Armadillo"
     img: "https://cdn.celiasy.com/images/index/compressed/8.jpg"
     url: "/work/ux-web3/armadillo/"
