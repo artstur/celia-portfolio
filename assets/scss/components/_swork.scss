@@ -32,6 +32,15 @@
       a {
         text-decoration: underline;
       }
+
+      &--compact {
+        font-size: 2.625rem;
+        text-wrap: balance;
+
+        @include mobile {
+          font-size: 1.875rem;
+        }
+      }
     }
     
     &-project-desc {
@@ -737,6 +746,13 @@
         }
       }
 
+      &-chart figcaption,
+      &-two-chart-img p {
+        font-family: $myriad-font;
+        color: $text-color-dark;
+        font-size: 14px;
+      }
+
       &-two-chart {
 
         display: flex;
@@ -774,9 +790,6 @@
           p {
             margin-top: 2%;
             width: 95%;
-            font-family: $myriad-font;
-            color: black;
-            font-size: 14px;
           }
 
           .site-work-detail-page-template-video-intro {
