@@ -24,24 +24,22 @@
     </div>
   </div>
 
-  <div data-aos="fade-in" data-aos-duration="1500">
-    {{ partial "work/video-carousel.html" (dict
-      "videos" (slice
-        (dict
-          "src" "https://www.youtube.com/embed/P8ShCn6hi4g?autoplay=1"
-          "title" "Garments of Discomfort"
-          "author" "Shuyue Li"
-          "duration" ""
-          "thumb" "https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/front-4.jpg"
-          "desc" "A Collection: Garments of Discomfort &mdash; a counter-prosthetic that aims to irritate and unease the body, mimicking the symptoms of menstruation."
-          "alt" "Garments of Discomfort"
-          "width" 3451
-          "height" 1911
-          "overlayTitle" "Garments of Discomfort"
-        )
+  {{ partial "work/video-carousel.html" (dict
+    "videos" (slice
+      (dict
+        "src" "https://www.youtube.com/embed/P8ShCn6hi4g?autoplay=1"
+        "title" "Garments of Discomfort"
+        "author" "Shuyue Li"
+        "duration" ""
+        "thumb" "https://cdn.celiasy.com/images/multimedia-art/garments-of-discomfort/compressed/front-4.jpg"
+        "desc" "A Collection: Garments of Discomfort &mdash; a counter-prosthetic that aims to irritate and unease the body, mimicking the symptoms of menstruation."
+        "alt" "Garments of Discomfort"
+        "width" 3451
+        "height" 1911
+        "overlayTitle" "Garments of Discomfort"
       )
-    ) }}
-  </div>
+    )
+  ) }}
   {{ partial "work/video-modal.html" . }}
 
   {{ partial "work/collaboration-meta.html" (dict
