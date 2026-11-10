@@ -1,9 +1,5 @@
 <div align="center">
 
-<a href="https://celiasy.com/">
-  <img src="https://cdn.celiasy.com/images/index/compressed/1.jpg" alt="Knowing River Through Sound" width="100%">
-</a>
-
 # Celia Shuyue Li
 
 **AI 产品设计 · 多媒体艺术 · 空间设计**
