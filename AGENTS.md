@@ -26,6 +26,7 @@
   1. `content/work/<category>/<slug>.md` 的 front matter；
   2. `layouts/<category>/<slug>.html` 的详情正文；
   3. `data/works.yml` 中首页与分类页共用的卡片、顺序、分类和链接。
+- 新增、删除、改名或调整作品顺序时，必须同步更新 [README.md](README.md) 的“作品一览”，确保作品标题、顺序和链接与 `data/works.yml` 一致，且缩略图可正常显示；不得只更新作品页面或数据文件。
 - 改动页面标题、URL 或 slug 时，同步检查卡片链接、站内引用、canonical / Open Graph、sitemap 及可能的旧链接影响；不无故改变已发布 URL。
 - 卡片链接使用带尾斜杠的完整站内路径：`/work/<category>/<slug>/`。
 - 图片和视频版权归原作者或相应权利人所有。替换媒体前确认来源与使用权限，并同步更新 CDN 地址、模板引用和替代文本。

@@ -53,6 +53,8 @@
       <sub>JunctionScape</sub>
     </td>
     <td valign="top">
+      <a href="https://celiasy.com/work/ux-web3/self-evolving-ai-workbench/"><img src="static/images/ux-web3/self-evolving-ai-workbench/workspace.jpg" alt="Self-Evolving AI Workbench"></a><br>
+      <sub>Self-Evolving AI Workbench</sub><br><br>
       <a href="https://celiasy.com/work/ux-web3/armadillo/"><img src="https://cdn.celiasy.com/images/index/compressed/8.jpg" alt="Armadillo"></a><br>
       <sub>Armadillo</sub><br><br>
       <a href="https://celiasy.com/work/ux-web3/trust-finance/"><img src="https://cdn.celiasy.com/images/index/compressed/9.jpg" alt="Trust Finance"></a><br>

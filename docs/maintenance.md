@@ -75,7 +75,7 @@ hugo --minify --destination "$build_dir" --cacheDir "$build_dir/.cache"
 
 主要作品图片托管在 `https://cdn.celiasy.com/images/`，视频使用外部嵌入；**Hugo 构建不会验证这些远端资源**。上传前可用 [iLoveIMG](https://www.iloveimg.com/zh-cn/compress-image/compress-jpg) 压缩 JPG，并为图片保留真实宽高和恰当的 `alt`。
 
-> `format_file.py` 会直接把指定目录内的文件名改为小写并用连字符替换空格。使用前请确认 CDN 上的资源 URL 和模板中的引用会同步更新。
+> `scripts/format_file.py` 会直接把指定目录内的文件名改为小写并用连字符替换空格。使用前请确认 CDN 上的资源 URL 和模板中的引用会同步更新。
 
 ## Sass
 
