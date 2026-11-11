@@ -1,0 +1,102 @@
+{{ define "main" }}
+{{ $style := resources.Get "css/along.css" | minify | fingerprint }}
+{{ $images := "/images/ux-web3/along" }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+<article class="along-case">
+  <div class="along-hero">
+    <div class="along-orbit" aria-hidden="true"></div>
+    <div class="along-hero-inner">
+      <div class="along-hero-copy">
+        <div class="along-brand"><img src="{{ $images }}/icon.png" width="36" height="36" alt=""><span>Personal goal agent</span></div>
+        {{ partial "work/page-header.html" . }}
+        <div class="along-links">
+          <a class="along-primary" href="#walks">Read the case <span aria-hidden="true">↓</span></a>
+          <a href="https://artstur.github.io/along/">Try the web demo <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <figure class="along-hero-figure">
+        <div class="along-device"><img src="{{ $images }}/goal.webp" width="780" height="1688" fetchpriority="high" alt="Along’s exercise goal with 75 of 120 weekly minutes logged and a suggested workout below."></div>
+        <figcaption>Goal workspace <span>·</span> Demo data</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="along-meta along-wrap">
+    <div><span>My role</span>Product design &amp; agent evaluation</div>
+    <div><span>Platform</span>iPhone &amp; web</div>
+    <div><span>Year</span>2026</div>
+    <a href="https://github.com/artstur/along">View on GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <section id="walks" class="along-wrap along-story">
+    <div class="along-story-copy">
+      <p class="along-label">The design question</p>
+      <h2>Which walk would<br class="along-desktop"> you cancel?</h2>
+      <p>You’ve planned two walks. One is a reminder to catch up on exercise. The other is a date with a friend. By the time you’ve met your weekly goal, only one of those walks has lost its purpose.</p>
+      <p>I designed Along to keep track of why a task exists. It can suggest a change, explain what prompted it, and leave the decision with you.</p>
+      <div class="along-metric">
+        <div><strong>195</strong><span>min logged</span></div>
+        <div><strong>180</strong><span>min goal</span></div>
+      </div>
+      <p class="along-fine">Four exercise sessions in a simulated week.</p>
+    </div>
+    <fieldset class="along-review">
+      <legend>Plan review</legend>
+      <input type="radio" id="along-before" name="along-review" checked>
+      <label for="along-before">Proposed change</label>
+      <input type="radio" id="along-after" name="along-review">
+      <label for="along-after">After acceptance</label>
+      <div class="along-states" aria-live="polite">
+        <figure class="along-state along-before">
+          <div class="along-paper"><a href="{{ $images }}/review-proposal.webp" aria-label="Open original plan proposal screenshot"><img src="{{ $images }}/review-proposal.webp" width="714" height="928" loading="lazy" alt="The proposal explains the 195-minute total, suggests removing the catch-up reminder, and offers to accept or keep the original plan."></a></div>
+          <figcaption>Along proposes removing the catch-up reminder. The person can accept the edit or keep the original tasks.</figcaption>
+        </figure>
+        <figure class="along-state along-after">
+          <div class="along-paper"><a href="{{ $images }}/review-applied.webp" aria-label="Open original updated task list screenshot"><img src="{{ $images }}/review-applied.webp" width="714" height="542" loading="lazy" alt="The updated task list still shows the planned weekend walk with a friend."></a></div>
+          <figcaption>After acceptance, the catch-up reminder is gone. The weekend walk with a friend still has its place in the plan.</figcaption>
+        </figure>
+      </div>
+    </fieldset>
+  </section>
+
+  <section class="along-context">
+    <div class="along-wrap along-example">
+      <div class="along-example-art">
+        <figure>
+          <a href="{{ $images }}/goal-draft.webp" aria-label="Open original iPhone goal screenshot"><img src="{{ $images }}/goal-draft.webp" width="1206" height="2622" loading="lazy" alt="Early iPhone build showing a blank custom goal and a prompt to start with one sentence."></a>
+          <figcaption>Goal entry · Early iPhone build</figcaption>
+        </figure>
+        <figure>
+          <a href="{{ $images }}/replan.webp" aria-label="Open the full exercise replay screenshot"><img src="{{ $images }}/replan.webp" width="780" height="1688" loading="lazy" alt="Along exercise replay comparing the original 45-minute walk with a 10-minute suggestion after a workout."></a>
+          <figcaption>Exercise replay · Web prototype</figcaption>
+        </figure>
+      </div>
+      <div class="along-example-copy">
+        <p class="along-label">Inside the prototype</p>
+        <h2>From a goal to the next ten minutes.</h2>
+        <p>You can describe a new goal in your own words, including your timing and preferences. The exercise demo starts with a goal of 120 minutes of movement this week.</p>
+        <p>With 75 minutes logged, the plan has 45 minutes left. Add a 35-minute workout and Along shortens the suggested walk to ten minutes.</p>
+        <h3>What the agent gets to see</h3>
+        <p>On iPhone, the person chooses which Apple Health summaries to share. Along sends the selected observations and the current plan to a paired Mac for review. The web demo uses sample data.</p>
+        <p>In one iPhone check, the observations matched the last review. Along kept all three existing tasks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="along-wrap along-evaluation">
+    <div class="along-eval-intro">
+      <p class="along-label">Agent evaluation</p>
+      <h2>What did Along know at the time?</h2>
+      <p>I shaped an evaluation around 54 synthetic decision cases across exercise, savings and Cantonese practice. Each replay gives the agent only the information available when it has to decide what to do next.</p>
+    </div>
+    <div class="along-pair">
+      <h3>The Cantonese listening test</h3>
+      <p>A learner understands four of five new phrases and answers one of three aloud. Change one detail and the next practice session should change with it.</p>
+      <dl>
+        <div><dt>Subtitles off</dt><dd>The learner understood the audio. Spend the next session practising a spoken reply.</dd></div>
+        <div><dt>Subtitles on</dt><dd>Reading may have helped. Try new phrases from a different speaker with the text hidden.</dd></div>
+      </dl>
+    </div>
+  </section>
+</article>
+{{ end }}

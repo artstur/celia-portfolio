@@ -30,6 +30,11 @@ work_item:
     url: "/work/spatial-design/junctionscape/"
     type: "spatial-design"
 
+  - title: "Along"
+    img: "/images/ux-web3/along/cover.webp"
+    url: "/work/ux-web3/along/"
+    type: "ux-web3"
+
   - title: "Self-Evolving AI Workbench"
     img: "/images/ux-web3/self-evolving-ai-workbench/cover.jpg"
     url: "/work/ux-web3/self-evolving-ai-workbench/"
