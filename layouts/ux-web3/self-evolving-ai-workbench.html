@@ -92,4 +92,12 @@
     </div>
   </div>
 </section>
+<dialog id="workbench-image-viewer" aria-label="Full-size screenshot">
+  <form method="dialog">
+    <button type="submit" autofocus>Close <span aria-hidden="true">&times;</span></button>
+  </form>
+  <img alt="">
+</dialog>
+{{ $viewerScript := resources.Get "js/workbench-stills.js" | minify | fingerprint }}
+<script defer src="{{ $viewerScript.RelPermalink }}"></script>
 {{ end }}

@@ -3,7 +3,7 @@
   {{ range . }}
     {{ $src := printf "/images/ux-web3/self-evolving-ai-workbench/%s" .file }}
     <figure>
-      <a class="workbench-frame" href="{{ $src }}" aria-label="View full-size still: {{ .title }}">
+      <a class="workbench-frame" href="{{ $src }}" aria-haspopup="dialog" aria-controls="workbench-image-viewer" aria-label="View full-size still: {{ .title }}">
         <img src="{{ $src }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" decoding="async">
       </a>
       <figcaption>
