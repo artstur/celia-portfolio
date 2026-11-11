@@ -55,7 +55,7 @@
     <td valign="top">
       <a href="https://celiasy.com/work/ux-web3/along/"><img src="assets/images/ux-web3/along/cover.webp" alt="Along"></a><br>
       <sub>Along</sub><br><br>
-      <a href="https://celiasy.com/work/ux-web3/self-evolving-ai-workbench/"><img src="static/images/ux-web3/self-evolving-ai-workbench/workspace.jpg" alt="Self-Evolving AI Workbench"></a><br>
+      <a href="https://celiasy.com/work/ux-web3/self-evolving-ai-workbench/"><img src="assets/images/ux-web3/self-evolving-ai-workbench/cover.jpg" alt="Self-Evolving AI Workbench"></a><br>
       <sub>Self-Evolving AI Workbench</sub><br><br>
       <a href="https://celiasy.com/work/ux-web3/armadillo/"><img src="https://cdn.celiasy.com/images/index/compressed/8.jpg" alt="Armadillo"></a><br>
       <sub>Armadillo</sub><br><br>

@@ -21,7 +21,13 @@ description: 为 celiasy.com（artstur/celia-portfolio）新增作品、编排�
 
 ## 给作品列表单独做封面
 
-- 在首页、`/work/` 和分类列表找到相邻作品，按实际卡片大小看它们如何取景。Product Design 先对照 Armadillo、PayBlocks Banking 或 Workbench：方形画布铺项目主题纯色，中央白边矩形画框约占画布宽度的三分之二，真实设备或界面放在框内，四周留出色块。用新作品自己的画面和颜色延续该构图；其他分类以各自的摄影、作品实物或图纸封面为参照。
+- 首页、`/work/` 和分类列表共用同一份印刷画框。直接复用 [导航封面母版](assets/navigation-frame.png)，其中保留了白色衬纸、右侧竖向刻度、右上与左下的定位标记及留白。母版从站内 [Sandscape 原始封面](https://cdn.celiasy.com/images/index/compressed/4.jpg) 按原尺寸提取。原画布为 1920 × 1920；画芯为 1027 × 996。每个项目只替换外底色和画芯。画芯用同分类作品适合的产品界面、实物、摄影或图纸。
+- 从仓库根目录运行下例（Python 3、Pillow）。传入已构好图的无框画芯，脚本等比居中裁切，再合成原始母版。打开导出图对照 Sandscape，检查右边整条刻度、两个角标、画芯开口与周围留白。
+
+  ```sh
+  python3 .agents/skills/celia-portfolio-project-design/scripts/render_cover.py \
+    artwork.png cover.webp --background '#eeeaf6'
+  ```
 - 标题由模板根据 `data/works.yml` 的 `title` 叠加。封面只放作品画面，避免额外排大字标题、口号或按钮。方形封面供列表使用，横向首屏图按正文模板的信息框位置构图。两者可取材于同一截图，分别导出适合各自用途的尺寸；以实际图片比例核对成品。
 - 三处入口共用 `data/works.yml` 的 `img` 和 `url`，分类依 `type` 筛选。查看 `layouts/partials/work-list.html`、`layouts/work/work-list-with-type.html` 和 `assets/scss/components/_work.scss`。需要更新的本地封面优先放在 `assets/images/<category>/<slug>/`，让共享 `work/image-url.html` 输出带内容指纹的资源；README 使用仓库内可访问的图片路径。桌面验收双列布局、悬停蒙层与居中标题，用 Tab 检查焦点并按 Enter 进入详情；手机验收单列、底部渐变上常显的标题和主体是否完整可见。
 
