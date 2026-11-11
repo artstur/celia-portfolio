@@ -1,6 +1,8 @@
 {{ define "main" }}
 {{ partial "accent-color-style.html" . }}
 {{ partial "work/page-header.html" . }}
+{{ $stillsStyle := resources.Get "css/workbench-stills.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $stillsStyle.RelPermalink }}">
 
 <section class="site-work-detail">
   {{ partial "work/detail-front.html" (dict
@@ -15,8 +17,8 @@
     <div class="container">
       <div class="site-work-detail-page-header">
         <h3>Problem Space</h3>
-        <p>A friend taps a photo in our chat, expects it to open, and tells me when it doesn’t. That message already describes the interaction, the expectation and the gap. What would it take for the workbench to use that feedback?</p>
-        <p>I built twelve plugins for DeepSeek Harness around a broader design question. If people can change a tool by describing what they need, which parts should the designer define up front, and which can take shape through use?</p>
+        <p>When a friend tells me a photo won’t open, their message already tells me what they tried and what they expected. Moving it into a tracker means someone has to describe the same problem a second time.</p>
+        <p>I built twelve DeepSeek Harness plugins to try a shorter path. Could the conversation where we notice a problem also be where the product starts to change?</p>
       </div>
     </div>
   </div>
@@ -25,25 +27,25 @@
     <div class="container">
       <div class="site-work-detail-page-template-header">
         <h3>01. Three Ways Ideas Travel</h3>
+        <p>A thought I save for later, something a friend says across the table, and a message they send me carry different clues. I wanted to keep those clues when I brought any of them into a question.</p>
       </div>
-      {{ partial "work/media-text-block.html" (dict
-        "imageSrc" "/images/ux-web3/self-evolving-ai-workbench/workspace.jpg"
-        "imageAlt" "The workbench sidebar alongside a list of feedback items and their iteration status"
-        "paragraphs" (slice
-          "I started with three places where ideas take shape. In <b>Notes</b> I keep thoughts I want to return to. <b>Face-to-Face</b> records a conversation and separates the speakers so I can revisit who said what. <b>Messages</b> holds exchanges with contacts, alongside a chat where I can leave notes to myself."
-          "These forms carry different context. In a transcript it matters who said something. In a chat it matters what they were replying to. Each plugin keeps its own format and offers the same two operations, search and read. In the composer I can type <b>#</b> to choose what the agent sees, whether I’m referring to a note or a conversation."
-        )
-        "insertBreakBetweenParagraphs" true
+      {{ partial "work/recording-stills.html" (slice
+        (dict "file" "notes-release-history.webp" "width" 2000 "height" 1606 "time" "00:25" "title" "Notes · What I keep" "alt" "Notes showing the Messages release history, with version 1.13.1 at the top" "caption" "I can return to a thought or a decision weeks later. Plugin changes live here too: this entry records where avatar editing moved in Messages.")
+        (dict "file" "facechat-transcript.webp" "width" 2000 "height" 1606 "time" "00:41" "title" "Face-to-Face · What we say" "alt" "A 41-second recording split into nine timestamped passages and three speakers" "caption" "A transcript keeps each remark with its speaker. I can revisit the words or read a summary organized around each person’s contribution.")
+        (dict "file" "messages-feedback.webp" "width" 1416 "height" 706 "time" "00:01" "title" "Messages · What we exchange" "alt" "A message to myself asking to edit my avatar in the same place as my name" "caption" "A contact can point out a problem in our chat. I can also message myself in the moment, as I did here about my profile.")
       ) }}
+      <div class="site-work-detail-page-template-header">
+        <h4>One way to ask across all three</h4>
+        <p>If I want to compare a conversation with my notes, I type <strong>#</strong> and pick the recording and notes I mean. Each plugin keeps its own material. A shared <a href="https://github.com/artstur/dsh-plugins/tree/main/plugins/context/resource-api">search and read interface</a> finds the items, and the composer reads their current text when I send. I see the sources I picked; I don’t have to paste them into the chat.</p>
+      </div>
     </div>
   </div>
 
   <div id="demo" class="site-work-detail-page-template">
     <div class="container">
       <div class="site-work-detail-page-template-header">
-        <h3>02. A Message Becomes a Product Change</h3>
-        <p>A contact mentioned that tapping a picture in Messages did nothing. With automatic iteration enabled, the plugin picked up the feedback and opened a DeepSeek Harness session. The agent added a full-size image preview and recorded the change in Notes. The next time someone opened a picture in that workbench, a tap was all it took. They could use the feature without ever seeing the conversation that produced it.</p>
-        <p>The recording follows another small change, this time from my chat with myself. I wanted to edit my avatar in the same place as my name. You can follow the request from Messages to the agent’s work and the resulting version entry.</p>
+        <h3>02. From a Message to a Release</h3>
+        <p>In the recording, I ask to edit my avatar alongside my name. The iteration plugin recognizes the message as a request. With automatic iteration on, it starts a DSH creation session to try the change. The trail ends in Notes: the release entry for Messages v1.13.1 puts avatar editing in the profile editor.</p>
       </div>
       <figure class="site-work-detail-page-template-chart">
         <video class="w-100 workbench-demo" controls playsinline preload="metadata" poster="/images/ux-web3/self-evolving-ai-workbench/workspace.jpg" aria-label="Self-Evolving AI Workbench demo">
@@ -52,24 +54,41 @@
         </video>
         <figcaption class="site-work-header-project-desc">Workbench walkthrough · 62 seconds · <a href="https://github.com/artstur/dsh-plugins/releases/tag/demo-video-2026-11-09">Original recording</a></figcaption>
       </figure>
+      {{ partial "work/recording-stills.html" (slice
+        (dict "file" "workspace.jpg" "width" 2560 "height" 1606 "time" "00:10" "title" "The request has a history" "alt" "Iteration list linking the avatar settings request to a completed Messages update" "caption" "The iteration list keeps the original wording beside its status and plugin version. I can open the session behind the change.")
+        (dict "file" "creation-session.webp" "width" 2000 "height" 1350 "time" "00:18" "title" "The work is inspectable" "alt" "DSH creation session reporting the avatar change and the checks the agent ran" "caption" "Inside the session, I can see what the agent changed and which checks it ran. The version entry gives me somewhere to look later.")
+      ) }}
     </div>
   </div>
 
   <div class="site-work-detail-page-template">
     <div class="container">
       <div class="site-work-detail-page-template-header">
-        <h3>03. Designing for a Product That Can Change</h3>
+        <h3>03. What Should a Changing Product Keep?</h3>
       </div>
       {{ partial "work/two-text.html" (dict "columns" (slice
-        (dict "title" "What should stay familiar?" "paragraphs" (slice
-          "The plugins changed what I think a product designer needs to specify. A new source can join the workbench if it knows how to return a search result and open the underlying item. For the person using it, the familiar parts are a reference in the composer and an identifiable source in the question."
-          "I would design those shared interactions first. For example, if someone adds a reading list tomorrow, its entries should fit the same reference picker. The workbench can gain a capability without asking people to learn another way to use their material."
+        (dict "title" "A familiar way to use new capabilities" "paragraphs" (slice
+          "The most useful part of the twelve-plugin experiment was deciding what each new plugin could rely on. If I add a reading list tomorrow, I want to find and cite a book the same way I cite a note. The designer’s job is to make that interaction hold up as the workspace grows."
         ))
-        (dict "title" "Who gets to change the tool?" "paragraphs" (slice
-          "A contact can spot a problem. I decide whether the workbench may act on incoming feedback. In dry-run mode I can see which messages qualify. With automatic iteration enabled, the agent can try a change or record why it skipped one. The original request and outcome stay together in Notes."
-          "The next design question is scope. An image preview might help everyone in a chat, while a larger font might suit just one reader. I would test whether people can predict who will see a change before they let the agent make it."
+        (dict "title" "A say in what changes" "paragraphs" (slice
+          "A greeting stays a greeting. Only messages that describe both a product and a problem or request become candidates. I can preview them before enabling automatic changes. The question I would test next: if I ask for larger type in a shared chat, can I tell whether it changes my view or everyone’s?"
         ))
       )) }}
+      <div class="workbench-map">
+        <div class="site-work-detail-page-template-header">
+          <h4>Mapping the experiments</h4>
+          <p>I built Exploration Atlas to keep track of the decisions behind the plugins. Each stage pairs what I learned with something I can test next.</p>
+          <p>One distinction I wanted to test was seeing how an agent worked versus changing how it worked. The trajectory viewer shows the steps it took. Verify-before-Finish can ask it to take one more step if it edits a file and tries to finish without checking it.</p>
+        </div>
+        {{ partial "work/recording-stills.html" (slice
+          (dict "file" "exploration-stages.webp" "width" 2000 "height" 1250 "time" "00:47" "title" "Exploration Atlas" "alt" "Exploration Atlas showing six stages, with Capture selected and its next experiment below" "caption" "The map follows an exchange from capture and memory through context, agent behavior, and the next change to the workbench.")
+        ) }}
+      </div>
+      <p class="workbench-sources">Inside the suite on GitHub:
+        <a href="https://github.com/artstur/dsh-plugins/tree/main/plugins/workspace">5 workspace plugins</a> ·
+        <a href="https://github.com/artstur/dsh-plugins/tree/main/plugins/context">3 context plugins</a> ·
+        <a href="https://github.com/artstur/dsh-plugins/tree/main/plugins/agent">4 agent plugins</a>.
+      </p>
     </div>
   </div>
 </section>

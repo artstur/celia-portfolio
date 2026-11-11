@@ -1,0 +1,16 @@
+{{/* Each entry is a cropped, caption-free frame of the Workbench recording. */}}
+<div class="workbench-stills">
+  {{ range . }}
+    {{ $src := printf "/images/ux-web3/self-evolving-ai-workbench/%s" .file }}
+    <figure>
+      <a class="workbench-frame" href="{{ $src }}" aria-label="View full-size still: {{ .title }}">
+        <img src="{{ $src }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" decoding="async">
+      </a>
+      <figcaption>
+        <span class="workbench-frame-time">Demo · {{ .time }}</span>
+        <strong>{{ .title }}</strong>
+        {{ .caption }}
+      </figcaption>
+    </figure>
+  {{ end }}
+</div>
