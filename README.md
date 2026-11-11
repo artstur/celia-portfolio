@@ -53,7 +53,7 @@
       <sub>JunctionScape</sub>
     </td>
     <td valign="top">
-      <a href="https://celiasy.com/work/ux-web3/along/"><img src="static/images/ux-web3/along/cover.webp" alt="Along"></a><br>
+      <a href="https://celiasy.com/work/ux-web3/along/"><img src="assets/images/ux-web3/along/cover.webp" alt="Along"></a><br>
       <sub>Along</sub><br><br>
       <a href="https://celiasy.com/work/ux-web3/self-evolving-ai-workbench/"><img src="static/images/ux-web3/self-evolving-ai-workbench/workspace.jpg" alt="Self-Evolving AI Workbench"></a><br>
       <sub>Self-Evolving AI Workbench</sub><br><br>
@@ -82,6 +82,8 @@ hugo server --bind 127.0.0.1 --baseURL http://localhost:1313/
 打开 <http://localhost:1313/>，改动会即时刷新。CI 固定使用 Hugo **0.157.0**，需要复现线上结果时请用同一版本。
 
 ## 新增一件作品
+
+新增前请参照 [Celia 作品集设计规范](.agents/skills/celia-portfolio-project-design/SKILL.md)，其中包含详情页排版和导航列表封面的制作、登记与验收方式。
 
 1. **写内容**：在 `content/work/<分类>/<slug>.md` 新建文件，front matter 参考同类现有作品。分类只有 `multimedia-art-hci`、`spatial-design`、`ux-web3` 三种。
 

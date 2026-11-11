@@ -1,0 +1,4 @@
+interface:
+  display_name: "Celia 作品集设计规范"
+  short_description: "为 celiasy.com 编排新作品，沿用全站的排版、组件与视觉验收方式"
+  default_prompt: "用 $celia-portfolio-project-design 把这个新作品按 celiasy.com 的现有设计规范加入作品集。"

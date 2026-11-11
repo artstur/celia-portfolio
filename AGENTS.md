@@ -20,6 +20,8 @@
 
 ## 3. 个人主页内容
 
+新增作品、编排案例页或调整作品封面时，使用 [Celia 作品集设计规范](.agents/skills/celia-portfolio-project-design/SKILL.md)。详情页与首页、Work 总览、所属分类的封面都按同类作品验收。
+
 - 站点只有 `content/work/` 下的三个作品分类，以及 About、Contact 页面；没有 blog 或独立 portfolio 分区，不凭习惯新增。
 - 保持 Celia 的表达方式与作品叙事，文案具体、克制、真实；保留必要的 NDA 声明、版权信息和归属，不公开敏感材料。
 - 新增或修改作品时，同时检查：
