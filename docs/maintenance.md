@@ -79,7 +79,7 @@ hugo --minify --destination "$build_dir" --cacheDir "$build_dir/.cache"
 
 ## Sass
 
-`layouts/partials/head.html` 通过 Hugo 的 `css.Sass` 编译 `assets/scss/style.scss`，没有显式指定 Dart Sass 转译器。CI 会另行安装 Dart Sass，但这不意味着本地必须先安装独立的 `sass` 命令。
+`layouts/partials/head.html` 通过 Hugo 的 `css.Sass` 编译 `assets/scss/style.scss`，使用 Hugo Extended 自带的 LibSass。本地与 CI 均通过同一条 Hugo 命令编译样式。
 
 ## 维护约定
 
