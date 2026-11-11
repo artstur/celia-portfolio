@@ -231,7 +231,6 @@
   .along-meta { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 12px 14px; font-size: 12px; }
   .along-meta a { margin: 0; justify-self: start; }
   .along-story, .along-example, .along-evaluation { grid-template-columns: 1fr; gap: 32px; padding-block: 48px; }
-  .along-desktop { display: none; }
   .along-case .along-label { margin-bottom: 12px; }
   .along-story-copy > p:not(.along-label), .along-example-copy > p:not(.along-label), .along-evaluation p:not(.along-label) { font-size: 17px; }
   .along-story-copy p.along-fine { font-size: 14px; }
