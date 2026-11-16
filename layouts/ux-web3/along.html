@@ -6,11 +6,16 @@
 
 <section class="site-work-detail along-case">
   {{ partial "work/detail-front.html" (dict
-    "backgroundImage" "/images/ux-web3/along/hero.webp"
+    "class" "along-hero"
     "title" "A Personal Goal Agent"
     "description" "A conversation becomes a plan. Along follows what changes and brings you back when it is time to act."
     "buttonHref" "#problem-space"
     "buttonLabel" "Read the Case"
+    "mediaLabel" "Along on iPhone: reminders and the weekly plan"
+    "images" (slice
+      (dict "src" "/images/ux-web3/along/notification-lock-screen.webp" "alt" "Actual iPhone lock screen showing Along bedtime and exercise reminders; unrelated messages are blurred." "width" 1000 "height" 2174)
+      (dict "src" "/images/ux-web3/along/iphone-goal-plan.webp" "alt" "Actual Along iPhone screen showing the sleep and exercise plan, Apple Health connection and next tasks." "width" 1000 "height" 2174)
+    )
   ) }}
 
   <div id="problem-space" class="site-work-detail-page">
