@@ -4,11 +4,11 @@
 {{ $style := resources.Get "css/along.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-<section class="site-work-detail">
+<section class="site-work-detail along-case">
   {{ partial "work/detail-front.html" (dict
     "backgroundImage" "/images/ux-web3/along/hero.webp"
     "title" "A Personal Goal Agent"
-    "description" "Along revisits a goal as your week unfolds. You decide which changes to make to your plan."
+    "description" "A conversation becomes a plan. Along follows what changes and brings you back when it is time to act."
     "buttonHref" "#problem-space"
     "buttonLabel" "Read the Case"
   ) }}
@@ -17,55 +17,49 @@
     <div class="container">
       <div class="site-work-detail-page-header">
         <h3>Problem Space</h3>
-        <p>You’ve planned two walks. One is a reminder to catch up on exercise. The other is a date with a friend. By the time you’ve met your weekly goal, only one of those walks has lost its purpose.</p>
-        <p>I designed Along to keep track of why a task exists. It can suggest a change, explain what prompted it, and leave the decision with you.</p>
+        <p>“I want to move more and sleep better” sounds simple. Keeping it going means noticing what changed: a tiring day, a workout already done, or a reminder that no longer fits.</p>
+        <p>I designed Along around that continuing conversation. The goal keeps its context, the next action can change, and the person can correct the plan in their own words.</p>
       </div>
-    </div>
-  </div>
-
-  <div id="walks" class="site-work-detail-page-template">
-    <div class="container">
-      <div class="site-work-detail-page-template-header">
-        <h3>01. Which Walk Would You Cancel?</h3>
-        <p>In this simulated week, four exercise sessions add up to 195 minutes against a goal of 180. Along proposes removing the catch-up reminder. The person can accept the edit or keep the original tasks.</p>
-      </div>
-      <fieldset class="along-review site-work-detail-page-template-chart-with-content-text">
-        <legend class="sr-only">Plan review</legend>
-        <input id="along-before" type="radio" name="along-review" checked>
-        <label for="along-before">Proposed change</label>
-        <input id="along-after" type="radio" name="along-review">
-        <label for="along-after">After acceptance</label>
-        <figure class="along-before site-work-detail-page-template-chart">
-          <a href="/images/ux-web3/along/review-proposal.webp" aria-label="Open original plan proposal screenshot"><img src="/images/ux-web3/along/review-proposal.webp" alt="Along offers to remove a catch-up exercise reminder after the weekly goal has been met." width="714" height="928" loading="lazy" decoding="async"></a>
-          <figcaption>The proposal explains the 195-minute total and identifies the reminder it would remove.</figcaption>
-        </figure>
-        <figure class="along-after site-work-detail-page-template-chart">
-          <a href="/images/ux-web3/along/review-applied.webp" aria-label="Open original updated task list screenshot"><img src="/images/ux-web3/along/review-applied.webp" alt="The updated task list still shows the planned weekend walk with a friend." width="714" height="542" loading="lazy" decoding="async"></a>
-          <figcaption>After acceptance, the catch-up reminder is gone. The weekend walk with a friend still has its place in the plan.</figcaption>
-        </figure>
-      </fieldset>
     </div>
   </div>
 
   <div class="site-work-detail-page-template">
     <div class="container">
       <div class="site-work-detail-page-template-header">
-        <h3>02. Inside the Prototype</h3>
-        <h4>From a goal to the next ten minutes</h4>
-        <p>You can describe a new goal in your own words, including your timing and preferences. The exercise demo starts with a goal of 120 minutes of movement this week.</p>
-        <p>With 75 minutes logged, the plan has 45 minutes left. Add a 35-minute workout and Along shortens the suggested walk to ten minutes.</p>
+        <h3>01. Keep the Goal, Change the Next Step</h3>
+        <p>“I’m tired today. Make it a twenty-minute walk, but keep the bedtime reminder.” A change like this belongs in the conversation where the goal began.</p>
+        <p>The current app turns an explicit request into a goal and tasks. Changes take effect after programmatic checks, and the person uses chat to correct them. Saying “I haven’t been sleeping well” starts a conversation; it does not automatically create a goal.</p>
       </div>
       {{ partial "work/two-chart.html" (dict
         "class" "along-screens"
         "images" (slice
-          (dict "src" "/images/ux-web3/along/goal-draft.webp" "alt" "Early iPhone build showing a blank custom goal and a prompt to start with one sentence." "captionHtml" "Goal entry · Early iPhone build · <a href='/images/ux-web3/along/goal-draft.webp'>Open screenshot</a>")
-          (dict "src" "/images/ux-web3/along/replan.webp" "alt" "Exercise replay comparing the original 45-minute walk with a 10-minute suggestion after a workout." "captionHtml" "Exercise replay · Web prototype with sample data · <a href='/images/ux-web3/along/replan.webp'>Open screenshot</a>")
+          (dict "src" "/images/ux-web3/along/current-chat.webp" "alt" "Current Along chat interface showing a request to change today's exercise to a twenty-minute walk while keeping the bedtime reminder." "captionHtml" "Change the plan in chat · Current app UI with a sample conversation · <a href='/images/ux-web3/along/current-chat.webp'>Open screenshot</a>")
+          (dict "src" "/images/ux-web3/along/iphone-goal-plan.webp" "alt" "Actual Along iPhone goal page showing a sleep and exercise plan, an authorized Apple Health connection, yoga class booking and a weather check before a weekend hike." "captionHtml" "A plan for the week · Actual iPhone screenshot, November 16 · <a href='/images/ux-web3/along/iphone-goal-plan.webp'>Open screenshot</a>")
         )
       ) }}
       <div class="site-work-detail-page-template-header">
-        <h4>What the agent gets to see</h4>
-        <p>On iPhone, the person chooses which Apple Health summaries to share. Along sends the selected observations and the current plan to a paired Mac for review. The web demo uses sample data.</p>
-        <p>In one iPhone check, the observations matched the last review. Along kept all three existing tasks.</p>
+        <p>The chat screen is a browser capture of the November 16 app code with a staged conversation. The goal screen is an actual iPhone capture: yoga bookings, a sleep routine and a weather check before a weekend hike sit together in one plan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="reminders" class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header">
+        <h3>02. A Reminder That Remembers the Request</h3>
+        <p>The bedtime reminder says to dim the lights, put down the screen and wind down at your own pace. It also preserves a preference: no fixed lights-out or wake-up time. The exercise reminder keeps the next step small: twenty minutes, at your own pace.</p>
+      </div>
+      {{ partial "work/two-chart.html" (dict
+        "class" "along-notifications"
+        "images" (slice
+          (dict "src" "/images/ux-web3/along/notification-sleep.webp" "alt" "Along iPhone notification reminding the person to dim the lights, put down the screen and prepare for sleep without a fixed bedtime or wake-up time." "captionHtml" "Bedtime preparation · Actual iPhone notification, November 11 · <a href='/images/ux-web3/along/notification-sleep.webp'>Open crop</a>")
+          (dict "src" "/images/ux-web3/along/notification-movement.webp" "alt" "Along iPhone notification saying there are twenty minutes of exercise planned today, to begin at the person's own pace." "captionHtml" "Today's movement · Actual iPhone notification, November 11 · <a href='/images/ux-web3/along/notification-movement.webp'>Open crop</a>")
+        )
+      ) }}
+      <div class="site-work-detail-page-template-header">
+        <h4>Getting back to the action matters too</h4>
+        <p>The latest version connects a scheduled notification to its task. In the iOS Simulator, a reminder arrived while the app was in the background; tapping it opened the matching task. An upgrade replay also checked that a reminder scheduled by the old app still opened its saved task after the update.</p>
+        <p>The real iPhone notifications above come from an earlier build. The latest app has been installed on the paired iPhone and its saved tasks reopened there; the latest notification delivery and tap-through flow still needs a device check. Remote push delivery while the app is suspended also remains unverified.</p>
       </div>
     </div>
   </div>
@@ -73,15 +67,51 @@
   <div class="site-work-detail-page-template">
     <div class="container">
       <div class="site-work-detail-page-template-header">
-        <h3>03. Agent Evaluation</h3>
-        <h4>What did Along know at the time?</h4>
-        <p>I shaped an evaluation around 54 synthetic decision cases across exercise, savings and Cantonese practice. Each replay gives the agent only the information available when it has to decide what to do next.</p>
-        <p>In the Cantonese listening test, a learner understands four of five new phrases and answers one of three aloud. Change one detail and the next practice session should change with it.</p>
+        <h3>03. Follow Progress Without Another Prompt</h3>
+        <p>Completing a workout should not require a second conversation just to update the plan. On iPhone, the person chooses which Apple Health summaries Along can use. Relevant changes can then trigger a review of an existing goal.</p>
+        <p>In an isolated test with a real model and synthetic health summaries, the agent removed an outdated “45 minutes still to do” task after reading the new exercise total. The goal stayed in place, and the validated task change took effect automatically.</p>
       </div>
       {{ partial "work/two-text.html" (dict "columns" (slice
-        (dict "title" "Subtitles off" "paragraphs" (slice "The learner understood the audio. Spend the next session practising a spoken reply."))
-        (dict "title" "Subtitles on" "paragraphs" (slice "Reading may have helped. Try new phrases from a different speaker with the text hidden."))
+        (dict "title" "Keep ordinary changes quiet" "paragraphs" (slice
+          "New facts can update the goal without becoming a notification. A review can keep the plan, change a task or ask for missing information. Reaching a scheduled time does not mean the person completed the action."
+        ))
+        (dict "title" "Respect the phone’s limits" "paragraphs" (slice
+          "Raw HealthKit samples stay on the phone. Selected summaries are queued for upload, including during background opportunities granted by iOS. Natural health changes, locked-screen wake-up and offline recovery still need end-to-end device validation."
+        ))
       )) }}
+    </div>
+  </div>
+
+  <div class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header">
+        <h3>04. Give the Agent Context and Boundaries</h3>
+        <p>The phone handles conversation, health permissions and reminders. A paired Mac stores the goal and runs Along Agent on DeepSeek Harness. A Router connects new input to the right work; a Worker reads the relevant context and proposes structured changes. Code checks ownership, scope and versions before anything becomes part of the plan.</p>
+      </div>
+      {{ partial "work/two-text.html" (dict "columns" (slice
+        (dict "title" "Remember what should carry forward" "paragraphs" (slice
+          "Scheduled maintenance extracts lasting preferences from conversation. Valid memories can inform later planning across goals. Asking Along to forget withdraws a memory from future use while preserving the conversation history."
+        ))
+        (dict "title" "Continue only what was delegated" "paragraphs" (slice
+          "A daily reminder needs an explicit daily instruction. When a task comes due, the Mac can review it and schedule the next occurrence within that instruction. Cancelling, completing or changing it to a one-off ends the repeat."
+        ))
+      )) }}
+      <div class="site-work-detail-page-template-header">
+        <p>Local storage does not mean local inference: the configured model and memory services process the context sent to them. Memory extraction and recall have passed isolated checks; long-term usefulness in daily life is still being evaluated.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-work-detail-page-template">
+    <div class="container">
+      <div class="site-work-detail-page-template-header">
+        <h3>05. Evaluate the Decision and the Return Journey</h3>
+        <p>My role spans the product behavior, prompts and context, evaluation scenarios, and acceptance of the resulting experience. An earlier evaluation set covered 54 synthetic decisions across exercise, savings and Cantonese practice. Each replay gave the agent only what was known at the decision point.</p>
+        <p>For Cantonese practice, understanding a phrase with subtitles and understanding it without them should lead to different next steps. For a reminder, a successful run is only part of the evidence: did it arrive, and did tapping it return to the intended task?</p>
+        <h4>Current stage</h4>
+        <p>Along is a personal prototype in use on a paired iPhone and Mac. Chat, task updates, scheduled reviews and memory have working implementations, with different levels of device validation. The public web demo can be explored with sample data; the paired agent flow requires the Mac service. Full retrospectives and automatic skill publishing remain future work.</p>
+        <p>Updated November 16, 2026 · <a href="https://github.com/artstur/Along/tree/92d575ee79fa55eded3382e904788d077460ef5a">App and Host source</a> · <a href="https://github.com/artstur/along-superagent/tree/73534d1e5fad85ffe3f33c9875a9296b2c61515a">Agent source</a> · <a href="https://github.com/artstur/along-superagent/blob/73534d1e5fad85ffe3f33c9875a9296b2c61515a/docs/along/009-current-runtime.md">Runtime and validation notes</a></p>
+      </div>
     </div>
   </div>
 </section>
