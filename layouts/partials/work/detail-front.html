@@ -4,20 +4,23 @@
   通用 work detail 首屏组件（site-work-detail-front）。
 
   参数：
-    - backgroundImage (string, 必填) 背景图 URL
+    - backgroundImage (string, 可选) 背景图 URL
     - title           (string, 必填) 标题
     - description     (string, 必填) 描述文案
     - buttonHref      (string, 可选) 按钮跳转锚点，默认 #problem-space
     - buttonLabel     (string, 可选) 按钮文案，默认 Learn More
     - textColor       (string, 可选) 标题/描述/按钮文字共用颜色
     - buttonWrapperClass (string, 可选) 按钮外层 class（如 trust-finance-blue）
+    - class (string, 可选) 首屏组件附加 class
+    - images (slice, 可选) 独立展示的截图，每项含 src / alt / width / height
+    - mediaLabel (string, 可选) 截图组的无障碍名称
 */}}
 
 {{- $buttonHref := default "#problem-space" .buttonHref -}}
 {{- $buttonLabel := default "Learn More" .buttonLabel -}}
 {{- $textColor := .textColor -}}
 
-<div class="site-work-detail-front" style="background-image:url('{{ partial "work/image-url.html" .backgroundImage }}');">
+<div class="site-work-detail-front{{ with .class }} {{ . }}{{ end }}"{{ with .backgroundImage }} style="background-image:url('{{ partial "work/image-url.html" . }}');"{{ end }}>
   <div class="site-work-detail-front-info">
     <div class="site-work-detail-front-info-box">
       <div class="site-work-detail-front-info-title" data-aos="fade-in" data-aos-duration="1500">
@@ -33,4 +36,13 @@
       </div>
     </div>
   </div>
+  {{- with .images }}
+  <div class="work-front-screens" role="group" aria-label="{{ default "Project screenshots" $.mediaLabel }}">
+    {{- range . }}
+    <figure class="work-front-screen">
+      <img src="{{ partial "work/image-url.html" .src }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" decoding="async">
+    </figure>
+    {{- end }}
+  </div>
+  {{- end }}
 </div>
