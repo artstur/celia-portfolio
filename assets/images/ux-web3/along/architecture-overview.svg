@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="584" viewBox="0 0 1440 584" role="img" aria-labelledby="title desc">
+  <title id="title">Along technical architecture overview</title>
+  <desc id="desc">iPhone exchanges chat, selected health summaries and task updates with a paired Mac Host. Along Agent runs in DeepSeek Harness. Source and Engine persist and dispatch work; chat passes through a Router, while health and due-work events can dispatch a Worker directly. The Worker reads context and governed memories and commits structured changes through ownership, scope and version checks. Business state and orchestration have separate SQLite stores. MemoryService uses the Hy-Memory SDK. Configured remote services supply model inference and embeddings. Raw HealthKit samples stay on iPhone and model credentials stay on the Mac.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 6 3 0 6" fill="none" stroke="#806b92" stroke-width="1.2"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#302b36}
+      .kicker{font-size:12.5px;font-weight:700;letter-spacing:1.1px;fill:#806b92}
+      .title{font-size:20px;font-weight:600}
+      .body{font-size:16px;fill:#5c5565}
+      .small{font-size:14px;fill:#6c6474}
+      .note{font-size:12.5px;fill:#817889}
+      .box{fill:#fff;stroke:#e0d8e7;stroke-width:1}
+      .flow{fill:none;stroke:#806b92;stroke-width:1.35;marker-end:url(#arrow)}
+      .both{marker-start:url(#arrow)}
+      .context{stroke-dasharray:4 4}
+    </style>
+  </defs>
+  <rect x=".5" y=".5" width="1439" height="583" rx="16" fill="#faf8fc" stroke="#eee8f3"/>
+  <text x="32" y="31" class="kicker">ALONG / TECHNICAL ARCHITECTURE</text>
+  <text x="1408" y="31" text-anchor="end" class="note">CURRENT IMPLEMENTATION · 16 NOV 2026</text>
+
+  <rect x="260" y="64" width="900" height="478" rx="14" fill="#f0ebf5" stroke="#e0d8e7"/>
+  <text x="282" y="87" class="kicker">MAC / ALONG AGENT · DEEPSEEK HARNESS</text>
+
+  <rect x="32" y="124" width="190" height="240" rx="10" class="box"/>
+  <text x="50" y="159" class="title">iPhone</text>
+  <text x="50" y="197" class="body">Chat &amp; task views</text>
+  <text x="50" y="225" class="body">HealthKit summaries</text>
+  <text x="50" y="253" class="body">Durable event queue</text>
+  <text x="50" y="281" class="body">Native reminders</text>
+  <line x1="50" y1="305" x2="204" y2="305" stroke="#eee8f3"/>
+  <text x="50" y="332" class="small">Task deep links</text>
+
+  <rect x="282" y="124" width="166" height="130" rx="10" class="box"/>
+  <text x="300" y="158" class="title">Along Host</text>
+  <text x="300" y="194" class="body">Pairing · TLS</text>
+  <text x="300" y="222" class="small">Event / sync bridge</text>
+  <path d="M222 184H282" class="flow both"/>
+  <text x="232" y="173" class="note">HTTPS</text>
+
+  <rect x="486" y="124" width="182" height="130" rx="10" class="box"/>
+  <text x="504" y="158" class="title">Source / Engine</text>
+  <text x="504" y="194" class="body">Events · tickets</text>
+  <text x="504" y="222" class="small">Dispatch &amp; recovery</text>
+  <path d="M448 184H486" class="flow both"/>
+
+  <rect x="706" y="124" width="158" height="130" rx="10" class="box"/>
+  <text x="724" y="158" class="title">Router</text>
+  <text x="724" y="194" class="body">Route chat</text>
+  <text x="724" y="222" class="small">Attach or stop</text>
+  <path d="M668 184H706" class="flow"/>
+  <text x="673" y="173" class="note">Chat</text>
+
+  <rect x="902" y="124" width="214" height="130" rx="10" class="box"/>
+  <text x="920" y="158" class="title">Worker</text>
+  <text x="920" y="194" class="body">Read context · plan</text>
+  <text x="920" y="222" class="small">Goal-scoped tools</text>
+  <path d="M864 184H902" class="flow"/>
+  <path d="M577 124V104H1009V124" class="flow"/>
+  <text x="791" y="96" class="note">Health / due work</text>
+
+  <rect x="32" y="404" width="190" height="124" rx="10" class="box"/>
+  <text x="50" y="434" class="title">Triggers</text>
+  <text x="50" y="462" class="small">Health · due tasks</text>
+  <text x="50" y="486" class="small">Daily schedules</text>
+  <text x="50" y="510" class="small">Memory maintenance</text>
+  <path d="M222 460H244V278H577V254" class="flow"/>
+
+  <rect x="282" y="310" width="386" height="104" rx="10" class="box"/>
+  <text x="300" y="342" class="title">MemoryService · Hy-Memory SDK</text>
+  <text x="300" y="372" class="body">Context · search · forget</text>
+  <text x="300" y="397" class="small">Scheduled extraction · vector index</text>
+  <path d="M902 222H884V290H650V310" class="flow both context"/>
+
+  <rect x="706" y="310" width="410" height="104" rx="10" fill="#faf7fe" stroke="#c9bad6"/>
+  <path d="M722 330V394" stroke="#a992ba" stroke-width="3" stroke-linecap="round"/>
+  <text x="738" y="342" class="title">Validate ChangeSet</text>
+  <text x="738" y="372" class="body">Owner · scope · input version</text>
+  <text x="738" y="397" class="small">Apply valid updates automatically</text>
+  <path d="M1009 254V310" class="flow"/>
+  <text x="1020" y="286" class="note">Changes</text>
+
+  <rect x="282" y="454" width="834" height="68" rx="10" class="box"/>
+  <line x1="752" y1="466" x2="752" y2="510" stroke="#eee8f3"/>
+  <text x="300" y="479" style="font-size:15px;font-weight:600">Business state</text>
+  <text x="300" y="502" class="small">along.sqlite · goals, tasks, chat, facts &amp; governed memory</text>
+  <text x="770" y="479" style="font-size:15px;font-weight:600">Agent execution</text>
+  <text x="770" y="502" class="small">orchestrator.sqlite · tickets &amp; effects</text>
+  <path d="M475 414V454" class="flow both"/>
+  <path d="M910 414V434H700V454" class="flow"/>
+
+  <rect x="1220" y="124" width="188" height="240" rx="10" class="box"/>
+  <text x="1238" y="159" class="title">Remote models</text>
+  <text x="1238" y="197" style="font-size:16px;font-weight:600">LLM</text>
+  <text x="1238" y="224" class="small">Route · plan · extract</text>
+  <text x="1238" y="270" style="font-size:16px;font-weight:600">Embeddings</text>
+  <text x="1238" y="297" class="small">Memory retrieval</text>
+  <text x="1238" y="336" class="note">Configured providers</text>
+  <path d="M1160 234H1220" class="flow both context"/>
+  <text x="1181" y="222" class="note">API</text>
+
+  <rect x="1220" y="404" width="188" height="124" rx="10" class="box"/>
+  <text x="1238" y="434" style="font-size:16px;font-weight:600">Data boundaries</text>
+  <text x="1238" y="463" class="small">Raw samples: iPhone</text>
+  <text x="1238" y="487" class="small">Credentials: Mac</text>
+  <text x="1238" y="511" class="note">Share chosen summaries</text>
+  <text x="32" y="568" class="note">Solid: state &amp; execution · Dashed: context &amp; model calls</text>
+</svg>

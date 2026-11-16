@@ -63,6 +63,11 @@
 .along-reminder a,
 .along-architecture a { color: inherit; text-decoration: underline; }
 .along-reminder img { max-height: 48rem; object-fit: contain; }
-.along-architecture-scroll { overflow-x: auto; }
-.along-architecture-scroll img { min-width: 900px; }
-.along-architecture-scroll:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+#architecture { scroll-margin-top: 48px; }
+.along-architecture { max-width: 1000px; margin: 0 auto 1.5rem; padding: 0; }
+.along-architecture-frame { display: block; }
+.along-architecture-frame img { width: 100%; height: auto; max-height: clamp(240px, calc(100svh - 300px), 420px); object-fit: contain; }
+.along-architecture-frame:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+.along-architecture figcaption { padding: 10px 0 0; }
+.along-architecture figcaption p { margin: 0; font-size: 14px; line-height: 1.5; }
+.along-architecture figcaption a { white-space: nowrap; }
