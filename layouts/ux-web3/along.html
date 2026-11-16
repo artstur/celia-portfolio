@@ -49,17 +49,18 @@
         <h3>02. A Reminder That Remembers the Request</h3>
         <p>The bedtime reminder says to dim the lights, put down the screen and wind down at your own pace. It also preserves a preference: no fixed lights-out or wake-up time. The exercise reminder keeps the next step small: twenty minutes, at your own pace.</p>
       </div>
-      {{ partial "work/two-chart.html" (dict
-        "class" "along-notifications"
-        "images" (slice
-          (dict "src" "/images/ux-web3/along/notification-sleep.webp" "alt" "Along iPhone notification reminding the person to dim the lights, put down the screen and prepare for sleep without a fixed bedtime or wake-up time." "captionHtml" "Bedtime preparation · Actual iPhone notification, November 11 · <a href='/images/ux-web3/along/notification-sleep.webp'>Open crop</a>")
-          (dict "src" "/images/ux-web3/along/notification-movement.webp" "alt" "Along iPhone notification saying there are twenty minutes of exercise planned today, to begin at the person's own pace." "captionHtml" "Today's movement · Actual iPhone notification, November 11 · <a href='/images/ux-web3/along/notification-movement.webp'>Open crop</a>")
-        )
-      ) }}
-      <div class="site-work-detail-page-template-header">
-        <h4>Getting back to the action matters too</h4>
-        <p>The latest version connects a scheduled notification to its task. In the iOS Simulator, a reminder arrived while the app was in the background; tapping it opened the matching task. An upgrade replay also checked that a reminder scheduled by the old app still opened its saved task after the update.</p>
-        <p>The real iPhone notifications above come from an earlier build. The latest app has been installed on the paired iPhone and its saved tasks reopened there; the latest notification delivery and tap-through flow still needs a device check. Remote push delivery while the app is suspended also remains unverified.</p>
+      <div class="along-reminder">
+        {{ partial "work/media-text-block.html" (dict
+          "reverse" true
+          "imageSrc" "/images/ux-web3/along/notification-lock-screen.webp"
+          "imageAlt" "Complete iPhone lock screen at 22:31 on November 11, with Along bedtime preparation and twenty-minute exercise reminders. Unrelated notifications are blurred."
+          "title" "Getting back to the action matters too"
+          "paragraphs" (slice
+            "The latest version connects a scheduled notification to its task. In the iOS Simulator, a reminder arrived while the app was in the background; tapping it opened the matching task. An upgrade replay also checked that a reminder scheduled by the old app still opened its saved task after the update."
+            "The real iPhone notifications shown here come from an earlier build. The latest app has been installed on the paired iPhone and its saved tasks reopened there; the latest notification delivery and tap-through flow still needs a device check. Remote push delivery while the app is suspended also remains unverified."
+            "Actual iPhone lock screen · November 11 · Unrelated notifications blurred · <a href='/images/ux-web3/along/notification-lock-screen.webp'>Open full screenshot</a>"
+          )
+        ) }}
       </div>
     </div>
   </div>
@@ -82,12 +83,20 @@
     </div>
   </div>
 
-  <div class="site-work-detail-page-template">
+  <div id="architecture" class="site-work-detail-page-template">
     <div class="container">
       <div class="site-work-detail-page-template-header">
         <h3>04. Give the Agent Context and Boundaries</h3>
         <p>The phone handles conversation, health permissions and reminders. A paired Mac stores the goal and runs Along Agent on DeepSeek Harness. A Router connects new input to the right work; a Worker reads the relevant context and proposes structured changes. Code checks ownership, scope and versions before anything becomes part of the plan.</p>
       </div>
+      <figure class="site-work-detail-page-template-chart along-architecture">
+        <div class="along-architecture-scroll" tabindex="0" role="region" aria-label="Technical architecture diagram; scroll horizontally on smaller screens">
+          <a href="/images/ux-web3/along/technical-architecture.png" aria-label="Open full-size Along technical architecture diagram">
+            <img src="/images/ux-web3/along/technical-architecture.svg" alt="Along architecture: iPhone connects through a paired Mac Host to the Engine, Router and Worker. Validated changes, governed memory and SQLite state support planning; configured remote services supply model inference and embeddings." width="1200" height="1100" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <figcaption class="site-work-detail-page-template-caption"><p>Current implementation · November 16 · <a href="/images/ux-web3/along/technical-architecture.png">Open full-size diagram</a>. On smaller screens, scroll across the diagram to read each component.</p></figcaption>
+      </figure>
       {{ partial "work/two-text.html" (dict "columns" (slice
         (dict "title" "Remember what should carry forward" "paragraphs" (slice
           "Scheduled maintenance extracts lasting preferences from conversation. Valid memories can inform later planning across goals. Asking Along to forget withdraws a memory from future use while preserving the conversation history."

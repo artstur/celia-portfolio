@@ -6,5 +6,9 @@
   object-fit: contain;
 }
 .along-screens a,
-.along-notifications a { color: inherit; text-decoration: underline; }
-.along-notifications { align-items: flex-start; }
+.along-reminder a,
+.along-architecture a { color: inherit; text-decoration: underline; }
+.along-reminder img { max-height: 48rem; object-fit: contain; }
+.along-architecture-scroll { overflow-x: auto; }
+.along-architecture-scroll img { min-width: 900px; }
+.along-architecture-scroll:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
