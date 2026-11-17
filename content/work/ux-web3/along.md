@@ -1,6 +1,6 @@
 ---
 title: "Along | Celia Shuyue Li"
-description: "Designing a personal goal agent that turns conversation into a changing plan, follows health updates, and brings you back when it is time to act."
+description: "Designing a personal goal agent that recommends relevant data sources and replans tasks as a conversation changes, from an OKX financial review to a gentler weekend hike."
 type: 'ux-web3'
 layout: 'along'
 accent_color: '#705883'
