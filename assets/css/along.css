@@ -59,6 +59,9 @@
   max-height: 38rem;
   object-fit: contain;
 }
+.along-progress-screens img { max-height: 32rem; }
+#goal-data-sources,
+#changing-the-plan { scroll-margin-top: 48px; }
 .along-screens a,
 .along-reminder a,
 .along-architecture a { color: inherit; text-decoration: underline; }
